@@ -46,7 +46,17 @@ class _CompaniesGuideListState extends State<CompaniesGuideList> {
               horizontal: horizontalPadding,
               vertical: 5
             ),
-            child: CompaniesGuideItem(),
+            child: CompaniesGuideItem(
+              image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY70aj8rN_VdbZpVuwtQx7I9dj4JCWQS4w2g&s',
+              title: 'مكتب القيقب العلمي',
+              city: 'بغداد',
+              date: '2024/4/20',
+              category: 'تجارة سلع مصنعة اخرى',
+              phone: '0832743284',
+              email: 'tariq-alhujud@EI.IQ',
+              publicOrPrivate: 'خاص',
+              views: '6',
+            ),
           );
         }
         return const Padding(

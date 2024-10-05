@@ -1,5 +1,4 @@
 import 'package:baghdad_fair/core/components/customLoadingIndicator.dart';
-import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/features/homeBody/ads/presentation/views/components/adsItem.dart';
 import 'package:flutter/material.dart';
 
@@ -46,11 +45,10 @@ class _AdsListState extends State<AdsList> {
               vertical: 5
             ),
             child: AdsItem(
-              image: Image(
-                image: AssetImage(AppAssets.appImage),
-                fit: BoxFit.contain,
-              )
-              
+              image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY70aj8rN_VdbZpVuwtQx7I9dj4JCWQS4w2g&s',
+              location: 'بغداد',
+              date: '2024/4/20',
+              time: '2:14 AM',
             ),
           );
         }

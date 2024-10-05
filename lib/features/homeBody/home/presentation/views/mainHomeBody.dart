@@ -1,11 +1,11 @@
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
-import 'package:baghdad_fair/features/homeBody/main/presentation/views/components/mainContactUs.dart';
-import 'package:baghdad_fair/features/homeBody/main/presentation/views/components/mainDetails.dart';
-import 'package:baghdad_fair/features/homeBody/main/presentation/views/components/mainHomeInfo.dart';
-import 'package:baghdad_fair/features/homeBody/main/presentation/views/components/mainLinks.dart';
-import 'package:baghdad_fair/features/homeBody/main/presentation/views/components/mainMap.dart';
-import 'package:baghdad_fair/features/homeBody/main/presentation/views/components/mainShowTimeInfo.dart';
+import 'package:baghdad_fair/features/homeBody/home/presentation/views/components/mainContactUs.dart';
+import 'package:baghdad_fair/features/homeBody/home/presentation/views/components/mainDetails.dart';
+import 'package:baghdad_fair/features/homeBody/home/presentation/views/components/mainHomeInfo.dart';
+import 'package:baghdad_fair/features/homeBody/home/presentation/views/components/mainLinks.dart';
+import 'package:baghdad_fair/features/homeBody/home/presentation/views/components/mainMap.dart';
+import 'package:baghdad_fair/features/homeBody/home/presentation/views/components/mainShowTimeInfo.dart';
 import 'package:flutter/material.dart';
 
 class MainHomeBody extends StatelessWidget {

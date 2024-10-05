@@ -36,9 +36,12 @@ class ParticipatingCompaniesItemSingleSection extends StatelessWidget {
             color: primaryBackgroundColor,
           ),
           Expanded(
-            child: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                firstText
+                firstText,
+                maxLines: 2,
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             )
           ),
@@ -62,8 +65,13 @@ class ParticipatingCompaniesItemSingleSection extends StatelessWidget {
             color: primaryBackgroundColor,
           ),
           Expanded(
-            child: Text(
-              secondText
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                secondText,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+                maxLines: 2,
+              ),
             )
           ),
         ],

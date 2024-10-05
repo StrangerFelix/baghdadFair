@@ -48,7 +48,7 @@ class _NewsCardsListState extends State<NewsCardsList> {
               vertical: 5
             ),
             child: NewsCard(
-              image: 'https://imhussain.com/upload/orginal/65018cd847292.jpg',
+              image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY70aj8rN_VdbZpVuwtQx7I9dj4JCWQS4w2g&s',
               title: 'تطبيق برنامج الاعتراف المتبادل بشهادات المطابقة بين الجهاز المركزي للتقييس والسيطرة النوعية',
               auther: 'تطبيق برنامج متبادل بين العراق والسعودية',
             ),

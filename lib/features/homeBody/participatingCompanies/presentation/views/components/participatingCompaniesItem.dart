@@ -4,74 +4,76 @@ import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/homeBody/participatingCompanies/presentation/views/components/participatingCompaniesItemSingleSection.dart';
 import 'package:flutter/material.dart';
 
-class ParticipatingCompaniesItem extends StatefulWidget {
-  const ParticipatingCompaniesItem({super.key});
-
-  @override
-  State<ParticipatingCompaniesItem> createState() => _ParticipatingCompaniesItemState();
-}
-
-class _ParticipatingCompaniesItemState extends State<ParticipatingCompaniesItem> {
+class ParticipatingCompaniesItem extends StatelessWidget {
+  const ParticipatingCompaniesItem({super.key, this.name, this.secondName, this.email, this.phone, this.companyDirection, this.companyType, this.location, this.localOrNot});
+  final String? name;
+  final String? secondName;
+  final String? email;
+  final String? phone;
+  final String? companyDirection; // داخلية او خارجية 
+  final String? companyType; // مؤسسة ام جمعية
+  final String? location;
+  final String? localOrNot;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: AppStyles.primaryBoxDeocration(hasBorRadius: false),
       child: Column(
         children: [
-          const ParticipatingCompaniesItemSingleSection(
-            firstIcon: Image(
+          ParticipatingCompaniesItemSingleSection(
+            firstIcon: const Image(
               image: AssetImage(AppAssets.userLarge)
             ), 
-            firstText: 'العتبة العباسية المقدسة', 
-            secondIcon: Image(
+            firstText: name ?? "", 
+            secondIcon: const Image(
               image: AssetImage(AppAssets.name)
             ),
-            secondText: 'Al-abbas Holy Shrine' 
+            secondText: secondName ?? "" 
           ),
           Container(
             height: 1,
             width: double.infinity,
             color: primaryBackgroundColor,
           ),
-          const ParticipatingCompaniesItemSingleSection(
-            firstIcon: Image(
+          ParticipatingCompaniesItemSingleSection(
+            firstIcon: const Image(
               image: AssetImage(AppAssets.emailLarge)
             ), 
-            firstText: 'العتبة العباسية المقدسة', 
-            secondIcon: Image(
+            firstText: email ?? "", 
+            secondIcon: const Image(
               image: AssetImage(AppAssets.phoneLarge)
             ),
-            secondText: 'Al-abbas Holy Shrine' 
+            secondText: phone ?? ""
           ),
           Container(
             height: 1,
             width: double.infinity,
             color: primaryBackgroundColor,
           ),
-          const ParticipatingCompaniesItemSingleSection(
-            firstIcon: Image(
+          ParticipatingCompaniesItemSingleSection(
+            firstIcon: const Image(
               image: AssetImage(AppAssets.earth)
             ), 
-            firstText: 'العتبة العباسية المقدسة', 
-            secondIcon: Image(
+            firstText: companyDirection ?? "", 
+            secondIcon: const Image(
               image: AssetImage(AppAssets.link)
             ),
-            secondText: 'Al-abbas Holy Shrine' 
+            secondText: companyType ?? ""
           ),
           Container(
             height: 1,
             width: double.infinity,
             color: primaryBackgroundColor,
           ),
-          const ParticipatingCompaniesItemSingleSection(
-            firstIcon: Image(
+          ParticipatingCompaniesItemSingleSection(
+            firstIcon: const Image(
               image: AssetImage(AppAssets.address)
             ), 
-            firstText: 'العتبة العباسية المقدسة', 
-            secondIcon: Image(
+            firstText: location ?? "", 
+            secondIcon: const Image(
               image: AssetImage(AppAssets.flag)
             ),
-            secondText: 'Al-abbas Holy Shrine' 
+            secondText: localOrNot ?? ""
           ),
         ],
       ),

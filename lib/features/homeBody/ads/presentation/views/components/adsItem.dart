@@ -1,11 +1,15 @@
+import 'package:baghdad_fair/core/components/customCachedImage.dart';
 import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:flutter/material.dart';
 
 class AdsItem extends StatelessWidget {
-  const AdsItem({required this.image,super.key});
-  final Widget image;
+  const AdsItem({required this.image,super.key, this.location, this.date, this.time});
+  final String? image;
+  final String? location;
+  final String? date;
+  final String? time;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,44 +22,44 @@ class AdsItem extends StatelessWidget {
             flex: 6,
             child: Padding(
               padding: const EdgeInsets.all(horizontalPadding),
-              child: image,
+              child: CustomCachedImage(image,fit: BoxFit.contain,),
             ),
           ),
-          const Expanded(
+          Expanded(
             flex: 1,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+              padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
               child: Row(
                 children: [
-                  Image(
+                  const Image(
                     image: AssetImage(AppAssets.address),
                     width: 20,
                   ),
-                  SizedBox(width: 5,),
+                  const SizedBox(width: 5,),
                   Text(
-                    'بغداد',
+                    location ?? "",
                     style: AppStyles.autherSmall,
                   ),
-                  SizedBox(width: 10,),
-                  Image(
+                  const SizedBox(width: 10,),
+                  const Image(
                     image: AssetImage(AppAssets.calendar),
                     width: 28,
                   ),
-                  SizedBox(width: 5,),
+                  const SizedBox(width: 5,),
                   Text(
-                    '2024/4/20',
+                    date ?? "",
                     style: AppStyles.autherSmall,
                   ),
-                  SizedBox(width: 10,),
-                  Image(
+                  const SizedBox(width: 10,),
+                  const Image(
                     image: AssetImage(AppAssets.time),
                     width: 28,
                   ),
-                  SizedBox(width: 5,),
+                  const SizedBox(width: 5,),
                   Directionality(
                     textDirection: TextDirection.ltr,
                     child: Text(
-                      '2:14 AM',
+                      time ?? "",
                       style: AppStyles.autherSmall,
                     ),
                   ),

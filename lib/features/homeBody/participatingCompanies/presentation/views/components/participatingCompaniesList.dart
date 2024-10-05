@@ -44,7 +44,16 @@ class _ParticipatingCompaniesListState extends State<ParticipatingCompaniesList>
             padding: EdgeInsets.symmetric(
               vertical: 5
             ),
-            child: ParticipatingCompaniesItem(),
+            child: ParticipatingCompaniesItem(
+              name: 'العتبة العباسية المقدسة',
+              secondName: 'Al-Abbas Holy Shrine',
+              email: "Info@alkafeel.net",
+              phone: '07723953380',
+              companyDirection: 'شركة داخلية',
+              companyType: 'مؤسسة',
+              location: "كربلاء/المركز",
+              localOrNot: 'عراقية'
+            ),
           );
         }
         return const Padding(
