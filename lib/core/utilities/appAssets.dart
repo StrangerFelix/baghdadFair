@@ -1,0 +1,29 @@
+abstract class AppAssets {
+  static const appImage = 'assets/images/appbar_image.png';
+  static const shield = "assets/icons/shield.png";
+  static const clock = "assets/icons/clock.png";
+  static const link = "assets/icons/link.png";
+  static const address = "assets/icons/address.png";
+  static const file = "assets/icons/file.png";
+  static const location = "assets/icons/location.png";
+  static const phone = "assets/icons/phone.png";
+  static const logo = "assets/icons/logo.png";
+  static const linksImage = "assets/images/links_image.svg";
+  static const facebook = "assets/icons/facebook.png";
+  static const google = "assets/icons/google.png";
+  static const x = "assets/icons/x.png";
+  static const email = "assets/icons/email.png";
+  static const search = "assets/icons/search.png";
+  static const splashLogo = "assets/icons/splashlogo.png";
+  static const filter = "assets/icons/filter.svg";
+  static const calendar = "assets/icons/calendar.png";
+  static const arrow = "assets/icons/arrow.png";
+  static const user = "assets/icons/user.png";
+  static const emailLarge = "assets/icons/email_large.png";
+  static const earth = "assets/icons/earth.png";
+  static const phoneLarge = "assets/icons/phone_large.png";
+  static const userLarge = "assets/icons/user_large.png";
+  static const name = "assets/icons/name.png";
+  static const flag = "assets/icons/flag.png";
+  static const time = "assets/icons/time.png";
+}
