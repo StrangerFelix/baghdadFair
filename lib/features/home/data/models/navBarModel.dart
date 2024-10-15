@@ -1,6 +1,8 @@
 import 'package:baghdad_fair/core/utilities/appRouter.dart';
 import 'package:baghdad_fair/features/homeBody/aboutUs/presentation/manager/aboutUs/aboutUsBloc.dart';
 import 'package:baghdad_fair/features/homeBody/aboutUs/presentation/manager/aboutUs/aboutUsEvents.dart';
+import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/homeBloc.dart';
+import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/homeEvents.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,7 +24,7 @@ List<NavBarItem> navBarItems (BuildContext context) {
       name: "home",
       path: AppRouter.home,
       event: () {
-        print ('Page 1');
+        context.read<HomeBloc>().add(GetHomeDataEvent());
       }
     ),
     NavBarItem(

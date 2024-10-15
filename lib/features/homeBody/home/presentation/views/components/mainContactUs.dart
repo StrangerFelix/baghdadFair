@@ -48,7 +48,7 @@ class MainContactUs extends StatelessWidget {
                         child: Row(
                           children: [
                             Expanded(
-                              flex: 3,
+                              flex: 1,
                               child: ContactUsInfo(
                                 imageLink: AppAssets.location,
                                 title: S.of(context).our_address,
@@ -56,7 +56,7 @@ class MainContactUs extends StatelessWidget {
                               )
                             ),
                             Expanded(
-                              flex: 2,
+                              flex: 1,
                               child: ContactUsInfo(
                                 imageLink: AppAssets.phone, 
                                 title: S.of(context).call_us,

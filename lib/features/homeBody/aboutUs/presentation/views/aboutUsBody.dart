@@ -17,14 +17,14 @@ class AboutUsBody extends StatefulWidget {
 }
 
 class _AboutUsBodyState extends State<AboutUsBody> {
-  AboutUs? aboutUs;
+  AboutUs? _aboutUs;
   String? error;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AboutUsBloc, AboutUsStates>(
       builder: (context, state) {
         if (state is AboutUsLoaded) {
-          aboutUs = state.model.data!.response![0];
+          _aboutUs = state.model.data?.response?[0];
         }
         if (state is AboutUsFailure) {
           error = state.error;
@@ -38,11 +38,11 @@ class _AboutUsBodyState extends State<AboutUsBody> {
             ),
             state is! AboutUsLoading ? 
             state is! AboutUsFailure ? 
-            state is AboutUsLoaded ?
+            state is AboutUsLoaded  && _aboutUs != null ?
             AboutUsContext(
-              description: aboutUs != null ? aboutUs!.description : S.of(context).error,
+              description: _aboutUs!.description,
             )
-            : const SizedBox()
+            : CustomErrorWidget(error: S.of(context).error,)
             : CustomErrorWidget(error: error,) 
             : const CustomLoadingWidget()
           ],

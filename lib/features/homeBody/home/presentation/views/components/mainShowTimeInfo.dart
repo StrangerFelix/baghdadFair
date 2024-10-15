@@ -1,9 +1,10 @@
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
+import 'package:baghdad_fair/features/homeBody/home/data/models/homeModel.dart';
 import 'package:flutter/material.dart';
 
 class MainShowTimeInfo extends StatelessWidget {
-  const MainShowTimeInfo({super.key});
-
+  const MainShowTimeInfo({this.data,super.key});
+  final HomeData? data;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -30,13 +31,22 @@ class MainShowTimeInfo extends StatelessWidget {
             ]
           )
         ),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text('أيام وساعات العرض',style: AppStyles.gradientBoxTextStyle,),
-            Text('من 1/11/2024 الى 7/11/2024',style: AppStyles.gradientBoxTextStyle),
-            Text('من الساعة 1 الى الساعة 10',style: AppStyles.gradientBoxTextStyle,),
+            const Text(
+              'أيام وساعات العرض',
+              style: AppStyles.gradientBoxTextStyle,
+            ),
+            Text(
+              'من ${data!.fromDate} الى ${data!.toDate}',
+              style: AppStyles.gradientBoxTextStyle
+            ),
+            Text(
+              'من الساعة ${data!.fromHour} الى الساعة ${data!.toHour}',
+              style: AppStyles.gradientBoxTextStyle,
+            ),
           ],
         ),
       ),
