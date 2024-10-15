@@ -68,5 +68,6 @@
     "golden_partners" : "الشركاء الذهبيّون",
     "silver_partners" : "الشركاء الفضيّون",
     "filter_by_year" : "تصفية حسب السنة",
-    "join_the_future" : "التحق بالمستقبل"
+    "join_the_future" : "التحق بالمستقبل",
+    "error" : "حدث خطأ ما!"
 }

@@ -13,12 +13,12 @@ class LanguageCubit extends Cubit<LanguageStates> {
     return locale ?? Locale(checkCachedLanguage);
   }
   
-  void changeLanguage(String language) {
+  Future<void> changeLanguage(String language) async{
     if (language == "English") {
-      CacheHelper.saveData(key: 'lang', value: 'en');
+      await CacheHelper.saveData(key: 'lang', value: 'en');
       locale = Locale('en');
     } else {
-      CacheHelper.saveData(key: 'lang', value: 'ar');
+      await CacheHelper.saveData(key: 'lang', value: 'ar');
       locale = Locale('ar');
     }
     emit(LanguageChanged());

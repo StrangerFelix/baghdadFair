@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "duration": MessageLookupByLibrary.simpleMessage("Duration"),
         "email": MessageLookupByLibrary.simpleMessage("Email Address"),
         "ended": MessageLookupByLibrary.simpleMessage("Ended"),
+        "error": MessageLookupByLibrary.simpleMessage("An error occurred"),
         "fair_history": MessageLookupByLibrary.simpleMessage(
             "Baghdad\'s international fair history"),
         "fairs": MessageLookupByLibrary.simpleMessage("Fairs"),

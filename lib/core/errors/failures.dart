@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:intl/intl.dart';
 
 abstract class Failures {
   final String errorMessage;
@@ -12,26 +13,26 @@ class ServerFailure extends Failures {
     switch(dioException.type) {
       
       case DioExceptionType.connectionTimeout:
-        return ServerFailure('Connection timeout with ApiServer!');
+        return ServerFailure(Intl.getCurrentLocale() == 'en' ? 'Connection timeout with ApiServer!' : 'انتهت مهلة الاتصال مع الخادم!');
       case DioExceptionType.sendTimeout:
-        return ServerFailure('Send timeout with ApiServer!');
+        return ServerFailure(Intl.getCurrentLocale() == 'en' ? 'Send timeout with ApiServer!' : 'هناك مشكلة اتصال مع الخادم!');
       case DioExceptionType.receiveTimeout:
-        return ServerFailure('Receive timeout with ApiServer!');
+        return ServerFailure(Intl.getCurrentLocale() == 'en' ? 'Receive timeout with ApiServer!' : 'هناك مشكلة اتصال مع الخادم!');
       case DioExceptionType.badCertificate:
-        return ServerFailure('Bad certificate with ApiServer!');
+        return ServerFailure(Intl.getCurrentLocale() == 'en' ? 'Bad certificate with ApiServer!' : 'هناك مشكلة اتصال مع الخادم!');
       case DioExceptionType.badResponse:
         return ServerFailure.fromResponse(dioException.response!.statusCode!, dioException.response!.data);
       case DioExceptionType.cancel:
-        return ServerFailure('Request to ApiServer was canceled!');
+        return ServerFailure(Intl.getCurrentLocale() == 'en' ? 'Request to ApiServer was canceled!' : 'تم رفع طلب البيانات من الخادم!');
       case DioExceptionType.connectionError:
-        return ServerFailure('Connection error with ApiServer!');
+        return ServerFailure(Intl.getCurrentLocale() == 'en' ? 'Connection error with ApiServer!' : 'هناك مشكلة اتصال مع الخادم!');
       case DioExceptionType.unknown:
         if(dioException.message!.contains('SocketException')){
-          return ServerFailure('No Internet Connection');
+          return ServerFailure(Intl.getCurrentLocale() == 'en' ? 'No Internet Connection' : 'لا يوجد اتصال بالانترنت');
         }
-        return ServerFailure('Unexpected Error!');
+        return ServerFailure(Intl.getCurrentLocale() == 'en' ? 'Unexpected Error!' : 'حدث خطأ غير متوقع!');
       default:
-        return ServerFailure('Opps, something went wrong :(');
+        return ServerFailure(Intl.getCurrentLocale() == 'en' ? 'Opps, something went wrong!' : 'للاسف, حدث خطأ ما!');
     }
 
   }

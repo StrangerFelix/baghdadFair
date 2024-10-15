@@ -46,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "duration": MessageLookupByLibrary.simpleMessage("المدة"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
         "ended": MessageLookupByLibrary.simpleMessage("منتهية"),
+        "error": MessageLookupByLibrary.simpleMessage("حدث خطأ ما!"),
         "fair_history":
             MessageLookupByLibrary.simpleMessage("تاريخ معرض بغداد الدولي"),
         "fairs": MessageLookupByLibrary.simpleMessage("المعارض"),

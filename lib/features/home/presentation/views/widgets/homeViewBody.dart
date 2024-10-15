@@ -1,4 +1,6 @@
 import 'package:baghdad_fair/core/components/constrainedSliverToBoxAdapter.dart';
+import 'package:baghdad_fair/core/utilities/constants.dart';
+import 'package:baghdad_fair/features/home/data/models/navBarModel.dart';
 import 'package:baghdad_fair/features/home/presentation/views/widgets/homeAppBar.dart';
 import 'package:baghdad_fair/features/home/presentation/views/widgets/homeAppBarImage.dart';
 import 'package:baghdad_fair/features/home/presentation/views/widgets/homeNavBar.dart';
@@ -30,16 +32,24 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      controller: _scrollController,
-      slivers: [
-        const HomeAppBarImage(),
-        HomeAppBar(topPaddingFraction: fraction),
-        const HomeNavBar(),
-        ConstrainedSliverToBoxAdapter(
-          child: widget.navigationShell
-        )
-      ],
+    return RefreshIndicator(
+      onRefresh: () async{
+        navBarItems(context)[currentPageIndex].executeEvent();
+      },
+      edgeOffset: 340,
+      color: primaryTextColor,
+      child: CustomScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        controller: _scrollController,
+        slivers: [
+          const HomeAppBarImage(),
+          HomeAppBar(topPaddingFraction: fraction),
+          const HomeNavBar(),
+          ConstrainedSliverToBoxAdapter(
+            child: widget.navigationShell
+          )
+        ],
+      ),
     );
   }
 

@@ -1,6 +1,8 @@
 import 'package:baghdad_fair/core/utilities/appCache.dart';
 import 'package:baghdad_fair/core/utilities/appRouter.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
+import 'package:baghdad_fair/core/utilities/providers.dart';
+import 'package:baghdad_fair/core/utilities/serviceLocator.dart';
 import 'package:baghdad_fair/features/home/presentation/managers/language/languageCubit.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +12,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
-
+  setupServiceLocator();
   runApp(const MyApp());
 }
 
@@ -19,8 +21,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LanguageCubit(),
+    return MultiBlocProvider(
+      providers: providers,
       child: BlocBuilder<LanguageCubit, LanguageStates>(
         builder: (context, state) {
           return MaterialApp.router(

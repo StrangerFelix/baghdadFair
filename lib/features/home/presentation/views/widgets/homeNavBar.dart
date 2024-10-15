@@ -12,13 +12,13 @@ class HomeNavBar extends StatefulWidget {
   State<HomeNavBar> createState() => _HomeNavBarState();
 }
 
+
 class _HomeNavBarState extends State<HomeNavBar> {
   // ignore: unused_field
-  int _currentPageIndex = 0;
 
   void _setCurrentPage(int index) {
     setState(() {
-      _currentPageIndex = index;
+      currentPageIndex = index;
     });
   }
   @override
@@ -52,7 +52,7 @@ class _HomeNavBarState extends State<HomeNavBar> {
                       child: Icon(
                         Icons.home,
                         size: 20,
-                        color: index == _currentPageIndex ? activeColor : primaryTextColor,
+                        color: index == currentPageIndex ? activeColor : primaryTextColor,
                       )
                     ),
                   ),
@@ -72,7 +72,7 @@ class _HomeNavBarState extends State<HomeNavBar> {
                         _setCurrentPage(index);
                         context.go(navBarItems(context)[index].path);
                       }, 
-                      child: Text(navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == _currentPageIndex ? activeColor : primaryTextColor),)
+                      child: Text(navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),)
                     ),
                   ),
                 );
@@ -87,7 +87,7 @@ class _HomeNavBarState extends State<HomeNavBar> {
                     _setCurrentPage(index);
                     context.go(navBarItems(context)[index].path);
                   }, 
-                  child: Text(navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == _currentPageIndex ? activeColor : primaryTextColor),)
+                  child: Text(navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),)
                 ),
               );
             }

@@ -68,5 +68,6 @@
     "golden_partners" : "Golden partners",
     "silver_partners" : "Silver partners",
     "filter_by_year" : "Filter by years",
-    "join_the_future" : "Join the future"
+    "join_the_future" : "Join the future",
+    "error" : "An error occurred"
 }

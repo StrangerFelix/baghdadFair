@@ -43,6 +43,7 @@ class _CustomDropDownButtonState extends State<LanguageDropDownButton> {
         setState(() {
           selectedValue = newValue;
           BlocProvider.of<LanguageCubit>(context).changeLanguage('$selectedValue');
+          
         });
       },
     );
