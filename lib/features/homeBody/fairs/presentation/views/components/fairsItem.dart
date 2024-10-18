@@ -61,15 +61,19 @@ class FairsItem extends StatelessWidget {
                               Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
+                                  const SizedBox(width: 4,),
                                   const Image(
                                     image: AssetImage(AppAssets.address),
                                     width: 20,
                                   ),
                                   const SizedBox(width: 5,),
-                                  Text(
-                                    location ?? "",
-                                    maxLines: 1,
-                                    style: AppStyles.autherSmall,
+                                  Expanded(
+                                    child: Text(
+                                      location ?? "",
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: AppStyles.autherSmall,
+                                    ),
                                   ),
                                   const SizedBox(width: 10,),
                                 ],
