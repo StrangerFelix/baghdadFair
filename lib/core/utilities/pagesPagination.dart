@@ -1,4 +1,6 @@
 import 'package:baghdad_fair/core/utilities/pagesFilters.dart';
+import 'package:baghdad_fair/features/homeBody/fairs/presentation/manager/fairs/fairsBloc.dart';
+import 'package:baghdad_fair/features/homeBody/fairs/presentation/manager/fairs/fairsEvents.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsBloc.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsEvents.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosBloc.dart';
@@ -57,7 +59,11 @@ void loadMore (int index,BuildContext context) {
     case 4: // Fairs
       if (!isFairsLoading && fairsHasMore) {
         isFairsLoading = true;
-        
+        context.read<FairsBloc>().add(GetFairsEvent(
+          page: fairsPagination + 1,
+          isPagination: true,
+          filter: fairsFilter
+        ));
 
       }
       fairsPagination++;

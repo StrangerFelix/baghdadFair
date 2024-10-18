@@ -56,27 +56,39 @@ class FairsItem extends StatelessWidget {
                             maxLines: 3,
                           ),
                           const SizedBox(height: 10,),
-                          Row(
+                          Wrap(
                             children: [
-                              const Image(
-                                image: AssetImage(AppAssets.address),
-                                width: 20,
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  const Image(
+                                    image: AssetImage(AppAssets.address),
+                                    width: 20,
+                                  ),
+                                  const SizedBox(width: 5,),
+                                  Text(
+                                    location ?? "",
+                                    maxLines: 1,
+                                    style: AppStyles.autherSmall,
+                                  ),
+                                  const SizedBox(width: 10,),
+                                ],
                               ),
-                              const SizedBox(width: 5,),
-                              Text(
-                                location ?? "",
-                                style: AppStyles.autherSmall,
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  const Image(
+                                    image: AssetImage(AppAssets.calendar),
+                                    width: 28,
+                                  ),
+                                  const SizedBox(width: 5,),
+                                  Text(
+                                    date ?? "",
+                                    style: AppStyles.autherSmall,
+                                  )
+                                ],
                               ),
-                              const SizedBox(width: 10,),
-                              const Image(
-                                image: AssetImage(AppAssets.calendar),
-                                width: 28,
-                              ),
-                              const SizedBox(width: 5,),
-                              Text(
-                                date ?? "",
-                                style: AppStyles.autherSmall,
-                              )
+                              
                             ],
                           ),
                           const SizedBox(height: 10,),

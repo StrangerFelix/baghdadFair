@@ -2,6 +2,8 @@ import 'package:baghdad_fair/core/utilities/appRouter.dart';
 import 'package:baghdad_fair/core/utilities/pagesFilters.dart';
 import 'package:baghdad_fair/features/homeBody/aboutUs/presentation/manager/aboutUs/aboutUsBloc.dart';
 import 'package:baghdad_fair/features/homeBody/aboutUs/presentation/manager/aboutUs/aboutUsEvents.dart';
+import 'package:baghdad_fair/features/homeBody/fairs/presentation/manager/fairs/fairsBloc.dart';
+import 'package:baghdad_fair/features/homeBody/fairs/presentation/manager/fairs/fairsEvents.dart';
 import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/homeBloc.dart';
 import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/homeEvents.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsBloc.dart';
@@ -50,9 +52,7 @@ List<NavBarItem> navBarItems (BuildContext context) {
     NavBarItem(
       name: S.of(context).fairs, 
       path: AppRouter.fairs,
-      event: () {
-        print ('Page 5');
-      }
+      event: () => context.read<FairsBloc>().add(GetFairsEvent(filter: fairsFilter))
     ),
     NavBarItem(
       name: S.of(context).par_countries, 
