@@ -8,6 +8,8 @@ import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/ho
 import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/homeEvents.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsBloc.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsEvents.dart';
+import 'package:baghdad_fair/features/homeBody/participatingCompanies/presentation/manager/companies/companiesBloc.dart';
+import 'package:baghdad_fair/features/homeBody/participatingCompanies/presentation/manager/companies/companiesEvents.dart';
 import 'package:baghdad_fair/features/homeBody/participatingCountries/presentation/manager/countries/countriesBloc.dart';
 import 'package:baghdad_fair/features/homeBody/participatingCountries/presentation/manager/countries/countriesEvents.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosBloc.dart';
@@ -64,9 +66,7 @@ List<NavBarItem> navBarItems (BuildContext context) {
     NavBarItem(
       name: S.of(context).par_companies, 
       path: AppRouter.participatingCompanies,
-      event: () {
-        print ('Page 7');
-      }
+      event: () => context.read<CompaniesBloc>().add(GetCompaniesEvent(filter: companiesFilter))
     ),
     NavBarItem(
       name: S.of(context).companies_guide, 

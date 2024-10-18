@@ -3,6 +3,8 @@ import 'package:baghdad_fair/features/homeBody/fairs/presentation/manager/fairs/
 import 'package:baghdad_fair/features/homeBody/fairs/presentation/manager/fairs/fairsEvents.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsBloc.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsEvents.dart';
+import 'package:baghdad_fair/features/homeBody/participatingCompanies/presentation/manager/companies/companiesBloc.dart';
+import 'package:baghdad_fair/features/homeBody/participatingCompanies/presentation/manager/companies/companiesEvents.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosBloc.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosEvents.dart';
 import 'package:flutter/material.dart';
@@ -72,8 +74,11 @@ void loadMore (int index,BuildContext context) {
     case 6: // Participating companies
       if (!isParCompaniesLoading && parCompaniesHasMore) {
         isParCompaniesLoading = true;
-        
-
+        context.read<CompaniesBloc>().add(GetCompaniesEvent(
+          page: parCompaniesPagination + 1,
+          isPagination: true,
+          filter: companiesFilter
+        ));
       }
       parCompaniesPagination++;
       isParCompaniesLoading = false;

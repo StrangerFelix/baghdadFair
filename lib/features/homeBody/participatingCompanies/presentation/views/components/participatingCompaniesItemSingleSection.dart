@@ -41,6 +41,7 @@ class ParticipatingCompaniesItemSingleSection extends StatelessWidget {
               child: Text(
                 firstText,
                 maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             )
@@ -71,6 +72,7 @@ class ParticipatingCompaniesItemSingleSection extends StatelessWidget {
                 secondText,
                 style: const TextStyle(fontWeight: FontWeight.bold),
                 maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
             )
           ),
