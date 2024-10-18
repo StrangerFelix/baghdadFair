@@ -12,6 +12,9 @@ import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/ho
 import 'package:baghdad_fair/features/homeBody/news/data/repository/newsRepoImpl.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsBloc.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsEvents.dart';
+import 'package:baghdad_fair/features/homeBody/participatingCountries/data/repository/countriesRepoImpl.dart';
+import 'package:baghdad_fair/features/homeBody/participatingCountries/presentation/manager/countries/countriesBloc.dart';
+import 'package:baghdad_fair/features/homeBody/participatingCountries/presentation/manager/countries/countriesEvents.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/data/repository/videosRepoImpl.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosBloc.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosEvents.dart';
@@ -26,4 +29,6 @@ List<SingleChildWidget> providers = [
   BlocProvider(create: (context) => NewsBloc(getIt.get<NewsRepositoryImplementation>())..add(GetNewsEvent()),),
   BlocProvider(create: (context) => VideosBloc(getIt.get<VideosRepositoryImplementation>())..add(GetVideosEvent()),),
   BlocProvider(create: (context) => FairsBloc(getIt.get<FairsRepositoryImplementation>())..add(GetFairsEvent()),),
+  BlocProvider(create: (context) => CountriesBloc(getIt.get<CountriesRepositoryImplementation>())..add(GetCountriesEvent()),),
+
 ];

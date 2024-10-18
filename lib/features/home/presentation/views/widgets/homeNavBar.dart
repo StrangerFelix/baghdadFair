@@ -3,6 +3,7 @@ import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/home/data/models/navBarModel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeNavBar extends StatefulWidget {
@@ -45,6 +46,7 @@ class _HomeNavBarState extends State<HomeNavBar> {
                     ),
                     child: TextButton(
                       onPressed: () {
+                        HapticFeedback.selectionClick();
                         _setCurrentPage(index);
                         context.go(navBarItems(context)[index].path);
                       }, 

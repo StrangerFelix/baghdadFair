@@ -8,6 +8,8 @@ import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/ho
 import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/homeEvents.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsBloc.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsEvents.dart';
+import 'package:baghdad_fair/features/homeBody/participatingCountries/presentation/manager/countries/countriesBloc.dart';
+import 'package:baghdad_fair/features/homeBody/participatingCountries/presentation/manager/countries/countriesEvents.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosBloc.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosEvents.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
@@ -57,9 +59,7 @@ List<NavBarItem> navBarItems (BuildContext context) {
     NavBarItem(
       name: S.of(context).par_countries, 
       path: AppRouter.participatingCountries,
-      event: () {
-        print ('Page 6');
-      }
+      event: () => context.read<CountriesBloc>().add(GetCountriesEvent(filter: countriesFilter))
     ),
     NavBarItem(
       name: S.of(context).par_companies, 

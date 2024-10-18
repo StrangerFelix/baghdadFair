@@ -3,6 +3,7 @@ import 'package:baghdad_fair/features/homeBody/aboutUs/data/repository/aboutUsRe
 import 'package:baghdad_fair/features/homeBody/fairs/data/repository/fairsRepoImpl.dart';
 import 'package:baghdad_fair/features/homeBody/home/data/repository/homeRepoImpl.dart';
 import 'package:baghdad_fair/features/homeBody/news/data/repository/newsRepoImpl.dart';
+import 'package:baghdad_fair/features/homeBody/participatingCountries/data/repository/countriesRepoImpl.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/data/repository/videosRepoImpl.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -25,5 +26,8 @@ void setupServiceLocator(){
   );
   getIt.registerSingleton<FairsRepositoryImplementation>(
     FairsRepositoryImplementation(getIt.get<ApiService>())
+  );
+  getIt.registerSingleton<CountriesRepositoryImplementation>(
+    CountriesRepositoryImplementation(getIt.get<ApiService>())
   );
 }
