@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الشركاء الماسيّون"),
         "duration": MessageLookupByLibrary.simpleMessage("المدة"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
+        "empty": MessageLookupByLibrary.simpleMessage("القائمة فارغة."),
         "ended": MessageLookupByLibrary.simpleMessage("منتهية"),
         "error": MessageLookupByLibrary.simpleMessage("حدث خطأ ما!"),
         "fair_history":
@@ -56,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "filter_by_year":
             MessageLookupByLibrary.simpleMessage("تصفية حسب السنة"),
         "from": MessageLookupByLibrary.simpleMessage("من"),
+        "from_hour": MessageLookupByLibrary.simpleMessage("من الساعة"),
         "general_specialization":
             MessageLookupByLibrary.simpleMessage("التخصص العام"),
         "golden_partners":
@@ -92,6 +94,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "search_and_filtering":
             MessageLookupByLibrary.simpleMessage("البحث والتصفية"),
         "send": MessageLookupByLibrary.simpleMessage("ارسال"),
+        "show_days_and_hours":
+            MessageLookupByLibrary.simpleMessage("ايام وساعات العرض"),
         "show_video": MessageLookupByLibrary.simpleMessage("عرض الفيديو"),
         "silver_partners":
             MessageLookupByLibrary.simpleMessage("الشركاء الفضيّون"),
@@ -104,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "statistics": MessageLookupByLibrary.simpleMessage("الاحصائيات"),
         "title": MessageLookupByLibrary.simpleMessage("معرض بغداد الدولي"),
         "to": MessageLookupByLibrary.simpleMessage("الى"),
+        "to_hour": MessageLookupByLibrary.simpleMessage("الى الساعة"),
         "top_rated": MessageLookupByLibrary.simpleMessage("الاكثر تفضيلا"),
         "trade_services": MessageLookupByLibrary.simpleMessage("تجارة خدمات"),
         "type": MessageLookupByLibrary.simpleMessage("صنف قطاع الشركة"),

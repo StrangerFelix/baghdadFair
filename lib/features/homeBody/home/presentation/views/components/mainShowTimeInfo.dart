@@ -1,5 +1,6 @@
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/features/homeBody/home/data/models/homeModel.dart';
+import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class MainShowTimeInfo extends StatelessWidget {
@@ -35,16 +36,16 @@ class MainShowTimeInfo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const Text(
-              'أيام وساعات العرض',
+            Text(
+              S.of(context).show_days_and_hours,
               style: AppStyles.gradientBoxTextStyle,
             ),
             Text(
-              'من ${data!.fromDate} الى ${data!.toDate}',
+              '${S.of(context).from} ${data!.fromDate} ${S.of(context).to.toLowerCase()} ${data!.toDate}',
               style: AppStyles.gradientBoxTextStyle
             ),
             Text(
-              'من الساعة ${data!.fromHour} الى الساعة ${data!.toHour}',
+              '${S.of(context).from_hour} ${data!.fromHour} ${S.of(context).to_hour} ${data!.toHour}',
               style: AppStyles.gradientBoxTextStyle,
             ),
           ],

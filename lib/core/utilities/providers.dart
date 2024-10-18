@@ -6,6 +6,12 @@ import 'package:baghdad_fair/features/homeBody/aboutUs/presentation/manager/abou
 import 'package:baghdad_fair/features/homeBody/home/data/repository/homeRepoImpl.dart';
 import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/homeBloc.dart';
 import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/homeEvents.dart';
+import 'package:baghdad_fair/features/homeBody/news/data/repository/newsRepoImpl.dart';
+import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsBloc.dart';
+import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsEvents.dart';
+import 'package:baghdad_fair/features/homeBody/videosLibrary/data/repository/videosRepoImpl.dart';
+import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosBloc.dart';
+import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosEvents.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: depend_on_referenced_packages
 import 'package:nested/nested.dart';
@@ -14,4 +20,6 @@ List<SingleChildWidget> providers = [
   BlocProvider(create: (context) => LanguageCubit(),),
   BlocProvider(create: (context) => HomeBloc(getIt.get<HomeRepositoryImplementation>())..add(GetHomeDataEvent()),),
   BlocProvider(create: (context) => AboutUsBloc(getIt.get<AboutUsRepositoryImplementation>())..add(GetAboutUsEvent()),),
+  BlocProvider(create: (context) => NewsBloc(getIt.get<NewsRepositoryImplementation>())..add(GetNewsEvent()),),
+  BlocProvider(create: (context) => VideosBloc(getIt.get<VideosRepositoryImplementation>())..add(GetVideosEvent()),),
 ];

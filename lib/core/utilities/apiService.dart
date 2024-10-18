@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 class ApiService {
   final _baseUrl = 'http://43.205.98.185:4000/api/v1/';
   final Dio _dio;
-  
+  final int limit = 6;
   ApiService(this._dio) {
     _dio.options.headers = {
     'x-api-key': apiKey,

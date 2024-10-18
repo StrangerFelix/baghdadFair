@@ -1,8 +1,13 @@
 import 'package:baghdad_fair/core/utilities/appRouter.dart';
+import 'package:baghdad_fair/core/utilities/pagesFilters.dart';
 import 'package:baghdad_fair/features/homeBody/aboutUs/presentation/manager/aboutUs/aboutUsBloc.dart';
 import 'package:baghdad_fair/features/homeBody/aboutUs/presentation/manager/aboutUs/aboutUsEvents.dart';
 import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/homeBloc.dart';
 import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/homeEvents.dart';
+import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsBloc.dart';
+import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsEvents.dart';
+import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosBloc.dart';
+import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosEvents.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,35 +23,29 @@ class NavBarItem {
   }
 }
 int currentPageIndex = 0;
+
 List<NavBarItem> navBarItems (BuildContext context) {
   return [
     NavBarItem(
       name: "home",
       path: AppRouter.home,
-      event: () {
-        context.read<HomeBloc>().add(GetHomeDataEvent());
-      }
+      event: () => context.read<HomeBloc>().add(GetHomeDataEvent())
+      
     ),
     NavBarItem(
       name: S.of(context).about_us, 
       path: AppRouter.aboutUs,
-      event: () {
-        context.read<AboutUsBloc>().add(GetAboutUsEvent());
-      },
+      event: () => context.read<AboutUsBloc>().add(GetAboutUsEvent())
     ),
     NavBarItem(
       name: S.of(context).news, 
       path: AppRouter.news,
-      event: () {
-        print ('Page 3');
-      }
+      event: () => context.read<NewsBloc>().add(GetNewsEvent(filter: newsFilter))
     ),
     NavBarItem(
       name: S.of(context).vid_library, 
       path: AppRouter.videosLibrary,
-      event: () {
-        print ('Page 4');
-      }
+      event: () => context.read<VideosBloc>().add(GetVideosEvent(filter: videosFilter))
     ),
     NavBarItem(
       name: S.of(context).fairs, 

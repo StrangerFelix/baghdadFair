@@ -1,9 +1,8 @@
 import 'package:baghdad_fair/core/components/customCachedImage.dart';
-import 'package:baghdad_fair/core/components/custumButton.dart';
+import 'package:baghdad_fair/core/components/youtubeButton.dart';
 import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
-import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class VideoCard extends StatelessWidget {
@@ -61,7 +60,7 @@ class VideoCard extends StatelessWidget {
                     ),
                     const SizedBox(width: 10,),
                     Expanded(
-                      flex: 6,
+                      flex: 7,
                       child: Stack(
                         children: [
                           Column(
@@ -73,25 +72,27 @@ class VideoCard extends StatelessWidget {
                                 padding: const EdgeInsetsDirectional.only(start: 5),
                                 child: Text(
                                   title ?? "",
-                                  maxLines: 3,
+                                  maxLines: 4,
                                   overflow: TextOverflow.ellipsis,
                                   style: AppStyles.bodySmall,
                                 ),
                               ),
                               const SizedBox(height: 5,),
                               Row(
+                                // crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   const Image(
-                                    
                                     image: AssetImage(AppAssets.user),
                                     height: 30,
                                   ),
                                   const SizedBox(width: 5,),
-                                  Text(
-                                    auther ?? "",
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: AppStyles.autherSmall,
+                                  Expanded(
+                                    child: Text(
+                                      auther ?? "",
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: AppStyles.autherSmall,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -125,16 +126,7 @@ class VideoCard extends StatelessWidget {
                           ),
                           Align(
                             alignment: AlignmentDirectional.bottomEnd,
-                            child: CustomButton(
-                              onPressed: () {
-                                // link to youtube
-                              }, 
-                              text: S.of(context).show_video,
-                              color: Colors.grey[200],
-                              textStyle: AppStyles.bodySmall.copyWith(fontSize: 14),
-                              vpadding: 5,
-                              hpadding: 15,
-                            )
+                            child: YouTubeButton(youtubeUrl: link ?? "https://youtube.com")
                           )
                         ],
                       )

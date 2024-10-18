@@ -69,5 +69,9 @@
     "silver_partners" : "الشركاء الفضيّون",
     "filter_by_year" : "تصفية حسب السنة",
     "join_the_future" : "التحق بالمستقبل",
-    "error" : "حدث خطأ ما!"
+    "error" : "حدث خطأ ما!",
+    "show_days_and_hours" : "ايام وساعات العرض",
+    "from_hour" : "من الساعة",
+    "to_hour" : "الى الساعة",
+    "empty" : "القائمة فارغة."
 }

@@ -14,7 +14,6 @@ class HomeNavBar extends StatefulWidget {
 
 
 class _HomeNavBarState extends State<HomeNavBar> {
-  // ignore: unused_field
 
   void _setCurrentPage(int index) {
     setState(() {

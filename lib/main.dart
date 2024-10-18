@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
+  // Bloc.observer = MyBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
   setupServiceLocator();

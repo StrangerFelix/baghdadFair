@@ -1,19 +1,28 @@
 import 'package:baghdad_fair/core/components/customSearchBar.dart';
+import 'package:baghdad_fair/core/utilities/pagesFilters.dart';
+import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsBloc.dart';
+import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsEvents.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/views/components/newsCardsList.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/views/components/newsSectionTitle.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NewsBody extends StatelessWidget {
   const NewsBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        NewsSectionTitle(),
-        CustomSearchBar(),
-        NewsCardsList(),
+        const NewsSectionTitle(),
+        CustomSearchBar(
+          onSubmitted: (val) {
+            newsFilter = val == '' ? "" : 'search=$val';
+            context.read<NewsBloc>().add(GetNewsEvent(filter: videosFilter));
+          },
+        ),
+        const NewsCardsList(),
       ],
     );
   }

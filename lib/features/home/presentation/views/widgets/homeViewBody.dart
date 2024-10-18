@@ -1,5 +1,6 @@
 import 'package:baghdad_fair/core/components/constrainedSliverToBoxAdapter.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
+import 'package:baghdad_fair/core/utilities/pagesPagination.dart';
 import 'package:baghdad_fair/features/home/data/models/navBarModel.dart';
 import 'package:baghdad_fair/features/home/presentation/views/widgets/homeAppBar.dart';
 import 'package:baghdad_fair/features/home/presentation/views/widgets/homeAppBarImage.dart';
@@ -24,11 +25,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     _initScrollingController();
     super.initState();
   }
-   @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
+  //  @override
+  // void dispose() {
+  //   _scrollController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +58,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   
   void _initScrollingController () {
     _scrollController.addListener(() {
+      if (_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
+        loadMore(currentPageIndex, context); 
+      }
       _currentScrollIndex = (_scrollController.position.pixels / 10 ).round();
           fraction = _currentScrollIndex / 20;
       if(fraction <= 1 && _currentScrollIndex >= 0) {

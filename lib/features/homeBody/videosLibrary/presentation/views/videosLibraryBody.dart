@@ -1,8 +1,12 @@
 import 'package:baghdad_fair/core/components/customSearchBar.dart';
 import 'package:baghdad_fair/core/components/sectionTitle.dart';
+import 'package:baghdad_fair/core/utilities/pagesFilters.dart';
+import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosBloc.dart';
+import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosEvents.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/views/components/videosList.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class VideosLibraryBody extends StatelessWidget {
   const VideosLibraryBody({super.key});
@@ -15,7 +19,12 @@ class VideosLibraryBody extends StatelessWidget {
         SectionTitle(
           title: S.of(context).vid_library
         ),
-        const CustomSearchBar(),
+        CustomSearchBar(
+          onSubmitted: (val) {
+            videosFilter = val == '' ? "" : 'search=$val';
+            context.read<VideosBloc>().add(GetVideosEvent(filter: videosFilter));
+          },
+        ),
         const VideosList()
       ],
     );

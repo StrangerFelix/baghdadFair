@@ -46,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Diamond partners"),
         "duration": MessageLookupByLibrary.simpleMessage("Duration"),
         "email": MessageLookupByLibrary.simpleMessage("Email Address"),
+        "empty": MessageLookupByLibrary.simpleMessage("The list is empty."),
         "ended": MessageLookupByLibrary.simpleMessage("Ended"),
         "error": MessageLookupByLibrary.simpleMessage("An error occurred"),
         "fair_history": MessageLookupByLibrary.simpleMessage(
@@ -57,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "filter_by_year":
             MessageLookupByLibrary.simpleMessage("Filter by years"),
         "from": MessageLookupByLibrary.simpleMessage("From"),
+        "from_hour": MessageLookupByLibrary.simpleMessage("From"),
         "general_specialization":
             MessageLookupByLibrary.simpleMessage("General Specialization"),
         "golden_partners":
@@ -94,6 +96,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "search_and_filtering":
             MessageLookupByLibrary.simpleMessage("Search and filtering"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
+        "show_days_and_hours":
+            MessageLookupByLibrary.simpleMessage("Show days and hours"),
         "show_video": MessageLookupByLibrary.simpleMessage("Show video"),
         "silver_partners":
             MessageLookupByLibrary.simpleMessage("Silver partners"),
@@ -107,6 +111,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
         "title": MessageLookupByLibrary.simpleMessage("Baghdad Exhibition"),
         "to": MessageLookupByLibrary.simpleMessage("To"),
+        "to_hour": MessageLookupByLibrary.simpleMessage("to"),
         "top_rated": MessageLookupByLibrary.simpleMessage("Top rated"),
         "trade_services":
             MessageLookupByLibrary.simpleMessage("Services trading"),

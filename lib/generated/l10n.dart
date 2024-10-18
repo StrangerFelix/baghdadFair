@@ -759,6 +759,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Show days and hours`
+  String get show_days_and_hours {
+    return Intl.message(
+      'Show days and hours',
+      name: 'show_days_and_hours',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From`
+  String get from_hour {
+    return Intl.message(
+      'From',
+      name: 'from_hour',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `to`
+  String get to_hour {
+    return Intl.message(
+      'to',
+      name: 'to_hour',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The list is empty.`
+  String get empty {
+    return Intl.message(
+      'The list is empty.',
+      name: 'empty',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

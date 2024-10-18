@@ -1,0 +1,2 @@
+String newsFilter = '';
+String videosFilter = '';

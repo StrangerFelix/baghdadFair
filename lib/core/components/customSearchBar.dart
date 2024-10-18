@@ -32,6 +32,7 @@ class CustomSearchBar extends StatelessWidget {
         
       ),
       child: TextField(
+        textInputAction: TextInputAction.search,
         decoration: InputDecoration(
           filled: true,
           contentPadding: const EdgeInsets.symmetric(horizontal: 25),
