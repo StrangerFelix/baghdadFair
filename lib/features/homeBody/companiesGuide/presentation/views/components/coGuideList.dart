@@ -1,7 +1,16 @@
+import 'package:baghdad_fair/core/components/customEmptyWidget.dart';
+import 'package:baghdad_fair/core/components/customErrorWidget.dart';
 import 'package:baghdad_fair/core/components/customLoadingIndicator.dart';
+import 'package:baghdad_fair/core/components/customLoadingWidget.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
+import 'package:baghdad_fair/core/utilities/pagesPagination.dart';
+import 'package:baghdad_fair/features/homeBody/companiesGuide/data/models/companiesGuideModel.dart';
+import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/manager/companiesGuide/coGuideBloc.dart';
+import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/manager/companiesGuide/coGuideStates.dart';
 import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/views/components/coGuideItem.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 class CompaniesGuideList extends StatefulWidget {
   const CompaniesGuideList({super.key});
@@ -11,57 +20,69 @@ class CompaniesGuideList extends StatefulWidget {
 }
 
 class _CompaniesGuideListState extends State<CompaniesGuideList> {
-  final limit = 10;
-  int page = 1;
-  final _controller = ScrollController();
-  final itemCount = 3;
-  @override
-  void initState() {
-    _controller.addListener(() {
-      if (_controller.position.maxScrollExtent == _controller.offset) {
-        // use the bloc event
-      }
-    });
-    super.initState();
-  }
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
+  int limitCounter = 0;
+  List<Guide> guides = [];
+  String? error;
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: const EdgeInsets.only(top: 10),
-      controller: _controller,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: itemCount + 1,
-      scrollDirection: Axis.vertical,
-      itemBuilder: (context, index) {
-        if (index < itemCount) {
-          return const Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: horizontalPadding,
-              vertical: 5
-            ),
-            child: CompaniesGuideItem(
-              image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY70aj8rN_VdbZpVuwtQx7I9dj4JCWQS4w2g&s',
-              title: 'مكتب القيقب العلمي',
-              city: 'بغداد',
-              date: '2024/4/20',
-              category: 'تجارة سلع مصنعة اخرى',
-              phone: '0832743284',
-              email: 'tariq-alhujud@EI.IQ',
-              publicOrPrivate: 'خاص',
-              views: '6',
-            ),
-          );
+    return BlocBuilder<CompaniesGuideBloc, CompaniesGuideStates>(
+      builder: (context, state) {
+        if (state is CompaniesGuideLoading) {
+          coGuideHasMore = true; // لان راح يترست
+          guides = []; // if refreshing {تكدر تحددها من تستدعي الايفينت تكله اذا باكنيشن او لا}
+          coGuidePagination = 1;
         }
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 30),
-          child:  CustomLoadingIndicator()
+        if (state is CompaniesGuideFailure) {
+          error = state.error;
+        }
+        if (state is CompaniesGuideLoaded) {
+          for (var item in state.model.data!.response!) {
+            limitCounter++;
+            guides.add(item);
+          }
+          if (limitCounter < 6) { // 6 is the limit
+            coGuideHasMore = false;
+          }
+          limitCounter = 0;
+        }
+        return SizedBox(
+          child: state is! CompaniesGuideLoading ?
+            state is! CompaniesGuideFailure ?
+            guides.isNotEmpty ?
+            ListView.builder(
+            padding: const EdgeInsets.only(top: 10),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: guides.length + 1,
+            scrollDirection: Axis.vertical,
+            itemBuilder: (context, index) {
+              if (index < guides.length) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: horizontalPadding, vertical: 5),
+                  child: CompaniesGuideItem(
+                    image: guides[index].photo,
+                    title: guides[index].companyName,
+                    city: guides[index].location,
+                    date: guides[index].createdAt!.substring(0,10),
+                    category: guides[index].description,
+                    phone: guides[index].phone,
+                    email: guides[index].email,
+                    publicOrPrivate: Intl.getCurrentLocale() == 'en' ?
+                        guides[index].companyType == "خاص" ? 'Private' : guides[index].companyType == "عام" ? 'Public' : 'Mixed'
+                        : guides[index].companyType
+                  ),
+                );
+              }
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 30),
+                child: coGuideHasMore ? const CustomLoadingIndicator() : const SizedBox()
+              );
+            },
+          ): const CustomEmptyWidget()
+            : CustomErrorWidget(error: error,)
+            : const CustomLoadingWidget(),
         );
       },
     );

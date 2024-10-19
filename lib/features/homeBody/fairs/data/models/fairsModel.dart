@@ -8,7 +8,7 @@ class FairsModel {
   FairsModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     results = json['results'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
 
 }
@@ -22,7 +22,7 @@ class Data {
     if (json['response'] != null) {
       response = <Fair>[];
       json['response'].forEach((v) {
-        response!.add(new Fair.fromJson(v));
+        response!.add(Fair.fromJson(v));
       });
     }
   }

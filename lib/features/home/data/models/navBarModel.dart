@@ -2,6 +2,8 @@ import 'package:baghdad_fair/core/utilities/appRouter.dart';
 import 'package:baghdad_fair/core/utilities/pagesFilters.dart';
 import 'package:baghdad_fair/features/homeBody/aboutUs/presentation/manager/aboutUs/aboutUsBloc.dart';
 import 'package:baghdad_fair/features/homeBody/aboutUs/presentation/manager/aboutUs/aboutUsEvents.dart';
+import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/manager/companiesGuide/coGuideBloc.dart';
+import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/manager/companiesGuide/coGuideEvents.dart';
 import 'package:baghdad_fair/features/homeBody/fairs/presentation/manager/fairs/fairsBloc.dart';
 import 'package:baghdad_fair/features/homeBody/fairs/presentation/manager/fairs/fairsEvents.dart';
 import 'package:baghdad_fair/features/homeBody/home/presentation/manager/home/homeBloc.dart';
@@ -71,9 +73,7 @@ List<NavBarItem> navBarItems (BuildContext context) {
     NavBarItem(
       name: S.of(context).companies_guide, 
       path: AppRouter.companiesGuide,
-      event: () {
-        print ('Page 8');
-      }
+      event: () => context.read<CompaniesGuideBloc>().add(GetCompaniesGuideEvent(filter: companiesGuideFilter))
     ),
     NavBarItem(
       name: S.of(context).sponsoring_companies, 

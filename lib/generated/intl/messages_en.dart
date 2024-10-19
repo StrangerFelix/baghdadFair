@@ -109,7 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sponsoring_companies":
             MessageLookupByLibrary.simpleMessage("Sponsoring companies"),
         "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
-        "title": MessageLookupByLibrary.simpleMessage("Baghdad Exhibition"),
+        "title": MessageLookupByLibrary.simpleMessage("Baghdad Fair"),
         "to": MessageLookupByLibrary.simpleMessage("To"),
         "to_hour": MessageLookupByLibrary.simpleMessage("to"),
         "top_rated": MessageLookupByLibrary.simpleMessage("Top rated"),

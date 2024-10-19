@@ -1,4 +1,6 @@
 import 'package:baghdad_fair/core/utilities/pagesFilters.dart';
+import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/manager/companiesGuide/coGuideBloc.dart';
+import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/manager/companiesGuide/coGuideEvents.dart';
 import 'package:baghdad_fair/features/homeBody/fairs/presentation/manager/fairs/fairsBloc.dart';
 import 'package:baghdad_fair/features/homeBody/fairs/presentation/manager/fairs/fairsEvents.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/manager/news/newsBloc.dart';
@@ -85,8 +87,12 @@ void loadMore (int index,BuildContext context) {
       break;
     case 7: // Companies guide
       if (!isCoGuideLoading && coGuideHasMore) {
-        coGuideHasMore = true;
-        
+        isCoGuideLoading = true;
+        context.read<CompaniesGuideBloc>().add(GetCompaniesGuideEvent(
+          page: coGuidePagination + 1,
+          isPagination: true,
+          filter: companiesGuideFilter
+        ));
 
       }
       coGuidePagination++;

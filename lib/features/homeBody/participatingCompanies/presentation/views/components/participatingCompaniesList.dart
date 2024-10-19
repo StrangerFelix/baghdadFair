@@ -65,8 +65,8 @@ class _ParticipatingCompaniesListState
                       email: companies[index].email,
                       phone: companies[index].phone,
                       companyDirection: companies[index].specialty,
-                      companyType: companies[index].companyType,
                       location: companies[index].location,
+                      companyType: companies[index].companyType,
                       localOrNot: companies[index].nationality
                     ),
                 );

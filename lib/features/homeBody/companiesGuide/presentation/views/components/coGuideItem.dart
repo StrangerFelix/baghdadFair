@@ -52,53 +52,52 @@ class CompaniesGuideItem extends StatelessWidget {
                             title ?? "",
                             style: AppStyles.bodySmall,
                             maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
                           ),
-                          const SizedBox(height: 10,),
-                          Wrap(
-                            // runSpacing: 2,
+                          const SizedBox(height: 5,),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
                             children: [
-                              SizedBox(
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    const Image(
-                                      image: AssetImage(AppAssets.address),
-                                      width: 20,
-                                    ),
-                                    const SizedBox(width: 5,),
-                                    Text(
-                                      city ?? "",
-                                      maxLines: 1,
-                                      style: AppStyles.autherSmall,
-                                    ),
-                                    
-                                  ],
+                              const SizedBox(width: 4,),
+                              const Image(
+                                image: AssetImage(AppAssets.address),
+                                width: 20,
+                              ),
+                              const SizedBox(width: 5,),
+                              Expanded(
+                                child: Text(
+                                  city ?? "",
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: AppStyles.autherSmall,
                                 ),
                               ),
                               
-                              SizedBox(
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    const Image(
-                                      image: AssetImage(AppAssets.calendar),
-                                      width: 28,
-                                    ),
-                                    const SizedBox(width: 5,),
-                                    Text(
-                                      date ?? "",
-                                      maxLines: 1,
-                                      style: AppStyles.autherSmall,
-                                    )
-                                  ],
-                                ),
+                            ],
+                          ),
+                          const SizedBox(height: 5,),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Image(
+                                image: AssetImage(AppAssets.calendar),
+                                width: 28,
                               ),
+                              const SizedBox(width: 5,),
+                              Text(
+                                date ?? "",
+                                maxLines: 1,
+                                style: AppStyles.autherSmall,
+                                overflow: TextOverflow.ellipsis,
+                              )
                             ],
                           ),
                           const SizedBox(height: 10,),
                           Text(
                             category ?? "",
                             style: AppStyles.autherSmall,
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
                           )
                         ],
                       ),
@@ -148,19 +147,19 @@ class CompaniesGuideItem extends StatelessWidget {
                         ), 
                         text: publicOrPrivate
                       ),
-                      Container(
-                        height: 50,
-                        width: 1,
-                        color: activeColor,
-                        margin: const EdgeInsets.symmetric(horizontal: 8),
-                      ),
-                      CompaniesGuideAboutItem(
-                        icon: const Icon(
-                          Icons.remove_red_eye_outlined,
-                          color: activeColor,
-                        ), 
-                        text: views
-                      ),
+                      // Container(
+                      //   height: 50,
+                      //   width: 1,
+                      //   color: activeColor,
+                      //   margin: const EdgeInsets.symmetric(horizontal: 8),
+                      // ),
+                      // CompaniesGuideAboutItem(
+                      //   icon: const Icon(
+                      //     Icons.remove_red_eye_outlined,
+                      //     color: activeColor,
+                      //   ), 
+                      //   text: views
+                      // ),
                     ],
                   ),
                 ),
