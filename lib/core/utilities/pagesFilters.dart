@@ -4,3 +4,4 @@ String fairsFilter = '';
 String countriesFilter = '';
 String companiesFilter = '';
 String companiesGuideFilter = '';
+String adsFilter = '';

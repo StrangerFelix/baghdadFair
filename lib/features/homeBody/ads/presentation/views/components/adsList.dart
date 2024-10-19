@@ -1,6 +1,14 @@
+import 'package:baghdad_fair/core/components/customEmptyWidget.dart';
+import 'package:baghdad_fair/core/components/customErrorWidget.dart';
 import 'package:baghdad_fair/core/components/customLoadingIndicator.dart';
+import 'package:baghdad_fair/core/components/customLoadingWidget.dart';
+import 'package:baghdad_fair/core/utilities/pagesPagination.dart';
+import 'package:baghdad_fair/features/homeBody/ads/data/models/adsModel.dart';
+import 'package:baghdad_fair/features/homeBody/ads/presentation/manager/ads/adsBloc.dart';
+import 'package:baghdad_fair/features/homeBody/ads/presentation/manager/ads/adsStates.dart';
 import 'package:baghdad_fair/features/homeBody/ads/presentation/views/components/adsItem.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AdsList extends StatefulWidget {
   const AdsList({super.key});
@@ -10,51 +18,63 @@ class AdsList extends StatefulWidget {
 }
 
 class _AdsListState extends State<AdsList> {
-  final limit = 10;
-  int page = 1;
-  final _controller = ScrollController();
-  final itemCount = 3;
-  @override
-  void initState() {
-    _controller.addListener(() {
-      if (_controller.position.maxScrollExtent == _controller.offset) {
-        // use the bloc event
-      }
-    });
-    super.initState();
-  }
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
+  List<Ad> ads = [];
+  String? error;
+  int limitCounter = 0;
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      controller: _controller,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: itemCount + 1,
-      scrollDirection: Axis.vertical,
-      itemBuilder: (context, index) {
-        if (index < itemCount) {
-          return const Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: 5
-            ),
-            child: AdsItem(
-              image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY70aj8rN_VdbZpVuwtQx7I9dj4JCWQS4w2g&s',
-              location: 'بغداد',
-              date: '2024/4/20',
-              time: '2:14 AM',
-            ),
-          );
+    return BlocBuilder<AdsBloc, AdsStates>(
+      builder: (context, state) {
+        if (state is AdsLoading) {
+          adsHasMore = true; // لان راح يترست
+          ads = []; // if refreshing {تكدر تحددها من تستدعي الايفينت تكله اذا باكنيشن او لا}
+          adsPagination = 1;
         }
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 30),
-          child:  CustomLoadingIndicator()
+        if (state is AdsFailure) {
+          error = state.error;
+        }
+        if (state is AdsLoaded) {
+          for (var item in state.model.data!.response!) {
+            limitCounter++;
+            ads.add(item);
+          }
+          if (limitCounter < 6) { // 6 is the limit
+            adsHasMore = false;
+          }
+          limitCounter = 0;
+        }
+        return SizedBox(
+          child: state is! AdsLoading ?
+            state is! AdsFailure ?
+            ads.isNotEmpty ?
+            ListView.builder(
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: ads.length + 1,
+            scrollDirection: Axis.vertical,
+            itemBuilder: (context, index) {
+              if (index < ads.length) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5),
+                  child: AdsItem(
+                    image: ads[index].image,
+                    location: ads[index].location,
+                    date: ads[index].createdAt!.substring(0, 10),
+                    time: ads[index].createdAt!.substring(11, 16),
+                  ),
+                );
+              }
+              return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 30),
+                  child: adsHasMore
+                      ? const CustomLoadingIndicator()
+                      : const SizedBox());
+            },
+          ) : const CustomEmptyWidget()
+            : CustomErrorWidget(error: error,) 
+            : const CustomLoadingWidget()
         );
       },
     );

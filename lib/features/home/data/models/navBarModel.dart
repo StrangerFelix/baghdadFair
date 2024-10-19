@@ -2,6 +2,8 @@ import 'package:baghdad_fair/core/utilities/appRouter.dart';
 import 'package:baghdad_fair/core/utilities/pagesFilters.dart';
 import 'package:baghdad_fair/features/homeBody/aboutUs/presentation/manager/aboutUs/aboutUsBloc.dart';
 import 'package:baghdad_fair/features/homeBody/aboutUs/presentation/manager/aboutUs/aboutUsEvents.dart';
+import 'package:baghdad_fair/features/homeBody/ads/presentation/manager/ads/adsBloc.dart';
+import 'package:baghdad_fair/features/homeBody/ads/presentation/manager/ads/adsEvents.dart';
 import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/manager/companiesGuide/coGuideBloc.dart';
 import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/manager/companiesGuide/coGuideEvents.dart';
 import 'package:baghdad_fair/features/homeBody/fairs/presentation/manager/fairs/fairsBloc.dart';
@@ -85,9 +87,7 @@ List<NavBarItem> navBarItems (BuildContext context) {
     NavBarItem(
       name: S.of(context).ads, 
       path: AppRouter.ads,
-      event: () {
-        print ('Page 10');
-      }
+      event: () => context.read<AdsBloc>().add(GetAdsEvent(filter: adsFilter))
     ),
     // NavBarItem(
     //   name: S.of(context).statistics, 

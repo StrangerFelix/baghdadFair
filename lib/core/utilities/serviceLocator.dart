@@ -1,5 +1,6 @@
 import 'package:baghdad_fair/core/utilities/apiService.dart';
 import 'package:baghdad_fair/features/homeBody/aboutUs/data/repository/aboutUsRepoImpl.dart';
+import 'package:baghdad_fair/features/homeBody/ads/data/repository/adsRepoImpl.dart';
 import 'package:baghdad_fair/features/homeBody/companiesGuide/data/repository/coGuideRepoImpl.dart';
 import 'package:baghdad_fair/features/homeBody/fairs/data/repository/fairsRepoImpl.dart';
 import 'package:baghdad_fair/features/homeBody/home/data/repository/homeRepoImpl.dart';
@@ -37,5 +38,8 @@ void setupServiceLocator(){
   );
   getIt.registerSingleton<CompaniesGuideRepositoryImplementation>(
     CompaniesGuideRepositoryImplementation(getIt.get<ApiService>())
+  );
+  getIt.registerSingleton<AdsRepositoryImplementation>(
+    AdsRepositoryImplementation(getIt.get<ApiService>())
   );
 }

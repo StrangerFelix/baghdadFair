@@ -1,4 +1,6 @@
 import 'package:baghdad_fair/core/utilities/pagesFilters.dart';
+import 'package:baghdad_fair/features/homeBody/ads/presentation/manager/ads/adsBloc.dart';
+import 'package:baghdad_fair/features/homeBody/ads/presentation/manager/ads/adsEvents.dart';
 import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/manager/companiesGuide/coGuideBloc.dart';
 import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/manager/companiesGuide/coGuideEvents.dart';
 import 'package:baghdad_fair/features/homeBody/fairs/presentation/manager/fairs/fairsBloc.dart';
@@ -101,8 +103,11 @@ void loadMore (int index,BuildContext context) {
     case 9: // Ads
       if (!isAdsLoading && adsHasMore) {
         isAdsLoading = true;
-        
-
+        context.read<AdsBloc>().add(GetAdsEvent(
+          page: adsPagination + 1,
+          isPagination: true,
+          filter: adsFilter
+        ));
       }
       adsPagination++;
       isAdsLoading = false;
