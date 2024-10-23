@@ -70,6 +70,7 @@ class _HomeNavBarState extends State<HomeNavBar> {
                     ),
                     child: TextButton(
                       onPressed: () {
+                        HapticFeedback.selectionClick();
                         _setCurrentPage(index);
                         context.go(navBarItems(context)[index].path);
                       }, 
@@ -85,6 +86,7 @@ class _HomeNavBarState extends State<HomeNavBar> {
                 ),
                 child: TextButton(
                   onPressed: () {
+                    HapticFeedback.selectionClick();
                     _setCurrentPage(index);
                     context.go(navBarItems(context)[index].path);
                   }, 

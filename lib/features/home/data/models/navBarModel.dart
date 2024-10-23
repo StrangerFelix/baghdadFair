@@ -16,6 +16,8 @@ import 'package:baghdad_fair/features/homeBody/participatingCompanies/presentati
 import 'package:baghdad_fair/features/homeBody/participatingCompanies/presentation/manager/companies/companiesEvents.dart';
 import 'package:baghdad_fair/features/homeBody/participatingCountries/presentation/manager/countries/countriesBloc.dart';
 import 'package:baghdad_fair/features/homeBody/participatingCountries/presentation/manager/countries/countriesEvents.dart';
+import 'package:baghdad_fair/features/homeBody/sponsoringCompanies/presentation/manager/sponsors/sponsorsBloc.dart';
+import 'package:baghdad_fair/features/homeBody/sponsoringCompanies/presentation/manager/sponsors/sponsorsEvents.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosBloc.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/manager/videos/videosEvents.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
@@ -80,9 +82,7 @@ List<NavBarItem> navBarItems (BuildContext context) {
     NavBarItem(
       name: S.of(context).sponsoring_companies, 
       path: AppRouter.sponsoringCompanies,
-      event: () {
-        print ('Page 9');
-      }
+      event: () => context.read<SponsorsBloc>().add(GetSponsorsEvent())
     ),
     NavBarItem(
       name: S.of(context).ads, 

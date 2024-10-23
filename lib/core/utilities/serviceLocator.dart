@@ -7,6 +7,7 @@ import 'package:baghdad_fair/features/homeBody/home/data/repository/homeRepoImpl
 import 'package:baghdad_fair/features/homeBody/news/data/repository/newsRepoImpl.dart';
 import 'package:baghdad_fair/features/homeBody/participatingCompanies/data/repository/companiesRepoImpl.dart';
 import 'package:baghdad_fair/features/homeBody/participatingCountries/data/repository/countriesRepoImpl.dart';
+import 'package:baghdad_fair/features/homeBody/sponsoringCompanies/data/repository/sponsoringRepoImpl.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/data/repository/videosRepoImpl.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -41,5 +42,8 @@ void setupServiceLocator(){
   );
   getIt.registerSingleton<AdsRepositoryImplementation>(
     AdsRepositoryImplementation(getIt.get<ApiService>())
+  );
+  getIt.registerSingleton<SponsoringRepositoryImplementation>(
+    SponsoringRepositoryImplementation(getIt.get<ApiService>())
   );
 }
