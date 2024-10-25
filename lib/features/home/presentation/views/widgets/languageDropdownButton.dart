@@ -42,7 +42,7 @@ class _CustomDropDownButtonState extends State<LanguageDropDownButton> {
       onChanged: (String? newValue) {
         setState(() {
           selectedValue = newValue;
-          BlocProvider.of<LanguageCubit>(context).changeLanguage('$selectedValue');
+          BlocProvider.of<LanguageCubit>(context).changeLanguage('$selectedValue',context);
           
         });
       },

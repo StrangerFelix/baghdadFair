@@ -2,6 +2,7 @@
 import 'package:baghdad_fair/core/utilities/appCache.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 
 part 'languageStates.dart';
 
@@ -13,7 +14,7 @@ class LanguageCubit extends Cubit<LanguageStates> {
     return locale ?? Locale(checkCachedLanguage);
   }
   
-  Future<void> changeLanguage(String language) async{
+  Future<void> changeLanguage(String language,BuildContext context) async{
     if (language == "English") {
       await CacheHelper.saveData(key: 'lang', value: 'en');
       locale = Locale('en');
@@ -22,5 +23,7 @@ class LanguageCubit extends Cubit<LanguageStates> {
       locale = Locale('ar');
     }
     emit(LanguageChanged());
+    // ignore: use_build_context_synchronously
+    Phoenix.rebirth(context);
   }
 }
