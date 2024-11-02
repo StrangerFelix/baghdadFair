@@ -22,7 +22,7 @@ class AdsItem extends StatelessWidget {
             flex: 6,
             child: Padding(
               padding: const EdgeInsets.all(horizontalPadding),
-              child: CustomCachedImage(image,fit: BoxFit.contain,),
+              child: Center(child: CustomCachedImage(image,fit: BoxFit.contain,)),
             ),
           ),
           Expanded(

@@ -30,7 +30,10 @@ class _MainHomeBodyState extends State<MainHomeBody> {
     return BlocBuilder<HomeBloc, HomeStates>(
       builder: (context, state) {
         if (state is HomeLoaded) {
-          _homeData = state.model.data?.response?[0];
+          if (state.model.data!.response!.isNotEmpty) {
+            _homeData = state.model.data?.response?[0];
+          }
+          
         }
         if (state is HomeFailure) {
           error = state.error;

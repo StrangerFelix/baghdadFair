@@ -24,7 +24,9 @@ class _AboutUsBodyState extends State<AboutUsBody> {
     return BlocBuilder<AboutUsBloc, AboutUsStates>(
       builder: (context, state) {
         if (state is AboutUsLoaded) {
-          _aboutUs = state.model.data?.response?[0];
+          if (state.model.data!.response!.isNotEmpty) {
+            _aboutUs = state.model.data?.response?[0];
+          }
         }
         if (state is AboutUsFailure) {
           error = state.error;
