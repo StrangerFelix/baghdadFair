@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("عنوان الشكوى للاستفسار"),
         "ads": MessageLookupByLibrary.simpleMessage("الاعلانات"),
         "all_locations": MessageLookupByLibrary.simpleMessage("كل المواقع"),
+        "babil_fair": MessageLookupByLibrary.simpleMessage("قاعة بابل"),
         "bod": MessageLookupByLibrary.simpleMessage("body"),
         "call_us": MessageLookupByLibrary.simpleMessage("الاتصال بنا"),
         "cancel_fair_filter":
@@ -63,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "golden_partners":
             MessageLookupByLibrary.simpleMessage("الشركاء الذهبيّون"),
         "governorate": MessageLookupByLibrary.simpleMessage("المحافظة"),
+        "hallvip": MessageLookupByLibrary.simpleMessage("القاعة الاولى VIP"),
         "higher_price": MessageLookupByLibrary.simpleMessage("الاعلى سعرا"),
         "inquiry": MessageLookupByLibrary.simpleMessage("استفسار"),
         "inside_iraq": MessageLookupByLibrary.simpleMessage("داخل العراق"),
@@ -80,7 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "organizer": MessageLookupByLibrary.simpleMessage("المنظم"),
         "orginizer": MessageLookupByLibrary.simpleMessage("البلد المنظم"),
         "our_address": MessageLookupByLibrary.simpleMessage("موقعنا"),
-        "our_location": MessageLookupByLibrary.simpleMessage("الموقع"),
+        "our_location": MessageLookupByLibrary.simpleMessage("المواقع"),
         "outside_iraq": MessageLookupByLibrary.simpleMessage("خارج العراق"),
         "par_companies":
             MessageLookupByLibrary.simpleMessage("الشركات المشاركة"),
@@ -100,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "silver_partners":
             MessageLookupByLibrary.simpleMessage("الشركاء الفضيّون"),
         "soon": MessageLookupByLibrary.simpleMessage("قادمة"),
+        "sorouh_fair": MessageLookupByLibrary.simpleMessage("قاعة صروح"),
         "specialization": MessageLookupByLibrary.simpleMessage("التخصص"),
         "specialization_fair":
             MessageLookupByLibrary.simpleMessage("تخصص المعرض"),

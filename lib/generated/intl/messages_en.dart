@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Address of complaint for inquiries"),
         "ads": MessageLookupByLibrary.simpleMessage("Ads"),
         "all_locations": MessageLookupByLibrary.simpleMessage("All locations"),
+        "babil_fair": MessageLookupByLibrary.simpleMessage("Babil Hall"),
         "bod": MessageLookupByLibrary.simpleMessage("bod"),
         "call_us": MessageLookupByLibrary.simpleMessage("Call us"),
         "cancel_fair_filter":
@@ -64,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "golden_partners":
             MessageLookupByLibrary.simpleMessage("Golden partners"),
         "governorate": MessageLookupByLibrary.simpleMessage("Governorate"),
+        "hallvip": MessageLookupByLibrary.simpleMessage("Hall No.1 VIP"),
         "higher_price": MessageLookupByLibrary.simpleMessage("Higher price"),
         "inquiry": MessageLookupByLibrary.simpleMessage("Inquiry"),
         "inside_iraq": MessageLookupByLibrary.simpleMessage("Inside iraq"),
@@ -81,7 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "organizer": MessageLookupByLibrary.simpleMessage("Organizer"),
         "orginizer": MessageLookupByLibrary.simpleMessage("Orginizer"),
         "our_address": MessageLookupByLibrary.simpleMessage("Address"),
-        "our_location": MessageLookupByLibrary.simpleMessage("Location"),
+        "our_location": MessageLookupByLibrary.simpleMessage("Locations"),
         "outside_iraq": MessageLookupByLibrary.simpleMessage("Outside iraq"),
         "par_companies":
             MessageLookupByLibrary.simpleMessage("Paricipating companies"),
@@ -102,6 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "silver_partners":
             MessageLookupByLibrary.simpleMessage("Silver partners"),
         "soon": MessageLookupByLibrary.simpleMessage("Soon"),
+        "sorouh_fair": MessageLookupByLibrary.simpleMessage("Sorouh Hall"),
         "specialization":
             MessageLookupByLibrary.simpleMessage("Specialization"),
         "specialization_fair":

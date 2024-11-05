@@ -60,6 +60,36 @@ class S {
     );
   }
 
+  /// `Babil Hall`
+  String get babil_fair {
+    return Intl.message(
+      'Babil Hall',
+      name: 'babil_fair',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sorouh Hall`
+  String get sorouh_fair {
+    return Intl.message(
+      'Sorouh Hall',
+      name: 'sorouh_fair',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hall No.1 VIP`
+  String get hallvip {
+    return Intl.message(
+      'Hall No.1 VIP',
+      name: 'hallvip',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `English`
   String get changeLanguageButton {
     return Intl.message(
@@ -160,10 +190,10 @@ class S {
     );
   }
 
-  /// `Location`
+  /// `Locations`
   String get our_location {
     return Intl.message(
-      'Location',
+      'Locations',
       name: 'our_location',
       desc: '',
       args: [],

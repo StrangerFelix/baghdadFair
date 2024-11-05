@@ -1,5 +1,8 @@
 {
     "title" : "معرض بغداد الدولي",
+    "babil_fair" : "قاعة بابل",
+    "sorouh_fair" : "قاعة صروح",
+    "hallvip" : "القاعة الاولى VIP",
     "changeLanguageButton" : "العربية",
     "email" : "البريد الالكتروني",
     "address_of_complaint" : "عنوان الشكوى للاستفسار",
@@ -10,7 +13,7 @@
     "contact_us" : "الاتصال بنا",
     "call_us" : "الاتصال بنا",
     "our_address" : "موقعنا",
-    "our_location" : "الموقع",
+    "our_location" : "المواقع",
     "participation_instructions" : "تعليمات المشاركة",
     "organizer" : "المنظم",
     "duration" : "المدة",

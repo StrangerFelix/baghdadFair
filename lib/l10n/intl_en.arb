@@ -1,5 +1,8 @@
 {
     "title" : "Baghdad Fair",
+    "babil_fair" : "Babil Hall",
+    "sorouh_fair" : "Sorouh Hall",
+    "hallvip" : "Hall No.1 VIP",
     "changeLanguageButton" : "English",
     "email" : "Email Address",
     "address_of_complaint" : "Address of complaint for inquiries",
@@ -10,7 +13,7 @@
     "contact_us" : "Contact us",
     "call_us" : "Call us",
     "our_address" : "Address",
-    "our_location" : "Location",
+    "our_location" : "Locations",
     "participation_instructions" : "Participation instructions",
     "organizer" : "Organizer",
     "duration" : "Duration",

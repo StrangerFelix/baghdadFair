@@ -9,7 +9,7 @@ import 'package:baghdad_fair/features/homeBody/home/presentation/views/component
 import 'package:baghdad_fair/features/homeBody/home/presentation/views/components/mainDetails.dart';
 import 'package:baghdad_fair/features/homeBody/home/presentation/views/components/mainHomeInfo.dart';
 import 'package:baghdad_fair/features/homeBody/home/presentation/views/components/mainLinks.dart';
-import 'package:baghdad_fair/features/homeBody/home/presentation/views/components/mainMap.dart';
+import 'package:baghdad_fair/features/homeBody/home/presentation/views/components/mainMaps.dart';
 import 'package:baghdad_fair/features/homeBody/home/presentation/views/components/mainShowTimeInfo.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -59,7 +59,7 @@ class _MainHomeBodyState extends State<MainHomeBody> {
                   MainDetails(
                     details: _homeData!.details
                   ),
-                  const MainMap(),
+                  const MainMaps(),
                 ],
               ),
             ),
