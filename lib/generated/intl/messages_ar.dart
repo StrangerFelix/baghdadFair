@@ -51,7 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "error": MessageLookupByLibrary.simpleMessage("حدث خطأ ما!"),
         "fair_history":
             MessageLookupByLibrary.simpleMessage("تاريخ معرض بغداد الدولي"),
-        "fairs": MessageLookupByLibrary.simpleMessage("المعارض"),
+        "fairs": MessageLookupByLibrary.simpleMessage("المعارض المتخصصة"),
         "filter": MessageLookupByLibrary.simpleMessage("فلتر"),
         "filter_by_date":
             MessageLookupByLibrary.simpleMessage("تصفية حسب التاريخ"),
