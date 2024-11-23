@@ -5,12 +5,14 @@ import 'package:baghdad_fair/features/homeBody/ads/presentation/views/adsBody.da
 import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/views/companiesGuideBody.dart';
 import 'package:baghdad_fair/features/homeBody/fairs/presentation/views/fairsBody.dart';
 import 'package:baghdad_fair/features/homeBody/home/presentation/views/mainHomeBody.dart';
+import 'package:baghdad_fair/features/homeBody/news/data/models/newsModel.dart';
 import 'package:baghdad_fair/features/homeBody/news/presentation/views/newsBody.dart';
 import 'package:baghdad_fair/features/homeBody/participatingCompanies/presentation/views/participatingCompaniesBody.dart';
 import 'package:baghdad_fair/features/homeBody/participatingCountries/presentation/views/participatingCountriesBody.dart';
 import 'package:baghdad_fair/features/homeBody/sponsoringCompanies/presentation/views/sponsoringCompaniesBody.dart';
 import 'package:baghdad_fair/features/homeBody/statistics/presentation/views/statisticsBody.dart';
 import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/views/videosLibraryBody.dart';
+import 'package:baghdad_fair/features/newsDetails/presentation/views/newsScreen.dart';
 import 'package:baghdad_fair/features/splash/presentation/views/splashView.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -19,6 +21,7 @@ abstract class AppRouter {
   static const home = '/home';
   static const aboutUs = '/aboutUs';
   static const news = "/news";
+  static const newsDetails = "/newsDetails";
   static const videosLibrary = "/videosLibrary";
   static const fairs = "/fairs";
   static const participatingCountries = "/participatingCountries";
@@ -37,6 +40,13 @@ abstract class AppRouter {
       GoRoute(
         path: '/',
         builder: (context,state) => const SplashView()
+      ),
+      GoRoute(
+        path: newsDetails,
+        builder: (context,state) {
+          final news = state.extra as News;
+          return NewsScreen(news: news,);
+        } 
       ),
       StatefulShellRoute.indexedStack(
         pageBuilder: (context,state,navigationShell) => pagesTransitionBuilder(

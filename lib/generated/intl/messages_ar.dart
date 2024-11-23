@@ -41,6 +41,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "contact_info":
             MessageLookupByLibrary.simpleMessage("معلومات جهة الاتصال"),
         "contact_us": MessageLookupByLibrary.simpleMessage("الاتصال بنا"),
+        "contact_us_error":
+            MessageLookupByLibrary.simpleMessage("تعذر ارسال البريد"),
         "details": MessageLookupByLibrary.simpleMessage("تفاصيل"),
         "diamond_partners":
             MessageLookupByLibrary.simpleMessage("الشركاء الماسيّون"),
@@ -73,7 +75,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "latest_news": MessageLookupByLibrary.simpleMessage("اخر الاخبار"),
         "less_price": MessageLookupByLibrary.simpleMessage("الاقل سعرا"),
         "low_rated": MessageLookupByLibrary.simpleMessage("الاقل تفضيلا"),
+        "message": MessageLookupByLibrary.simpleMessage("الرسالة"),
         "mixed": MessageLookupByLibrary.simpleMessage("مختلط"),
+        "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "newest": MessageLookupByLibrary.simpleMessage("الاحدث"),
         "news": MessageLookupByLibrary.simpleMessage("الاخبار"),
         "no_filter": MessageLookupByLibrary.simpleMessage("بدون ترتيب"),
@@ -109,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sponsoring_companies":
             MessageLookupByLibrary.simpleMessage("الشركات الراعية"),
         "statistics": MessageLookupByLibrary.simpleMessage("الاحصائيات"),
+        "subject": MessageLookupByLibrary.simpleMessage("عنوان الموضوع"),
         "title": MessageLookupByLibrary.simpleMessage("معرض بغداد الدولي"),
         "to": MessageLookupByLibrary.simpleMessage("الى"),
         "to_hour": MessageLookupByLibrary.simpleMessage("الى الساعة"),

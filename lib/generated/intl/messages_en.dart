@@ -42,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "condition": MessageLookupByLibrary.simpleMessage("Condition"),
         "contact_info": MessageLookupByLibrary.simpleMessage("Contact info"),
         "contact_us": MessageLookupByLibrary.simpleMessage("Contact us"),
+        "contact_us_error":
+            MessageLookupByLibrary.simpleMessage("Email not sent."),
         "details": MessageLookupByLibrary.simpleMessage("Details"),
         "diamond_partners":
             MessageLookupByLibrary.simpleMessage("Diamond partners"),
@@ -74,7 +76,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "latest_news": MessageLookupByLibrary.simpleMessage("Latest news"),
         "less_price": MessageLookupByLibrary.simpleMessage("Less price"),
         "low_rated": MessageLookupByLibrary.simpleMessage("Low rated"),
+        "message": MessageLookupByLibrary.simpleMessage("Message"),
         "mixed": MessageLookupByLibrary.simpleMessage("Mixed"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
         "newest": MessageLookupByLibrary.simpleMessage("Newest"),
         "news": MessageLookupByLibrary.simpleMessage("News"),
         "no_filter": MessageLookupByLibrary.simpleMessage("No filter"),
@@ -112,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sponsoring_companies":
             MessageLookupByLibrary.simpleMessage("Sponsoring companies"),
         "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
+        "subject": MessageLookupByLibrary.simpleMessage("Subject"),
         "title": MessageLookupByLibrary.simpleMessage("Baghdad Fair"),
         "to": MessageLookupByLibrary.simpleMessage("To"),
         "to_hour": MessageLookupByLibrary.simpleMessage("to"),

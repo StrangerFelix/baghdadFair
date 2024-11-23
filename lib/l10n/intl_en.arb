@@ -76,5 +76,9 @@
     "show_days_and_hours" : "Show days and hours",
     "from_hour" : "From", 
     "to_hour" : "to",
-    "empty" : "The list is empty."
+    "empty" : "The list is empty.",
+    "name" : "Name",
+    "subject" : "Subject",
+    "message" : "Message",
+    "contact_us_error" : "Email not sent."
 }

@@ -21,7 +21,7 @@ class ServerFailure extends Failures {
       case DioExceptionType.badCertificate:
         return ServerFailure(Intl.getCurrentLocale() == 'en' ? 'Bad certificate with ApiServer!' : 'هناك مشكلة اتصال مع الخادم!');
       case DioExceptionType.badResponse:
-        return ServerFailure.fromResponse(dioException.response!.statusCode!, dioException.response!.data);
+        return ServerFailure('Server error!');
       case DioExceptionType.cancel:
         return ServerFailure(Intl.getCurrentLocale() == 'en' ? 'Request to ApiServer was canceled!' : 'تم رفع طلب البيانات من الخادم!');
       case DioExceptionType.connectionError:

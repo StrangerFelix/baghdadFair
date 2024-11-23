@@ -829,6 +829,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subject`
+  String get subject {
+    return Intl.message(
+      'Subject',
+      name: 'subject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Message`
+  String get message {
+    return Intl.message(
+      'Message',
+      name: 'message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email not sent.`
+  String get contact_us_error {
+    return Intl.message(
+      'Email not sent.',
+      name: 'contact_us_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

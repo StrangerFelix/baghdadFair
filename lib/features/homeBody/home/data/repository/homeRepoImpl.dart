@@ -4,6 +4,7 @@ import 'package:baghdad_fair/features/homeBody/home/data/models/homeModel.dart';
 import 'package:baghdad_fair/features/homeBody/home/data/repository/homeRepo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:intl/intl.dart';
 
 class HomeRepositoryImplementation implements HomeRepository {
   HomeRepositoryImplementation(this._apiService);
@@ -25,9 +26,32 @@ class HomeRepositoryImplementation implements HomeRepository {
       return left(ServerFailure(e.toString()));
     }
   }
-
+  
   @override
-  sendReport() {
-    
+  Future<Either<Failures, String>> sendReport({
+    required String name,
+    required String email,
+    required String subject,
+    required String message
+
+  }) async{
+    try {
+      var data = await _apiService.post(
+        endpoint: 'contactUs',
+        data: {
+          "name" : name, 
+          "email" : email,
+          "subject" : subject,
+          "message" : message
+        }
+      );
+      return right(
+        Intl.getCurrentLocale() == 'ar' ? "تم ارسال البريد" : "Email sent successfully"
+      );
+    } on Exception catch (e) {
+      return left(ServerFailure(e.toString()));
+    }
   }
+
+  
 }

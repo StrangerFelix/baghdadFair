@@ -60,9 +60,10 @@ class _NewsCardsListState extends State<NewsCardsList> {
                   padding: const EdgeInsets.symmetric(
                       horizontal: horizontalPadding, vertical: 5),
                   child: NewsCard(
-                    image: news[index].photo,
-                    title: news[index].title,
-                    auther: news[index].description,
+                    news: news[index],
+                    // image: news[index].photo,
+                    // title: news[index].title,
+                    // auther: news[index].description,
                   ),
                 );
               }

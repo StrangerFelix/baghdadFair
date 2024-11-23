@@ -4,5 +4,10 @@ import 'package:dartz/dartz.dart';
 
 abstract class HomeRepository {
   Future<Either<Failures,HomeModel>> getHomeBody();
-  sendReport();
+  Future<Either<Failures,String>> sendReport({
+    required String name,
+    required String email,
+    required String subject,
+    required String message
+  });
 }

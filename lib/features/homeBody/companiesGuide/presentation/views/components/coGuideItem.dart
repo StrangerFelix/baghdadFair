@@ -1,4 +1,5 @@
 import 'package:baghdad_fair/core/components/customCachedImage.dart';
+import 'package:baghdad_fair/core/components/imagePopup.dart';
 import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
@@ -34,9 +35,21 @@ class CompaniesGuideItem extends StatelessWidget {
                       flex: 6,
                       child: AspectRatio(
                         aspectRatio: 7/6,
-                        child: CustomCachedImage(
-                          image,
-                          fit: BoxFit.contain,
+                        child: GestureDetector(
+                          onTap: () {
+                            if (image != null) {
+                              showDialog(
+                                context: context,
+                                builder: (context) => FullScreenImagePopup(
+                                  imageUrl: image!
+                                ),
+                              );
+                            }
+                          },
+                          child: CustomCachedImage(
+                            image,
+                            fit: BoxFit.contain,
+                          ),
                         )
                       ),
                     ),

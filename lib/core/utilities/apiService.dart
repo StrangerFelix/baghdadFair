@@ -22,7 +22,7 @@ class ApiService {
     required String endpoint,
     Map? data
   }) async{
-    var request = await _dio.post('$_baseUrl${Intl.getCurrentLocale()}/$endpoint',data: data);
+    var request = await _dio.post('$_baseUrl$endpoint',data: data);
     return request.data;
   }
 }
