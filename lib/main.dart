@@ -7,6 +7,7 @@ import 'package:baghdad_fair/features/home/presentation/managers/language/langua
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 
@@ -14,6 +15,7 @@ void main() async {
   // Bloc.observer = MyBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
+  await dotenv.load();
   setupServiceLocator();
   runApp(Phoenix(child: const MyApp()));
 }

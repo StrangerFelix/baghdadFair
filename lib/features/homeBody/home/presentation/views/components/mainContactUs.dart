@@ -149,7 +149,6 @@ class _MainContactUsState extends State<MainContactUs> {
                                         ? CustomButton(
                                             onPressed: () {
                                               if (formKey.currentState!.validate()) {
-                                                print ("name: ${nameController.text}\nemail:${emailController.text}\nsubject:${subjectController.text}\nmessage:${messageController.text}");
                                                 context.read<ContactUsBloc>().add(
                                                   SendEmailEvent(
                                                       name: nameController.text,

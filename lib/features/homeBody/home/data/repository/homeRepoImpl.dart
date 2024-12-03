@@ -36,7 +36,7 @@ class HomeRepositoryImplementation implements HomeRepository {
 
   }) async{
     try {
-      var data = await _apiService.post(
+      await _apiService.post(
         endpoint: 'contactUs',
         data: {
           "name" : name, 
