@@ -6,11 +6,13 @@ class CustomHomeButton extends StatelessWidget {
   final double thickness; // Thickness of the ring
   final Widget child; // Centered child widget
   final void Function()? onTap;
+  final bool hasSmallerRing;
   const CustomHomeButton({
     this.onTap,
     super.key,
     this.size = 45.0,
     this.thickness = 2.0,
+    this.hasSmallerRing = true,
     required this.child,
   });
 
@@ -37,14 +39,17 @@ class CustomHomeButton extends StatelessWidget {
                 ],
               ),
             ),
-            CircleAvatar(
+            hasSmallerRing ? CircleAvatar(
               radius: (size / 2) - (size / 10),
               backgroundColor: gradiant1,
               child: CircleAvatar(
-                radius: (size / 2) - (size / 7.5),
+                radius: (size / 2) - (size / 8.5),
                 backgroundColor: Colors.white,
                 child: child
               )
+            ) : CircleAvatar(
+              backgroundColor: Colors.white,
+              child: child
             ),
           ],
         ),

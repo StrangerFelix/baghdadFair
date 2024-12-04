@@ -1,6 +1,6 @@
 import 'package:baghdad_fair/core/components/customLoadingIndicator.dart';
 import 'package:baghdad_fair/core/components/customTextField.dart';
-import 'package:baghdad_fair/core/components/custumButton.dart';
+import 'package:baghdad_fair/core/components/customButton.dart';
 import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/serviceLocator.dart';

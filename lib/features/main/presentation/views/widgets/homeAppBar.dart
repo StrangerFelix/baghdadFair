@@ -44,8 +44,7 @@ class HomeAppBar extends StatelessWidget {
             CustomHomeButton(
               size: 40,
               onTap: () {
-                context.go(AppRouter.home);
-                print('Hello world');
+                context.go(AppRouter.aboutUs);
               },
               child: SvgPicture.asset(AppAssets.burgerMenu),
             )

@@ -1,5 +1,6 @@
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/baghdadFair/aboutUs/presentation/views/aboutUsBody.dart';
+import 'package:baghdad_fair/features/baghdadFair/baghdadFair/presentation/views/baghdadFairBody.dart';
 import 'package:baghdad_fair/features/main/presentation/views/homeView.dart';
 import 'package:baghdad_fair/features/ads/presentation/views/adsBody.dart';
 import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/views/fairsBody.dart';
@@ -17,17 +18,15 @@ import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
   static const home = '/home';
-  static const aboutUs = '/aboutUs';
+  static const aboutUs = '/bf/aboutUs';
   static const news = "/news";
   static const newsDetails = "/newsDetails";
   static const videosLibrary = "/videosLibrary";
-  static const fairs = "/fairs";
-  static const participatingCountries = "/participatingCountries";
-  static const participatingCompanies = "/participatingCompanies";
-  static const companiesGuide = "/companiesGuide";
-  static const sponsoringCompanies = "/sponsoringCompanies";
+  static const fairs = "/bf/fairs";
+  static const participatingCountries = "/bf/participatingCountries";
+  static const participatingCompanies = "/bf/participatingCompanies";
+  static const sponsoringCompanies = "/bf/sponsoringCompanies";
   static const ads = "/ads";
-  static const statistics = '/statistics';
 
   static final _rootNavigationKey = GlobalKey<NavigatorState>(debugLabel: 'root');
   static final router = GoRouter(
@@ -43,7 +42,7 @@ abstract class AppRouter {
         path: newsDetails,
         builder: (context,state) {
           final news = state.extra as News;
-          return NewsScreen(news: news,);
+          return NewsScreen(news: news);
         } 
       ),
       StatefulShellRoute.indexedStack(
@@ -64,12 +63,83 @@ abstract class AppRouter {
           ),
           StatefulShellBranch(
             routes: [
-              GoRoute(
-                path: aboutUs,
-                builder: (context, state) => const AboutUsBody(),
-              ),
-            ],
+              StatefulShellRoute.indexedStack(
+                builder: (context, state, navigationShell) => BaghdadFairBody(navigationShell: navigationShell),
+                branches: [
+                  StatefulShellBranch(
+                    routes: [
+                      GoRoute(
+                        path: aboutUs,
+                        builder: (context, state) => const AboutUsBody(),
+                      ),
+                    ],
+                  ),
+                  StatefulShellBranch(
+                    routes: [
+                      GoRoute(
+                        path: participatingCountries,
+                        builder: (context, state) => const ParticipatingCountriesBody(),
+                      ),
+                    ],
+                  ),
+                  StatefulShellBranch(
+                    routes: [
+                      GoRoute(
+                        path: fairs,
+                        builder: (context, state) => const FairsBody(),
+                      ),
+                    ],
+                  ),
+                  StatefulShellBranch(
+                    routes: [
+                      GoRoute(
+                        path: participatingCompanies,
+                        builder: (context, state) => const ParticipatingCompaniesBody(),
+                      ),
+                    ],
+                  ),
+                  StatefulShellBranch(
+                    routes: [
+                      GoRoute(
+                        path: sponsoringCompanies,
+                        builder: (context, state) => const SponsoringCompaniesBody(),
+                      ),
+                    ],
+                  ),
+                ]
+              )
+            ]
           ),
+          // StatefulShellBranch(
+          //   routes: [
+          //     GoRoute(
+          //       path: '/bf',
+          //       builder: (context, state) => const BaghdadFairBody(),
+          //       routes: [
+          //         GoRoute(
+          //           path: 'aboutUs',
+          //           builder: (context, state) => const AboutUsBody(),
+          //         ),
+          //         GoRoute(
+          //           path: 'participatingCountries',
+          //           builder: (context, state) => const ParticipatingCountriesBody(),
+          //         ),
+          //         GoRoute(
+          //           path: 'fairs',
+          //           builder: (context, state) => const FairsBody(),
+          //         ),
+          //         GoRoute(
+          //           path: 'participatingCompanies',
+          //           builder: (context, state) => const ParticipatingCompaniesBody(),
+          //         ),
+          //         GoRoute(
+          //           path: 'sponsoringCompanies',
+          //           builder: (context, state) => const SponsoringCompaniesBody(),
+          //         ),
+          //       ],
+          //     ),
+          //   ],
+          // ),
           StatefulShellBranch(
             routes: [
               GoRoute(
@@ -83,38 +153,6 @@ abstract class AppRouter {
               GoRoute(
                 path: videosLibrary,
                 builder: (context, state) => const VideosLibraryBody(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: fairs,
-                builder: (context, state) => const FairsBody(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: participatingCountries,
-                builder: (context, state) => const ParticipatingCountriesBody(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: participatingCompanies,
-                builder: (context, state) => const ParticipatingCompaniesBody(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: sponsoringCompanies,
-                builder: (context, state) => const SponsoringCompaniesBody(),
               ),
             ],
           ),

@@ -1,4 +1,3 @@
-import 'package:baghdad_fair/core/components/constrainedSliverWidth.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/main/data/models/navBarModel.dart';
@@ -23,88 +22,82 @@ class _HomeNavBarState extends State<HomeNavBar> {
   }
   @override
   Widget build(BuildContext context) {
-    return ConstrainedSliverWidth(
-      maxWidth: 600,
-      sliver: SliverToBoxAdapter(
-        child: Container(
-          margin: const EdgeInsetsDirectional.only( top: 2, ),
-          height: 35,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: navBarItems(context).length,
-            itemBuilder: (context,index) {
-              if (index == 0) {
-                return Padding(
-                  padding: const EdgeInsetsDirectional.only(
-                    start: horizontalPadding
-                  ),
-                  child: Container(
-                    decoration: AppStyles.primaryBoxDeocration (
-                      hasBoxShadows: false,
-                      hasSevralParts: true,
-                      alignment: AlignmentDirectional.centerStart
-                    ),
-                    child: Row(
-                      children: [
-                        const SizedBox(width: 15,),
-                        TextButton(
-                          onPressed: () {
-                            HapticFeedback.selectionClick();
-                            _setCurrentPage(index);
-                            context.go(navBarItems(context)[index].path);
-                          }, 
-                          child: Text(
-                            navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),
-                          )
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              }
-              if (index == navBarItems(context).length - 1) { // if (index == itemsCount - 1)
-                return Padding(
-                  padding: const EdgeInsetsDirectional.only(end: horizontalPadding),
-                  child: Container(
-                    decoration: AppStyles.primaryBoxDeocration(
-                      hasSevralParts: true,
-                      hasBoxShadows: false,
-                      alignment: AlignmentDirectional.centerEnd
-                    ),
-                    child: Row(
-                      children: [
-                        TextButton(
-                          onPressed: () {
-                            HapticFeedback.selectionClick();
-                            _setCurrentPage(index);
-                            context.go(navBarItems(context)[index].path);
-                          }, 
-                          child: Text(navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),)
-                        ),
-                        const SizedBox(width: 15,),
-                      ],
-                    ),
-                  ),
-                );
-              }
-              return Container(
-                decoration: AppStyles.primaryBoxDeocration(
-                  hasBorRadius: false,
+    return Container(
+      margin: const EdgeInsetsDirectional.only( top: 2, ),
+      height: 35,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: navBarItems(context).length,
+        itemBuilder: (context,index) {
+          if (index == 0) {
+            return Padding(
+              padding: const EdgeInsetsDirectional.only(
+                start: horizontalPadding
+              ),
+              child: Container(
+                decoration: AppStyles.primaryBoxDeocration (
                   hasBoxShadows: false,
+                  hasSevralParts: true,
+                  alignment: AlignmentDirectional.centerStart
                 ),
-                child: TextButton(
-                  onPressed: () {
-                    HapticFeedback.selectionClick();
-                    _setCurrentPage(index);
-                    context.go(navBarItems(context)[index].path);
-                  }, 
-                  child: Text(navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),)
+                child: Row(
+                  children: [
+                    const SizedBox(width: 15,),
+                    TextButton(
+                      onPressed: () {
+                        HapticFeedback.selectionClick();
+                        _setCurrentPage(index);
+                        context.go(navBarItems(context)[index].path);
+                      }, 
+                      child: Text(
+                        navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),
+                      )
+                    ),
+                  ],
                 ),
-              );
-            }
-          ),
-        )
-      
+              ),
+            );
+          }
+          if (index == navBarItems(context).length - 1) { // if (index == itemsCount - 1)
+            return Padding(
+              padding: const EdgeInsetsDirectional.only(end: horizontalPadding),
+              child: Container(
+                decoration: AppStyles.primaryBoxDeocration(
+                  hasSevralParts: true,
+                  hasBoxShadows: false,
+                  alignment: AlignmentDirectional.centerEnd
+                ),
+                child: Row(
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        HapticFeedback.selectionClick();
+                        _setCurrentPage(index);
+                        context.go(navBarItems(context)[index].path);
+                      }, 
+                      child: Text(navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),)
+                    ),
+                    const SizedBox(width: 15,),
+                  ],
+                ),
+              ),
+            );
+          }
+          return Container(
+            decoration: AppStyles.primaryBoxDeocration(
+              hasBorRadius: false,
+              hasBoxShadows: false,
+            ),
+            child: TextButton(
+              onPressed: () {
+                HapticFeedback.selectionClick();
+                _setCurrentPage(index);
+                context.go(navBarItems(context)[index].path);
+              }, 
+              child: Text(navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),)
+            ),
+          );
+        }
       ),
     );
   }

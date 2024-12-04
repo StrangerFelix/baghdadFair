@@ -16,7 +16,8 @@ class HomeAppBarImage extends StatelessWidget {
             bottomRight: Radius.circular(16),
           ),
           child: Image(
-            image: AssetImage(AppAssets.appImage)
+            image: AssetImage(AppAssets.appImage),
+            fit: BoxFit.cover,
           ),
         ),
       ),

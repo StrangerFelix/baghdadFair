@@ -1,4 +1,4 @@
-import 'package:baghdad_fair/core/components/custumButton.dart';
+import 'package:baghdad_fair/core/components/customButton.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';

@@ -1,7 +1,6 @@
+import 'package:baghdad_fair/core/components/baghdadFairTitle.dart';
 import 'package:baghdad_fair/core/components/customErrorWidget.dart';
 import 'package:baghdad_fair/core/components/customLoadingWidget.dart';
-import 'package:baghdad_fair/core/utilities/appStyles.dart';
-import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/home/data/models/homeModel.dart';
 import 'package:baghdad_fair/features/home/presentation/manager/home/homeBloc.dart';
 import 'package:baghdad_fair/features/home/presentation/manager/home/homeStates.dart';
@@ -11,6 +10,7 @@ import 'package:baghdad_fair/features/home/presentation/views/components/mainHom
 import 'package:baghdad_fair/features/home/presentation/views/components/mainLinks.dart';
 import 'package:baghdad_fair/features/home/presentation/views/components/mainMaps.dart';
 import 'package:baghdad_fair/features/home/presentation/views/components/mainShowTimeInfo.dart';
+import 'package:baghdad_fair/features/home/presentation/views/components/participationInstructionsButton.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -43,26 +43,25 @@ class _MainHomeBodyState extends State<MainHomeBody> {
         state is HomeLoaded && _homeData != null?
         Column(
           children: [
+            const BaghdadFairTitle(),
             Container(
-              margin: const EdgeInsets.only(
-                  top: 20, left: horizontalPadding, right: horizontalPadding),
-              decoration: AppStyles.primaryBoxDeocration(),
-              child: Column(
-                children: [
-                  MainHomeInfo(
-                    orginazerTitle: _homeData!.organizer,
-                    durationTitle: _homeData!.dates,
-                    locationTitle: _homeData!.locations,
-                    specializationTitle: _homeData!.specialization,
-                  ),
-                  MainShowTimeInfo(data: _homeData,),
-                  MainDetails(
-                    details: _homeData!.details
-                  ),
-                  const MainMaps(),
-                ],
-              ),
+              width: double.infinity,
+              height: 2,
+              color: Colors.white,
             ),
+            const SizedBox(height: 10,),
+            MainHomeInfo(
+              orginazerTitle: _homeData!.organizer,
+              durationTitle: _homeData!.dates,
+              locationTitle: _homeData!.locations,
+              specializationTitle: _homeData!.specialization,
+            ),
+            MainShowTimeInfo(data: _homeData,),
+            MainDetails(
+              details: _homeData!.details
+            ),
+            const ParticipationInstructionsButton(),
+            const MainMaps(),
             const MainContactUs(
               addressInfo: 'بغداد المنصور - معرض بغداد الدولي - مبنى قاعة (VIP)',
               phoneInfo: '+9647901800183 الاحد الى الخميس',

@@ -1,3 +1,4 @@
+import 'package:baghdad_fair/core/components/customHomeButton.dart';
 import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:flutter/material.dart';
@@ -15,22 +16,29 @@ class MapButton extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 5),
           decoration: BoxDecoration(
-            color: Colors.grey.shade200,
+            color: Colors.white,
+            boxShadow: AppStyles.boxShadow,
             borderRadius: BorderRadius.circular(10)
           ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Image(
-                image: AssetImage(AppAssets.address),
-                width: 30,
-              ),
-              const SizedBox(width: 10,),
-              Text(
-                text,
-                style: AppStyles.title18,
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 28),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const CustomHomeButton(
+                  hasSmallerRing: false,
+                  child: Image(
+                    image: AssetImage(AppAssets.address),
+                    width: 30,
+                  ),
+                ),
+                const SizedBox(width: 15,),
+                Text(
+                  text,
+                  style: AppStyles.title18,
+                ),
+              ],
+            ),
           ),
         ),
       ),

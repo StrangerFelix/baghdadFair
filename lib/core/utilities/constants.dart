@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const primaryBackgroundColor = Color(0xffF9F5F3);
 const appbarColor = Colors.white;
+const primaryFocusedColor = Color(0xffF6EFEC);
 const primaryTextColor = Color(0xff000000);
 const horizontalPadding = 22.0;
 const splashEndingNavigationDuration = Duration(milliseconds: 700);

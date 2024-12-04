@@ -49,9 +49,17 @@ class AppStyles {
   );
   static const gradientBoxTextStyle = TextStyle(
     fontSize: 18,
-    color: Colors.white,
+    color: gradiant2,
     fontWeight: FontWeight.bold
   );
+  static var boxShadow = [
+    BoxShadow(
+      color: gradiant2.withOpacity(.1),
+      spreadRadius: 1,
+      blurRadius: 3,
+      offset: const Offset(0, 0),
+    ),
+  ];
   static BoxDecoration primaryBoxDeocration ({
   bool hasBorRadius = true,
   bool hasSevralParts = false,
