@@ -1,18 +1,16 @@
 import 'package:baghdad_fair/core/utilities/constants.dart';
-import 'package:baghdad_fair/features/homeBody/aboutUs/presentation/views/aboutUsBody.dart';
-import 'package:baghdad_fair/features/home/presentation/views/homeView.dart';
-import 'package:baghdad_fair/features/homeBody/ads/presentation/views/adsBody.dart';
-import 'package:baghdad_fair/features/homeBody/companiesGuide/presentation/views/companiesGuideBody.dart';
-import 'package:baghdad_fair/features/homeBody/fairs/presentation/views/fairsBody.dart';
-import 'package:baghdad_fair/features/homeBody/home/presentation/views/mainHomeBody.dart';
-import 'package:baghdad_fair/features/homeBody/news/data/models/newsModel.dart';
-import 'package:baghdad_fair/features/homeBody/news/presentation/views/newsBody.dart';
-import 'package:baghdad_fair/features/homeBody/participatingCompanies/presentation/views/participatingCompaniesBody.dart';
-import 'package:baghdad_fair/features/homeBody/participatingCountries/presentation/views/participatingCountriesBody.dart';
-import 'package:baghdad_fair/features/homeBody/sponsoringCompanies/presentation/views/sponsoringCompaniesBody.dart';
-import 'package:baghdad_fair/features/homeBody/statistics/presentation/views/statisticsBody.dart';
-import 'package:baghdad_fair/features/homeBody/videosLibrary/presentation/views/videosLibraryBody.dart';
-import 'package:baghdad_fair/features/newsDetails/presentation/views/newsScreen.dart';
+import 'package:baghdad_fair/features/baghdadFair/aboutUs/presentation/views/aboutUsBody.dart';
+import 'package:baghdad_fair/features/main/presentation/views/homeView.dart';
+import 'package:baghdad_fair/features/ads/presentation/views/adsBody.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/views/fairsBody.dart';
+import 'package:baghdad_fair/features/home/presentation/views/mainHomeBody.dart';
+import 'package:baghdad_fair/features/news/news/data/models/newsModel.dart';
+import 'package:baghdad_fair/features/news/news/presentation/views/newsBody.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/presentation/views/participatingCompaniesBody.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCountries/presentation/views/participatingCountriesBody.dart';
+import 'package:baghdad_fair/features/baghdadFair/sponsoringCompanies/presentation/views/sponsoringCompaniesBody.dart';
+import 'package:baghdad_fair/features/videos/presentation/views/videosLibraryBody.dart';
+import 'package:baghdad_fair/features/news/newsDetails/presentation/views/newsScreen.dart';
 import 'package:baghdad_fair/features/splash/presentation/views/splashView.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -115,14 +113,6 @@ abstract class AppRouter {
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: companiesGuide,
-                builder: (context, state) => const CompaniesGuideBody(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
                 path: sponsoringCompanies,
                 builder: (context, state) => const SponsoringCompaniesBody(),
               ),
@@ -133,14 +123,6 @@ abstract class AppRouter {
               GoRoute(
                 path: ads,
                 builder: (context, state) => const AdsBody(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: statistics,
-                builder: (context, state) => const StatisticsBody(),
               ),
             ],
           ),

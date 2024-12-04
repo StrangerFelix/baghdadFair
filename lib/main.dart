@@ -3,7 +3,7 @@ import 'package:baghdad_fair/core/utilities/appRouter.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/providers.dart';
 import 'package:baghdad_fair/core/utilities/serviceLocator.dart';
-import 'package:baghdad_fair/features/home/presentation/managers/language/languageCubit.dart';
+import 'package:baghdad_fair/features/main/presentation/managers/language/languageCubit.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

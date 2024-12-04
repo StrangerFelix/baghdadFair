@@ -1,14 +1,13 @@
 import 'package:baghdad_fair/core/utilities/apiService.dart';
-import 'package:baghdad_fair/features/homeBody/aboutUs/data/repository/aboutUsRepoImpl.dart';
-import 'package:baghdad_fair/features/homeBody/ads/data/repository/adsRepoImpl.dart';
-import 'package:baghdad_fair/features/homeBody/companiesGuide/data/repository/coGuideRepoImpl.dart';
-import 'package:baghdad_fair/features/homeBody/fairs/data/repository/fairsRepoImpl.dart';
-import 'package:baghdad_fair/features/homeBody/home/data/repository/homeRepoImpl.dart';
-import 'package:baghdad_fair/features/homeBody/news/data/repository/newsRepoImpl.dart';
-import 'package:baghdad_fair/features/homeBody/participatingCompanies/data/repository/companiesRepoImpl.dart';
-import 'package:baghdad_fair/features/homeBody/participatingCountries/data/repository/countriesRepoImpl.dart';
-import 'package:baghdad_fair/features/homeBody/sponsoringCompanies/data/repository/sponsoringRepoImpl.dart';
-import 'package:baghdad_fair/features/homeBody/videosLibrary/data/repository/videosRepoImpl.dart';
+import 'package:baghdad_fair/features/baghdadFair/aboutUs/data/repository/aboutUsRepoImpl.dart';
+import 'package:baghdad_fair/features/ads/data/repository/adsRepoImpl.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/data/repository/fairsRepoImpl.dart';
+import 'package:baghdad_fair/features/home/data/repository/homeRepoImpl.dart';
+import 'package:baghdad_fair/features/news/news/data/repository/newsRepoImpl.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/data/repository/companiesRepoImpl.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCountries/data/repository/countriesRepoImpl.dart';
+import 'package:baghdad_fair/features/baghdadFair/sponsoringCompanies/data/repository/sponsoringRepoImpl.dart';
+import 'package:baghdad_fair/features/videos/data/repository/videosRepoImpl.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -36,9 +35,6 @@ void setupServiceLocator(){
   );
   getIt.registerSingleton<CompaniesRepositoryImplementation>(
     CompaniesRepositoryImplementation(getIt.get<ApiService>())
-  );
-  getIt.registerSingleton<CompaniesGuideRepositoryImplementation>(
-    CompaniesGuideRepositoryImplementation(getIt.get<ApiService>())
   );
   getIt.registerSingleton<AdsRepositoryImplementation>(
     AdsRepositoryImplementation(getIt.get<ApiService>())

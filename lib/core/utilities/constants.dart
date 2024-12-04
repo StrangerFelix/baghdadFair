@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const primaryBackgroundColor = Color.fromARGB(255, 160, 158, 158);
+const primaryBackgroundColor = Color(0xffF9F5F3);
 const appbarColor = Colors.white;
 const primaryTextColor = Color(0xff000000);
 const horizontalPadding = 22.0;
