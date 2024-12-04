@@ -15,7 +15,7 @@ void main() async {
   // Bloc.observer = MyBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
-  await dotenv.load();
+  await dotenv.load(fileName: ".env");
   setupServiceLocator();
   runApp(Phoenix(child: const MyApp()));
 }

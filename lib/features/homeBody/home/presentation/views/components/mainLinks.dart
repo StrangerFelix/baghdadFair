@@ -39,6 +39,7 @@ class MainLinks extends StatelessWidget {
                       Image(
                         image: AssetImage(AppAssets.email),
                         width: 25,
+                        height: 25,
                       ),
                       SizedBox(width: 5,),
                       Text(
@@ -50,8 +51,9 @@ class MainLinks extends StatelessWidget {
                   const Row(
                     children: [
                       Image(
-                        image: AssetImage(AppAssets.search),
+                        image: AssetImage(AppAssets.website),
                         width: 25,
+                        height: 25,
                       ),
                       SizedBox(width: 5,),
                       Text(

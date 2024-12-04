@@ -1,3 +1,4 @@
+import 'package:baghdad_fair/core/components/customHomeButton.dart';
 import 'package:flutter/material.dart';
 
 class MainHomeInfoItem extends StatelessWidget {
@@ -15,8 +16,10 @@ class MainHomeInfoItem extends StatelessWidget {
     return Expanded(
       child: Column(
         children: [
-          Image(
-            image: AssetImage(imageLink)
+          CustomHomeButton(
+            child: Image(
+              image: AssetImage(imageLink)
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),

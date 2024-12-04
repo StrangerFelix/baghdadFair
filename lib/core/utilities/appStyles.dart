@@ -6,8 +6,8 @@ class AppStyles {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     scaffoldBackgroundColor: primaryBackgroundColor,
-    fontFamily: 'dubai',
-    
+    fontFamily: 'expo'
+    // fontFamily: 'dubai',
   );
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.light,

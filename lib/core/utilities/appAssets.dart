@@ -1,5 +1,9 @@
 abstract class AppAssets {
-  static const appImage = 'assets/images/appbar_image.png';
+  static const appImage = 'assets/images/appimage.png';
+  static const titleText = 'assets/icons/titletext.svg';
+  static const burgerMenu = 'assets/icons/burgermenu.svg';
+  static const website = 'assets/icons/website.png';
+  static const send = 'assets/icons/send.png';
   static const shield = "assets/icons/shield.png";
   static const clock = "assets/icons/clock.png";
   static const link = "assets/icons/link.png";
@@ -14,7 +18,6 @@ abstract class AppAssets {
   static const x = "assets/icons/x.png";
   static const email = "assets/icons/email.png";
   static const search = "assets/icons/search.png";
-  static const splashLogo = "assets/icons/splashlogo.png";
   static const filter = "assets/icons/filter.svg";
   static const calendar = "assets/icons/calendar.png";
   static const arrow = "assets/icons/arrow.png";

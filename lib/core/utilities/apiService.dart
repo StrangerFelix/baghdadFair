@@ -1,5 +1,5 @@
-import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:intl/intl.dart';
 
 class ApiService {
@@ -8,7 +8,7 @@ class ApiService {
   final int limit = 6;
   ApiService(this._dio) {
     _dio.options.headers = {
-    'x-api-key': apiKey,
+    'x-api-key': dotenv.env['API_KEY'] ?? '',
     };
   }
   

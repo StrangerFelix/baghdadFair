@@ -44,17 +44,20 @@ class _HomeNavBarState extends State<HomeNavBar> {
                       hasSevralParts: true,
                       alignment: AlignmentDirectional.centerStart
                     ),
-                    child: TextButton(
-                      onPressed: () {
-                        HapticFeedback.selectionClick();
-                        _setCurrentPage(index);
-                        context.go(navBarItems(context)[index].path);
-                      }, 
-                      child: Icon(
-                        Icons.home,
-                        size: 20,
-                        color: index == currentPageIndex ? activeColor : primaryTextColor,
-                      )
+                    child: Row(
+                      children: [
+                        const SizedBox(width: 15,),
+                        TextButton(
+                          onPressed: () {
+                            HapticFeedback.selectionClick();
+                            _setCurrentPage(index);
+                            context.go(navBarItems(context)[index].path);
+                          }, 
+                          child: Text(
+                            navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),
+                          )
+                        ),
+                      ],
                     ),
                   ),
                 );
@@ -68,13 +71,18 @@ class _HomeNavBarState extends State<HomeNavBar> {
                       hasBoxShadows: false,
                       alignment: AlignmentDirectional.centerEnd
                     ),
-                    child: TextButton(
-                      onPressed: () {
-                        HapticFeedback.selectionClick();
-                        _setCurrentPage(index);
-                        context.go(navBarItems(context)[index].path);
-                      }, 
-                      child: Text(navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),)
+                    child: Row(
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            HapticFeedback.selectionClick();
+                            _setCurrentPage(index);
+                            context.go(navBarItems(context)[index].path);
+                          }, 
+                          child: Text(navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),)
+                        ),
+                        const SizedBox(width: 15,),
+                      ],
                     ),
                   ),
                 );
