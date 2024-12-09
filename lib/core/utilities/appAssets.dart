@@ -17,6 +17,7 @@ abstract class AppAssets {
   static const google = "assets/icons/google.png";
   static const x = "assets/icons/x.png";
   static const email = "assets/icons/email.png";
+  static const bflogo = 'assets/icons/baghdadfairlogo.png';
   static const search = "assets/icons/search.png";
   static const filter = "assets/icons/filter.svg";
   static const calendar = "assets/icons/calendar.png";
@@ -29,4 +30,12 @@ abstract class AppAssets {
   static const name = "assets/icons/name.png";
   static const flag = "assets/icons/flag.png";
   static const time = "assets/icons/time.png";
+  static const news = "assets/icons/news.png";
+  static const videos = "assets/icons/videos.png";
+  static const ads = "assets/icons/ads.png";
+  static const complaints = "assets/icons/complaints.png";
+  static const langs = "assets/icons/langs.png";
+  static const arabic = "assets/icons/arabic.png";
+  static const english = "assets/icons/english.png";
+  static const home = "assets/icons/home.png";
 }

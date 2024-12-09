@@ -1,12 +1,11 @@
 import 'dart:ui';
-
 import 'package:baghdad_fair/core/components/customHomeButton.dart';
 import 'package:baghdad_fair/core/utilities/appAssets.dart';
-import 'package:baghdad_fair/core/utilities/appRouter.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
+import 'package:baghdad_fair/features/main/presentation/views/widgets/drawer/drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
@@ -44,7 +43,8 @@ class HomeAppBar extends StatelessWidget {
             CustomHomeButton(
               size: 40,
               onTap: () {
-                context.go(AppRouter.aboutUs);
+                HapticFeedback.mediumImpact();
+                openDrawer(context,MediaQuery.of(context).padding.top);
               },
               child: SvgPicture.asset(AppAssets.burgerMenu),
             )

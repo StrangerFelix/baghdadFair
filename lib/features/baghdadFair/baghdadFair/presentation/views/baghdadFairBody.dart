@@ -1,5 +1,5 @@
 import 'package:baghdad_fair/core/components/baghdadFairTitle.dart';
-import 'package:baghdad_fair/features/main/presentation/views/widgets/homeNavBar.dart';
+import 'package:baghdad_fair/features/baghdadFair/baghdadFair/presentation/views/homeNavBar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

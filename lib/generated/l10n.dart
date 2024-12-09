@@ -90,10 +90,10 @@ class S {
     );
   }
 
-  /// `English`
+  /// `Language`
   String get changeLanguageButton {
     return Intl.message(
-      'English',
+      'Language',
       name: 'changeLanguageButton',
       desc: '',
       args: [],
@@ -865,6 +865,36 @@ class S {
     return Intl.message(
       'Email not sent.',
       name: 'contact_us_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lists`
+  String get lists {
+    return Intl.message(
+      'Lists',
+      name: 'lists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Homescreen`
+  String get home {
+    return Intl.message(
+      'Homescreen',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Complaints`
+  String get complaints {
+    return Intl.message(
+      'Complaints',
+      name: 'complaints',
       desc: '',
       args: [],
     );

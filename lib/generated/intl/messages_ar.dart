@@ -34,9 +34,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "call_us": MessageLookupByLibrary.simpleMessage("الاتصال بنا"),
         "cancel_fair_filter":
             MessageLookupByLibrary.simpleMessage("الغاء التصفية"),
-        "changeLanguageButton": MessageLookupByLibrary.simpleMessage("العربية"),
+        "changeLanguageButton": MessageLookupByLibrary.simpleMessage("اللغة"),
         "commodity_trade": MessageLookupByLibrary.simpleMessage("تجارة سلع"),
         "companies_guide": MessageLookupByLibrary.simpleMessage("دليل الشركات"),
+        "complaints": MessageLookupByLibrary.simpleMessage("الشكاوي"),
         "condition": MessageLookupByLibrary.simpleMessage("حالة المعرض"),
         "contact_info":
             MessageLookupByLibrary.simpleMessage("معلومات جهة الاتصال"),
@@ -68,12 +69,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "governorate": MessageLookupByLibrary.simpleMessage("المحافظة"),
         "hallvip": MessageLookupByLibrary.simpleMessage("القاعة الاولى VIP"),
         "higher_price": MessageLookupByLibrary.simpleMessage("الاعلى سعرا"),
+        "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
         "inquiry": MessageLookupByLibrary.simpleMessage("استفسار"),
         "inside_iraq": MessageLookupByLibrary.simpleMessage("داخل العراق"),
         "join_the_future":
             MessageLookupByLibrary.simpleMessage("التحق بالمستقبل"),
         "latest_news": MessageLookupByLibrary.simpleMessage("اخر الاخبار"),
         "less_price": MessageLookupByLibrary.simpleMessage("الاقل سعرا"),
+        "lists": MessageLookupByLibrary.simpleMessage("القوائم"),
         "low_rated": MessageLookupByLibrary.simpleMessage("الاقل تفضيلا"),
         "message": MessageLookupByLibrary.simpleMessage("الرسالة"),
         "mixed": MessageLookupByLibrary.simpleMessage("مختلط"),

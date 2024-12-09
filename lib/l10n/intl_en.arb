@@ -3,7 +3,7 @@
     "babil_fair" : "Babil Hall",
     "sorouh_fair" : "Sorouh Hall",
     "hallvip" : "Hall No.1 VIP",
-    "changeLanguageButton" : "English",
+    "changeLanguageButton" : "Language",
     "email" : "Email Address",
     "address_of_complaint" : "Address of complaint for inquiries",
     "inquiry" : "Inquiry",
@@ -80,5 +80,8 @@
     "name" : "Name",
     "subject" : "Subject",
     "message" : "Message",
-    "contact_us_error" : "Email not sent."
+    "contact_us_error" : "Email not sent.",
+    "lists" : "Lists",
+    "home" : "Homescreen",
+    "complaints" : "Complaints"
 }

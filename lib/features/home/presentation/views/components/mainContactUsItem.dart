@@ -1,4 +1,5 @@
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
+import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:flutter/material.dart';
 
 class ContactUsInfo extends StatelessWidget {
@@ -18,10 +19,10 @@ class ContactUsInfo extends StatelessWidget {
             const SizedBox(width: 5,),
             Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 15,
-                color: Colors.grey
+                color: gradiant2.withOpacity(.75)
               ),
             ),
           ],

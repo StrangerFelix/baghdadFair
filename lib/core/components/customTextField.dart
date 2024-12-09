@@ -1,3 +1,4 @@
+import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -18,10 +19,10 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(vertical: 0,horizontal: 15),
           enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF90CDFB)),  // Border color when not focused
+            borderSide: BorderSide(color: gradiant1),  // Border color when not focused
           ),
           focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.blue, width: 2.0),  // Border color when focused
+            borderSide: BorderSide(color: gradiant2, width: 2.0),  // Border color when focused
           ),
           border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(5)),

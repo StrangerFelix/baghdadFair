@@ -14,7 +14,8 @@ class HomeNavBar extends StatefulWidget {
 
 
 class _HomeNavBarState extends State<HomeNavBar> {
-
+  int itemCount = 5;
+  // int itemCount: navBarItems(context).length;
   void _setCurrentPage(int index) {
     setState(() {
       currentPageIndex = index;
@@ -27,7 +28,8 @@ class _HomeNavBarState extends State<HomeNavBar> {
       height: 35,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: navBarItems(context).length,
+        itemCount: itemCount,
+        // itemCount: navBarItems(context).length,
         itemBuilder: (context,index) {
           if (index == 0) {
             return Padding(
@@ -47,10 +49,16 @@ class _HomeNavBarState extends State<HomeNavBar> {
                       onPressed: () {
                         HapticFeedback.selectionClick();
                         _setCurrentPage(index);
+                        lastBfPageIndex = currentPageIndex;
                         context.go(navBarItems(context)[index].path);
                       }, 
                       child: Text(
-                        navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),
+                        navBarItems(context)[index].name,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                          color: currentPageIndex == index ? activeColor : primaryTextColor
+                        ),
                       )
                     ),
                   ],
@@ -58,7 +66,7 @@ class _HomeNavBarState extends State<HomeNavBar> {
               ),
             );
           }
-          if (index == navBarItems(context).length - 1) { // if (index == itemsCount - 1)
+          if (index == itemCount - 1) { // if (index == navBarItems(context).length - 1)
             return Padding(
               padding: const EdgeInsetsDirectional.only(end: horizontalPadding),
               child: Container(
@@ -73,6 +81,8 @@ class _HomeNavBarState extends State<HomeNavBar> {
                       onPressed: () {
                         HapticFeedback.selectionClick();
                         _setCurrentPage(index);
+                        lastBfPageIndex = currentPageIndex;
+                        
                         context.go(navBarItems(context)[index].path);
                       }, 
                       child: Text(navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),)
@@ -92,6 +102,7 @@ class _HomeNavBarState extends State<HomeNavBar> {
               onPressed: () {
                 HapticFeedback.selectionClick();
                 _setCurrentPage(index);
+                lastBfPageIndex = currentPageIndex;
                 context.go(navBarItems(context)[index].path);
               }, 
               child: Text(navBarItems(context)[index].name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: index == currentPageIndex ? activeColor : primaryTextColor),)

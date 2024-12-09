@@ -16,6 +16,14 @@ import 'package:baghdad_fair/features/splash/presentation/views/splashView.dart'
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+List<String> bfRoutes = [
+  AppRouter.aboutUs,
+  AppRouter.participatingCountries,
+  AppRouter.fairs,
+  AppRouter.participatingCompanies,
+  AppRouter.sponsoringCompanies
+];
+
 abstract class AppRouter {
   static const home = '/home';
   static const aboutUs = '/bf/aboutUs';

@@ -34,11 +34,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "call_us": MessageLookupByLibrary.simpleMessage("Call us"),
         "cancel_fair_filter":
             MessageLookupByLibrary.simpleMessage("Cancel filter"),
-        "changeLanguageButton": MessageLookupByLibrary.simpleMessage("English"),
+        "changeLanguageButton":
+            MessageLookupByLibrary.simpleMessage("Language"),
         "commodity_trade":
             MessageLookupByLibrary.simpleMessage("Commodity trading"),
         "companies_guide":
             MessageLookupByLibrary.simpleMessage("Companies guide"),
+        "complaints": MessageLookupByLibrary.simpleMessage("Complaints"),
         "condition": MessageLookupByLibrary.simpleMessage("Condition"),
         "contact_info": MessageLookupByLibrary.simpleMessage("Contact info"),
         "contact_us": MessageLookupByLibrary.simpleMessage("Contact us"),
@@ -69,12 +71,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "governorate": MessageLookupByLibrary.simpleMessage("Governorate"),
         "hallvip": MessageLookupByLibrary.simpleMessage("Hall No.1 VIP"),
         "higher_price": MessageLookupByLibrary.simpleMessage("Higher price"),
+        "home": MessageLookupByLibrary.simpleMessage("Homescreen"),
         "inquiry": MessageLookupByLibrary.simpleMessage("Inquiry"),
         "inside_iraq": MessageLookupByLibrary.simpleMessage("Inside iraq"),
         "join_the_future":
             MessageLookupByLibrary.simpleMessage("Join the future"),
         "latest_news": MessageLookupByLibrary.simpleMessage("Latest news"),
         "less_price": MessageLookupByLibrary.simpleMessage("Less price"),
+        "lists": MessageLookupByLibrary.simpleMessage("Lists"),
         "low_rated": MessageLookupByLibrary.simpleMessage("Low rated"),
         "message": MessageLookupByLibrary.simpleMessage("Message"),
         "mixed": MessageLookupByLibrary.simpleMessage("Mixed"),

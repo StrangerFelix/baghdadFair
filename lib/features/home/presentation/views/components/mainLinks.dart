@@ -31,7 +31,7 @@ class MainLinks extends StatelessWidget {
                 children: [
                   Text(
                     S.of(context).contact_info,
-                    style: AppStyles.gradientBoxTextStyle,
+                    style: AppStyles.bodySmall,
                   ),
                   const SizedBox(height: 8,),
                   const Row(

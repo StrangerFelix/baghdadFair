@@ -1,4 +1,5 @@
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
+import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -17,12 +18,12 @@ class CustomButton extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(vertical: vpadding,horizontal: hpadding),
         decoration: BoxDecoration(
-          color: color ?? const Color(0xFF3EA9F9),
+          color: color ?? gradiant2,
           borderRadius: const BorderRadius.all(Radius.circular(5)),
         ),
         child: Text(
           text,
-          style: textStyle ?? AppStyles.gradientBoxTextStyle,
+          style: textStyle ?? AppStyles.bodySmall.copyWith(color: Colors.white),
         ),
       ),
     );

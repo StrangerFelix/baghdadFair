@@ -1,5 +1,7 @@
 import 'package:baghdad_fair/core/utilities/appRouter.dart';
 import 'package:baghdad_fair/core/utilities/pagesFilters.dart';
+import 'package:baghdad_fair/features/ads/presentation/manager/ads/adsBloc.dart';
+import 'package:baghdad_fair/features/ads/presentation/manager/ads/adsEvents.dart';
 import 'package:baghdad_fair/features/baghdadFair/aboutUs/presentation/manager/aboutUs/aboutUsBloc.dart';
 import 'package:baghdad_fair/features/baghdadFair/aboutUs/presentation/manager/aboutUs/aboutUsEvents.dart';
 import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/manager/fairs/fairsBloc.dart';
@@ -10,6 +12,12 @@ import 'package:baghdad_fair/features/baghdadFair/participatingCountries/present
 import 'package:baghdad_fair/features/baghdadFair/participatingCountries/presentation/manager/countries/countriesEvents.dart';
 import 'package:baghdad_fair/features/baghdadFair/sponsoringCompanies/presentation/manager/sponsors/sponsorsBloc.dart';
 import 'package:baghdad_fair/features/baghdadFair/sponsoringCompanies/presentation/manager/sponsors/sponsorsEvents.dart';
+import 'package:baghdad_fair/features/home/presentation/manager/home/homeBloc.dart';
+import 'package:baghdad_fair/features/home/presentation/manager/home/homeEvents.dart';
+import 'package:baghdad_fair/features/news/news/presentation/manager/news/newsBloc.dart';
+import 'package:baghdad_fair/features/news/news/presentation/manager/news/newsEvents.dart';
+import 'package:baghdad_fair/features/videos/presentation/manager/videos/videosBloc.dart';
+import 'package:baghdad_fair/features/videos/presentation/manager/videos/videosEvents.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,31 +32,16 @@ class NavBarItem {
     event();
   }
 }
-int currentPageIndex = 0;
+int currentPageIndex = 5;
+int lastBfPageIndex = 0;
 
 List<NavBarItem> navBarItems (BuildContext context) {
   return [
-    // NavBarItem(
-    //   name: "home",
-    //   path: AppRouter.home,
-    //   event: () => context.read<HomeBloc>().add(GetHomeDataEvent())
-      
-    // ),
     NavBarItem(
       name: S.of(context).about_us, 
       path: AppRouter.aboutUs,
       event: () => context.read<AboutUsBloc>().add(GetAboutUsEvent())
     ),
-    // NavBarItem(
-    //   name: S.of(context).news, 
-    //   path: AppRouter.news,
-    //   event: () => context.read<NewsBloc>().add(GetNewsEvent(filter: newsFilter))
-    // ),
-    // NavBarItem(
-    //   name: S.of(context).vid_library, 
-    //   path: AppRouter.videosLibrary,
-    //   event: () => context.read<VideosBloc>().add(GetVideosEvent(filter: videosFilter))
-    // ),
     NavBarItem(
       name: S.of(context).par_countries, 
       path: AppRouter.participatingCountries,
@@ -69,11 +62,26 @@ List<NavBarItem> navBarItems (BuildContext context) {
       path: AppRouter.sponsoringCompanies,
       event: () => context.read<SponsorsBloc>().add(GetSponsorsEvent())
     ),
-    // NavBarItem(
-    //   name: S.of(context).ads, 
-    //   path: AppRouter.ads,
-    //   event: () => context.read<AdsBloc>().add(GetAdsEvent(filter: adsFilter))
-    // ),
+    NavBarItem(
+      name: "home",
+      path: AppRouter.home,
+      event: () => context.read<HomeBloc>().add(GetHomeDataEvent())
+    ),
+    NavBarItem(
+      name: S.of(context).news, 
+      path: AppRouter.news,
+      event: () => context.read<NewsBloc>().add(GetNewsEvent(filter: newsFilter))
+    ),
+    NavBarItem(
+      name: S.of(context).vid_library, 
+      path: AppRouter.videosLibrary,
+      event: () => context.read<VideosBloc>().add(GetVideosEvent(filter: videosFilter))
+    ),
+    NavBarItem(
+      name: S.of(context).ads, 
+      path: AppRouter.ads,
+      event: () => context.read<AdsBloc>().add(GetAdsEvent(filter: adsFilter))
+    ),
     // NavBarItem(
     //   name: S.of(context).statistics, 
     //   path: AppRouter.statistics

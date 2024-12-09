@@ -3,7 +3,7 @@
     "babil_fair" : "قاعة بابل",
     "sorouh_fair" : "قاعة صروح",
     "hallvip" : "القاعة الاولى VIP",
-    "changeLanguageButton" : "العربية",
+    "changeLanguageButton" : "اللغة",
     "email" : "البريد الالكتروني",
     "address_of_complaint" : "عنوان الشكوى للاستفسار",
     "inquiry" : "استفسار",
@@ -80,5 +80,8 @@
     "name" : "الاسم",
     "subject" : "عنوان الموضوع",
     "message" : "الرسالة",
-    "contact_us_error" : "تعذر ارسال البريد"
+    "contact_us_error" : "تعذر ارسال البريد",
+    "lists" : "القوائم",
+    "home" : "الصفحة الرئيسية",
+    "complaints" : "الشكاوي"
 }

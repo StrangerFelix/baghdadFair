@@ -3,6 +3,7 @@ import 'package:baghdad_fair/core/components/customTextField.dart';
 import 'package:baghdad_fair/core/components/customButton.dart';
 import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
+import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/core/utilities/serviceLocator.dart';
 import 'package:baghdad_fair/features/home/data/repository/homeRepoImpl.dart';
 import 'package:baghdad_fair/features/home/presentation/manager/contactUs/contactUsBloc.dart';
@@ -147,6 +148,7 @@ class _MainContactUsState extends State<MainContactUs> {
                                     alignment: AlignmentDirectional.centerEnd,
                                     child: state is! SendEmailLoading
                                         ? CustomButton(
+                                            vpadding: 5,
                                             onPressed: () {
                                               if (formKey.currentState!.validate()) {
                                                 context.read<ContactUsBloc>().add(
@@ -158,6 +160,10 @@ class _MainContactUsState extends State<MainContactUs> {
                                                           .text,
                                                       message: messageController
                                                           .text));
+                                                          nameController.clear();
+                                                          emailController.clear();
+                                                          subjectController.clear();
+                                                          messageController.clear();
                                               }
                                               
                                             },
@@ -177,14 +183,14 @@ class _MainContactUsState extends State<MainContactUs> {
                     top: 0,
                     child: Container(
                       width: 220,
-                      height: 35,
+                      height: 40,
                       decoration: BoxDecoration(
-                          color: const Color(0xFF3EA9F9),
+                          color: gradiant2,
                           borderRadius: BorderRadius.circular(2)),
                       child: Center(
                         child: Text(
                           S.of(context).contact_us,
-                          style: AppStyles.gradientBoxTextStyle,
+                          style: AppStyles.bodySmall.copyWith(color: Colors.white,fontSize: 18),
                         ),
                       ),
                     ),
