@@ -9,7 +9,12 @@ class AboutUsContext extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 30,left: horizontalPadding,right: horizontalPadding),
-      decoration: AppStyles.primaryBoxDeocration(hasBorRadius: true),
+      decoration: AppStyles.primaryBoxDeocration(hasBorRadius: true).copyWith(
+        border: Border.all(
+          color: gradiant2.withOpacity(.4),
+          width: 3, 
+        )
+      ),
       child: IntrinsicHeight(
         child: Row(
           children: [
@@ -17,9 +22,9 @@ class AboutUsContext extends StatelessWidget {
               flex: 1,
               child: Container(
                 decoration: BoxDecoration(
-                  color: const Color(0xFF3EA9F9).withOpacity(.6),
+                  color: gradiant2.withOpacity(.4),
                   borderRadius: const BorderRadiusDirectional.only(
-                    topStart: Radius.circular(20),
+                    topStart: Radius.circular(16),
                     bottomStart: Radius.circular(20),
                   ),
                 ),
