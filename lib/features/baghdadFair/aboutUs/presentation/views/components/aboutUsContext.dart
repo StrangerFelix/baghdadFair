@@ -42,6 +42,7 @@ class AboutUsContext extends StatelessWidget {
                 ),
                 child: Text(
                   description ?? "",
+                  textAlign: TextAlign.justify,
                   style: AppStyles.bodySmall.copyWith(height: 1.8),
                   
                 ),

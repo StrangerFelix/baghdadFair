@@ -24,6 +24,7 @@ class MainDetails extends StatelessWidget {
             Text(
               details ?? "",
               style: AppStyles.paragraphSmall,
+              textAlign: TextAlign.justify,
             ),
           ],
         ),
