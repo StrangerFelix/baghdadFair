@@ -1,10 +1,7 @@
-import 'dart:math';
-
 import 'package:baghdad_fair/core/components/customCachedImage.dart';
 import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/views/components/fairsAboutItem.dart';
 import 'package:flutter/material.dart';
 
 class FairsItem extends StatelessWidget {
@@ -46,7 +43,7 @@ class FairsItem extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        '$title' ?? "",
+                        title ?? "",
                         style: AppStyles.bodySmall,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 4,
@@ -68,7 +65,7 @@ class FairsItem extends StatelessWidget {
                       const SizedBox(height: 5,),
                       Row(
                         children: [
-                          Image(
+                          const Image(
                             image: AssetImage(AppAssets.calendar)
                           ),
                           const SizedBox(width: 5,),

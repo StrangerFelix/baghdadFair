@@ -1,7 +1,7 @@
 import 'package:baghdad_fair/core/errors/failures.dart';
 import 'package:baghdad_fair/core/utilities/apiService.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/data/models/fairsModel.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/data/repository/fairsRepo.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/data/models/fairsModel.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/data/repository/fairsRepo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 

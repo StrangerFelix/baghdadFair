@@ -1,4 +1,4 @@
-import 'package:baghdad_fair/features/baghdadFair/fairs/data/models/fairsModel.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/data/models/fairsModel.dart';
 
 abstract class FairsStates {}
 class FairsInitial extends FairsStates {}

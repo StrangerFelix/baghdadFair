@@ -1,23 +1,25 @@
 import 'dart:math';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/manager/filters/fairsFiltersBloc.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/manager/filters/fairsFiltersEvents.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/manager/filters/fairsFiltersStates.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/manager/filters/fairsFiltersBloc.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/manager/filters/fairsFiltersEvents.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/manager/filters/fairsFiltersStates.dart';
+
 
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
-class FairsLocationsDropdownButton extends StatefulWidget {
-  const FairsLocationsDropdownButton({super.key});
+class FairsConditionDropDownButton extends StatefulWidget {
+  const FairsConditionDropDownButton({super.key});
 
   @override
-  State<FairsLocationsDropdownButton> createState() => _FairsLocationsDropdownButtonState();
+  State<FairsConditionDropDownButton> createState() => _FairsConditionDropDownButtonState();
 }
 
-class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownButton> {
+class _FairsConditionDropDownButtonState extends State<FairsConditionDropDownButton> {
+  
   int currentIndex = 0;
   late List items;
   @override
@@ -30,16 +32,16 @@ class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownBut
     final renderBox = context.findRenderObject() as RenderBox;
     final size = renderBox.size;
     final offset = renderBox.localToGlobal(Offset.zero);
-    fairsDropdownLocationsEntry = OverlayEntry(
+    fairsDropdownConditionEntry = OverlayEntry(
       builder: (context) => PositionedDirectional(
           end: Intl.getCurrentLocale() == 'ar' ? offset.dx : null,
           start: Intl.getCurrentLocale() == 'en' ? offset.dx : null,
           // top: offset.dy / 3.2,
-          top: 169,
+          top: 134,
           width: size.width,
           child: buildOverlay(context)),
     );
-    overlay.insert(fairsDropdownLocationsEntry!);
+    overlay.insert(fairsDropdownConditionEntry!);
   }
 
   Widget buildOverlay(BuildContext context) {
@@ -55,8 +57,8 @@ class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownBut
             onTap: () {
               setState(() {
                 currentIndex = index;
-                fairsDropdownLocationsEntry?.remove();
-                fairsDropdownLocationsEntry = null;    
+                fairsDropdownConditionEntry?.remove();
+                fairsDropdownConditionEntry = null;    
               });
             },
             child: Container(
@@ -71,7 +73,8 @@ class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownBut
                       style: const TextStyle(
                           height: 1.3,
                           fontWeight: FontWeight.bold,
-                          color: gradiant2),
+                          color: gradiant2)
+                        ,
                     ),
                   ),
                   index == items.length - 1
@@ -94,17 +97,18 @@ class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownBut
   @override
   Widget build(BuildContext context) {
     items = [
-      S.of(context).all_locations,
-      S.of(context).inside_iraq,
-      S.of(context).outside_iraq
+      S.of(context).condition,
+      S.of(context).ended,
+      S.of(context).ongoing,
+      S.of(context).soon,
     ];
     return BlocBuilder<FairsFiltersBloc, FairsFiltersStates>(
       builder: (context, state) {
         return GestureDetector(
           onTap: () {
-            if (fairsDropdownLocationsEntry == null) {
+            if (fairsDropdownConditionEntry == null) {
               showOverlay(context);
-              context.read<FairsFiltersBloc>().add(SectionHideOverlaysEvent('locations'));
+              context.read<FairsFiltersBloc>().add(SectionHideOverlaysEvent('condition'));
             } else {
               context.read<FairsFiltersBloc>().add(SectionHideOverlaysEvent('all'));
             }
@@ -150,3 +154,4 @@ class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownBut
     );
   }
 }
+

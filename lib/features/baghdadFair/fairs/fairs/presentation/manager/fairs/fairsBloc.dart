@@ -1,6 +1,6 @@
-import 'package:baghdad_fair/features/baghdadFair/fairs/data/repository/fairsRepo.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/manager/fairs/fairsEvents.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/manager/fairs/fairsStates.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/data/repository/fairsRepo.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/manager/fairs/fairsEvents.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/manager/fairs/fairsStates.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FairsBloc extends Bloc<FairsEvents,FairsStates> {
@@ -13,7 +13,6 @@ class FairsBloc extends Bloc<FairsEvents,FairsStates> {
         } else {
           emit(FairsLoading());
         }
-        print ('fairs page: ${event.page}');
         var data = await _fairsRepository.getFairs(
           filter: event.filter,
           page: event.page,

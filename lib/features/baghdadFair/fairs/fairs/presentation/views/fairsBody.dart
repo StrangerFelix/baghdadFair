@@ -1,5 +1,5 @@
-import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/views/components/fairsList.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/views/components/sectionTitleAndFilter/fairsCompleteSectionTitle.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/views/components/fairsList.dart';
+import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/views/components/sectionTitleAndFilter/fairsCompleteSectionTitle.dart';
 import 'package:flutter/material.dart';
 
 class FairsBody extends StatelessWidget {

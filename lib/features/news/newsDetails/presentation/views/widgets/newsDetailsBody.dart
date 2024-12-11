@@ -25,25 +25,41 @@ class NewsDetailsBody extends StatelessWidget {
                   child: Column(
                     children: [
                       CustomCachedImage(news!.photo),
+                      // const SizedBox(height: 10,),
                       Container(
                         width: double.infinity,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              
+                              
+                              gradiant1.withOpacity(.05),
+                              gradiant2.withOpacity(.2),
+                              gradiant2.withOpacity(.3)
+                            ]
+                          )
+                        ),
                         padding: const EdgeInsets.symmetric(
-                          vertical: 20,
-                          horizontal: horizontalPadding / 2
+                          vertical: 10,
+                          horizontal: horizontalPadding / 1.5
                         ),
                         child: Text(
                           news!.title!,
-                          style: AppStyles.titleSmall.copyWith(color: Colors.black),
+                          style: AppStyles.bodySmall.copyWith(fontSize: 18,fontWeight: FontWeight.normal),
                         ),
                       ),
                       Container(
                         width: double.infinity,
                         padding: const EdgeInsets.symmetric(
-                          horizontal: horizontalPadding / 2
+                          horizontal: horizontalPadding / 1.5,
+                          vertical: 20
                         ),
                         child: Text(
                           news!.description!,
-                          style: AppStyles.autherSmall.copyWith(fontWeight: FontWeight.w500),
+                          textAlign: TextAlign.justify,
+                          style: AppStyles.bodySmall.copyWith(fontWeight: FontWeight.w500),
                         ),
                       ),
                       const SizedBox(height: 50,)
@@ -60,10 +76,10 @@ class NewsDetailsBody extends StatelessWidget {
                   HapticFeedback.mediumImpact();
                   context.pop();
                 },
-                child: const CircleAvatar(
-                  backgroundColor: primaryBackgroundColor,
+                child: CircleAvatar(
+                  backgroundColor: primaryBackgroundColor.withOpacity(.65),
                   radius: 24,
-                  child: Icon(Icons.arrow_back_ios_new_rounded),
+                  child: const Icon(Icons.arrow_back_ios_new_rounded),
                 ),
               )
             )

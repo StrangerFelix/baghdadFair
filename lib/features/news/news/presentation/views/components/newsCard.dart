@@ -47,7 +47,7 @@ class NewsCard extends StatelessWidget {
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
                         news!.title ?? "",
-                        style: AppStyles.bodySmall,
+                        style: AppStyles.bodySmall.copyWith(fontWeight: FontWeight.normal),
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                       ),
