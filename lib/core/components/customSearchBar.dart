@@ -17,7 +17,7 @@ class CustomSearchBar extends StatelessWidget {
         borderRadius: const BorderRadius.all(Radius.circular(16)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: gradiant1.withOpacity(0.2),
             spreadRadius: 1,
             blurRadius: 2,
             offset: const Offset(0, 0),
@@ -45,7 +45,7 @@ class CustomSearchBar extends StatelessWidget {
           ),
           focusedBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(16)),
-            borderSide: BorderSide(color: primaryTextColor, width: 2.0), // Focused border color
+            borderSide: BorderSide(color: gradiant2, width: 2.0), // Focused border color
           ),
         ),
         onChanged: onChanged,

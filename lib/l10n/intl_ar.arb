@@ -85,5 +85,7 @@
     "contact_us_error" : "تعذر ارسال البريد",
     "lists" : "القوائم",
     "home" : "الصفحة الرئيسية",
-    "complaints" : "الشكاوي"
+    "complaints" : "الشكاوي",
+    "complaint_title" : "عنوان الشكوى",
+    "help_message" : "نحن هنا لمساعدتك"
 }

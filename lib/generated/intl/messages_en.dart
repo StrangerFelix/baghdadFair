@@ -42,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Commodity trading"),
         "companies_guide":
             MessageLookupByLibrary.simpleMessage("Companies guide"),
+        "complaint_title":
+            MessageLookupByLibrary.simpleMessage("Complaint title"),
         "complaints": MessageLookupByLibrary.simpleMessage("Complaints"),
         "condition": MessageLookupByLibrary.simpleMessage("Condition"),
         "contact_info": MessageLookupByLibrary.simpleMessage("Contact info"),
@@ -72,6 +74,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Golden partners"),
         "governorate": MessageLookupByLibrary.simpleMessage("Governorate"),
         "hallvip": MessageLookupByLibrary.simpleMessage("Hall No.1 VIP"),
+        "help_message":
+            MessageLookupByLibrary.simpleMessage("We\'re here to help"),
         "higher_price": MessageLookupByLibrary.simpleMessage("Higher price"),
         "home": MessageLookupByLibrary.simpleMessage("Homescreen"),
         "inquiry": MessageLookupByLibrary.simpleMessage("Inquiry"),

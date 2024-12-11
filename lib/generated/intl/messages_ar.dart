@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "changeLanguageButton": MessageLookupByLibrary.simpleMessage("اللغة"),
         "commodity_trade": MessageLookupByLibrary.simpleMessage("تجارة سلع"),
         "companies_guide": MessageLookupByLibrary.simpleMessage("دليل الشركات"),
+        "complaint_title": MessageLookupByLibrary.simpleMessage("عنوان الشكوى"),
         "complaints": MessageLookupByLibrary.simpleMessage("الشكاوي"),
         "condition": MessageLookupByLibrary.simpleMessage("حالة المعرض"),
         "contact_info":
@@ -70,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الشركاء الذهبيّون"),
         "governorate": MessageLookupByLibrary.simpleMessage("المحافظة"),
         "hallvip": MessageLookupByLibrary.simpleMessage("القاعة الاولى VIP"),
+        "help_message":
+            MessageLookupByLibrary.simpleMessage("نحن هنا لمساعدتك"),
         "higher_price": MessageLookupByLibrary.simpleMessage("الاعلى سعرا"),
         "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
         "inquiry": MessageLookupByLibrary.simpleMessage("استفسار"),

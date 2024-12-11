@@ -69,7 +69,10 @@ List<DrawerModel> drawerButtons (BuildContext context) {
       title: S.of(context).complaints,
       pageNumber: 9,
       icon: AppAssets.complaints,
-      // onTap: () => context.go(AppRouter.ads),
+      onTap: () {
+        Navigator.of(context).pop();
+        context.push(AppRouter.complaints);
+      },
     ),
   ];
 } 

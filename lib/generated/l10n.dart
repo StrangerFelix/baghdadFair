@@ -919,6 +919,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Complaint title`
+  String get complaint_title {
+    return Intl.message(
+      'Complaint title',
+      name: 'complaint_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We're here to help`
+  String get help_message {
+    return Intl.message(
+      'We\'re here to help',
+      name: 'help_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -44,7 +44,7 @@ class AppStyles {
     fontSize: 15,
   );
   static const selectionFilterText = TextStyle(
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.normal,
     fontSize: 15
   );
   static const gradientBoxTextStyle = TextStyle(
@@ -105,15 +105,15 @@ class AppStyles {
     return Theme(
       data: Theme.of(context).copyWith(
         colorScheme: const ColorScheme.light(
-          primary: primaryTextColor,
-          onPrimaryContainer: primaryTextColor,
+          primary: gradiant2,
+          onPrimaryContainer: gradiant2,
           onPrimary: primaryBackgroundColor,
-          onSecondary: primaryTextColor,
+          onSecondary: gradiant2,
           surface: primaryBackgroundColor,
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
-            foregroundColor: primaryTextColor,
+            foregroundColor: gradiant2,
           ),
         ),
         dividerTheme: DividerThemeData(

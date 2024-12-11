@@ -1,6 +1,7 @@
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/baghdadFair/aboutUs/presentation/views/aboutUsBody.dart';
 import 'package:baghdad_fair/features/baghdadFair/baghdadFair/presentation/views/baghdadFairBody.dart';
+import 'package:baghdad_fair/features/complaints/presentation/views/complaintsView.dart';
 import 'package:baghdad_fair/features/main/presentation/views/homeView.dart';
 import 'package:baghdad_fair/features/ads/presentation/views/adsBody.dart';
 import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/views/fairsBody.dart';
@@ -35,6 +36,7 @@ abstract class AppRouter {
   static const participatingCompanies = "/bf/participatingCompanies";
   static const sponsoringCompanies = "/bf/sponsoringCompanies";
   static const ads = "/ads";
+  static const complaints = '/complaints';
 
   static final _rootNavigationKey = GlobalKey<NavigatorState>(debugLabel: 'root');
   static final router = GoRouter(
@@ -52,6 +54,10 @@ abstract class AppRouter {
           final news = state.extra as News;
           return NewsScreen(news: news);
         } 
+      ),
+      GoRoute(
+        path: complaints,
+        builder: (context, state) => const ComplaintsView(),
       ),
       StatefulShellRoute.indexedStack(
         pageBuilder: (context,state,navigationShell) => pagesTransitionBuilder(

@@ -72,10 +72,12 @@ class _CalendarFilterState extends State<CalendarFilter> {
             height: 45,
             child: Row(
               children: [
+                const SizedBox(width: 10,),
                 const Image(image: AssetImage(AppAssets.calendar)),
+                const SizedBox(width: 10,),
                 Text(
                   S.of(context).filter_by_date,
-                  style: AppStyles.bodySmall.copyWith(fontSize: 14),
+                  style: AppStyles.bodySmall.copyWith(fontSize: 14,fontWeight: FontWeight.normal),
                 ),
                 const Spacer(),
                 CustomFilterButton(
@@ -83,11 +85,12 @@ class _CalendarFilterState extends State<CalendarFilter> {
                   onTap: () {
                     // print ("from: $_selectedFromDate \nTo: $_selectedToDate");
                   },
-                )
+                ),
+                const SizedBox(width: 5,),
               ],
             ),
           ),
-          const Divider(height: 1,color: primaryTextColor,),
+          const Divider(height: 1,color: gradiant2,),
           SizedBox(
             height: 45,
             child: Row(

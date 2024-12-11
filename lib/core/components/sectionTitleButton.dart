@@ -16,7 +16,7 @@ class SectionTitleButton extends StatelessWidget {
           horizontal: 10
         ),
         decoration: const BoxDecoration(
-          color: primaryTextColor,
+          color: gradiant2,
           borderRadius: BorderRadius.all(Radius.circular(5))
         ),
         child: Row(

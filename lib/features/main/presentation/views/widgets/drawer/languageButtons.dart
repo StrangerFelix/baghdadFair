@@ -28,6 +28,7 @@ class LanguageButtons extends StatelessWidget {
               title: 'العربية',
               onTap: () {
                 HapticFeedback.lightImpact();
+                Navigator.of(context).pop();
                 BlocProvider.of<LanguageCubit>(context).changeLanguage('Arabic',context);
               },
             ),
@@ -46,6 +47,7 @@ class LanguageButtons extends StatelessWidget {
               title: 'English',
               onTap: () {
                 HapticFeedback.lightImpact();
+                Navigator.of(context).pop();
                 BlocProvider.of<LanguageCubit>(context).changeLanguage('English',context);
               },
             ),

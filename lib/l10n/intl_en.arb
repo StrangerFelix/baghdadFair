@@ -85,5 +85,7 @@
     "contact_us_error" : "Email not sent.",
     "lists" : "Lists",
     "home" : "Homescreen",
-    "complaints" : "Complaints"
+    "complaints" : "Complaints",
+    "complaint_title" : "Complaint title",
+    "help_message" : "We're here to help"
 }

@@ -82,6 +82,7 @@ List<NavBarItem> navBarItems (BuildContext context) {
       path: AppRouter.ads,
       event: () => context.read<AdsBloc>().add(GetAdsEvent(filter: adsFilter))
     ),
+    
     // NavBarItem(
     //   name: S.of(context).statistics, 
     //   path: AppRouter.statistics
