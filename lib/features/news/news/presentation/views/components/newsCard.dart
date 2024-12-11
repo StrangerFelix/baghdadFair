@@ -35,7 +35,7 @@ class NewsCard extends StatelessWidget {
                 ),
               )
             ),
-            Container(height: double.infinity,width: 1,color: Colors.grey.withOpacity(.5),),
+            // Container(height: double.infinity,width: 1,color: Colors.grey.withOpacity(.5),),
             Expanded(
               flex: 2,
               child: Column(

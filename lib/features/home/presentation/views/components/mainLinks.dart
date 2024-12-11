@@ -1,6 +1,7 @@
 import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
+import 'package:baghdad_fair/core/utilities/urlLauncher.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -64,29 +65,38 @@ class MainLinks extends StatelessWidget {
                   )
                 ],
               ),
-              const Column(
+              Column(
                 
                 children: [
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.only(start: 20,end: 15),
-                        child: Image(
-                          image: AssetImage(AppAssets.x),
-                          height: 30,
+                        padding: const EdgeInsetsDirectional.only(start: 20,end: 15),
+                        child: GestureDetector(
+                          onTap: () => launchURL(xsite),
+                          child: const Image(
+                            image: AssetImage(AppAssets.x),
+                            height: 30,
+                          ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 15),
-                        child: Image(
-                          image: AssetImage(AppAssets.facebook),
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: GestureDetector(
+                          onTap: () => launchURL(facebooksite),
+                          child: const Image(
+                            image: AssetImage(AppAssets.facebook),
+                          ),
                         ),
                       ),Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 15),
-                        child: Image(
-                          image: AssetImage(AppAssets.google),
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: GestureDetector(
+                          onTap: () => launchURL(website),
+                          child: const Image(
+                            image: AssetImage(AppAssets.google),
+                          ),
                         ),
                       )
                     ],

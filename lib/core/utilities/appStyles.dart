@@ -66,6 +66,7 @@ class AppStyles {
   bool hasBoxShadows = true,
   bool withBackground = true,
   double borderRadius = 20,
+  Color color = gradiant1,
   AlignmentDirectional alignment = AlignmentDirectional.center,
   }) {
     return BoxDecoration(
@@ -82,7 +83,7 @@ class AppStyles {
       ) : hasBorRadius ? BorderRadius.circular(borderRadius) : BorderRadius.circular(0),
       boxShadow: hasBoxShadows ? [
         BoxShadow(
-          color: Colors.black.withOpacity(0.1),
+          color: color.withOpacity(0.15),
           spreadRadius: 2,
           blurRadius: 4,
           offset: const Offset(0, 0),
@@ -93,14 +94,13 @@ class AppStyles {
   static BoxDecoration filterBoxDecoration = BoxDecoration(
     color: Colors.white,
     borderRadius: const BorderRadius.all(Radius.circular(5)),
-    border: Border.all(width: 1,color: primaryTextColor)
+    border: Border.all(width: 1,color: gradiant2)
   );
   static const TextStyle filterTitle = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.bold,
-    color: primaryTextColor
+    color: gradiant2
   );
-  static const Color skyBlueColor = Color(0xFF90CDFB);
   static Widget Function(BuildContext, Widget?)? showTimePickerThemeBuilder = (context, child) {
     return Theme(
       data: Theme.of(context).copyWith(

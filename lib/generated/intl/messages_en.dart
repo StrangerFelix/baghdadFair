@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "about_us": MessageLookupByLibrary.simpleMessage("About us"),
         "activity": MessageLookupByLibrary.simpleMessage("Activity"),
         "address": MessageLookupByLibrary.simpleMessage("Address"),
+        "address_info": MessageLookupByLibrary.simpleMessage(
+            "Baghdad Al Mansour - Baghdad International Fair - Hall Building (VIP)"),
         "address_of_complaint": MessageLookupByLibrary.simpleMessage(
             "Address of complaint for inquiries"),
         "ads": MessageLookupByLibrary.simpleMessage("Ads"),
@@ -99,6 +101,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Paricipating countries"),
         "participation_instructions":
             MessageLookupByLibrary.simpleMessage("Participation instructions"),
+        "phone_info": MessageLookupByLibrary.simpleMessage(
+            "+9647901800183 Sunday to Thursday"),
         "private": MessageLookupByLibrary.simpleMessage("Private"),
         "producing": MessageLookupByLibrary.simpleMessage("Producing"),
         "public": MessageLookupByLibrary.simpleMessage("Public"),

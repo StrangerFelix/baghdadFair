@@ -13,6 +13,7 @@ class FairsBloc extends Bloc<FairsEvents,FairsStates> {
         } else {
           emit(FairsLoading());
         }
+        print ('fairs page: ${event.page}');
         var data = await _fairsRepository.getFairs(
           filter: event.filter,
           page: event.page,

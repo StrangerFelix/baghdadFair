@@ -62,9 +62,9 @@ class _MainHomeBodyState extends State<MainHomeBody> {
             ),
             const ParticipationInstructionsButton(),
             const MainMaps(),
-            const MainContactUs(
-              addressInfo: 'بغداد المنصور - معرض بغداد الدولي - مبنى قاعة (VIP)',
-              phoneInfo: '+9647901800183 الاحد الى الخميس',
+            MainContactUs(
+              addressInfo: S.of(context).address_info,
+              phoneInfo: S.of(context).phone_info,
             ),
             const MainLinks()
           ],

@@ -23,8 +23,75 @@ class FairsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: AppStyles.primaryBoxDeocration(borderRadius: 10),
-      // height: 240,
       child: IntrinsicHeight(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
+            children: [
+              Expanded(
+                flex: 4,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(16)),
+                    child: CustomCachedImage(image)
+                  )
+                )
+              ),
+              const SizedBox(width: 10,),
+              Expanded(
+                flex: 5,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  child: Column(
+                    children: [
+                      Text(
+                        '$title' ?? "",
+                        style: AppStyles.bodySmall,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 4,
+                      ),
+                      const SizedBox(height: 20,),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.power_settings_new,
+                            color: gradiant2.withOpacity(.75),
+                          ),
+                          const SizedBox(width: 5,),
+                          Text(
+                            fairCondition ?? "",
+                            style: AppStyles.autherSmall.copyWith(color: gradiant2.withOpacity(.75)),
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 5,),
+                      Row(
+                        children: [
+                          Image(
+                            image: AssetImage(AppAssets.calendar)
+                          ),
+                          const SizedBox(width: 5,),
+                          Text(
+                            date ?? "",
+                            style: AppStyles.autherSmall.copyWith(color: gradiant2.withOpacity(.75)),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              ),
+            ],
+          ),
+        ),
+      ),
+      
+    );
+  }
+}
+/*
+child: IntrinsicHeight(
         child: Column(
           children: [
             Expanded(
@@ -63,7 +130,7 @@ class FairsItem extends StatelessWidget {
                                 children: [
                                   const SizedBox(width: 4,),
                                   const Image(
-                                    image: AssetImage(AppAssets.address),
+                                    image: AssetImage(AppAssets.location),
                                     width: 20,
                                   ),
                                   const SizedBox(width: 5,),
@@ -172,6 +239,4 @@ class FairsItem extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
+ */

@@ -26,7 +26,7 @@ class ParticipationInstructionsButton extends StatelessWidget {
             const SizedBox(width: 10,),
             Text(
               S.of(context).participation_instructions,
-              style: AppStyles.title18,
+              style: AppStyles.bodySmall,
             ),
           ],
         ),

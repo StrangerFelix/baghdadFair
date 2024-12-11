@@ -24,15 +24,15 @@ class AboutUsContext extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: gradiant2.withOpacity(.4),
                   borderRadius: const BorderRadiusDirectional.only(
-                    topStart: Radius.circular(16),
-                    bottomStart: Radius.circular(20),
+                    topStart: Radius.circular(17),
+                    bottomStart: Radius.circular(17),
                   ),
                 ),
                 
               ),
             ),
             Expanded(
-              flex: 15,
+              flex: 14,
               child: Padding(
                 padding: const EdgeInsetsDirectional.only(
                   top: 25,

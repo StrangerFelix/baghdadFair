@@ -9,12 +9,14 @@ class DrawerModel {
   final String title;
   final String icon;
   final void Function()? onTap;
-  DrawerModel({required this.title,required this.icon, this.onTap});
+  final int pageNumber;
+  DrawerModel({required this.pageNumber,required this.title,required this.icon, this.onTap});
 }
 List<DrawerModel> drawerButtons (BuildContext context) {
   return [
     DrawerModel(
       title: S.of(context).home,
+      pageNumber: 5,
       icon: AppAssets.home,
       onTap: () {
         currentPageIndex = 5;
@@ -25,6 +27,7 @@ List<DrawerModel> drawerButtons (BuildContext context) {
     DrawerModel(
       title: S.of(context).title,
       icon: AppAssets.bflogo,
+      pageNumber: 1,
       onTap: () {
         
         currentPageIndex = lastBfPageIndex;
@@ -34,6 +37,7 @@ List<DrawerModel> drawerButtons (BuildContext context) {
     ),
     DrawerModel(
       title: S.of(context).news,
+      pageNumber: 6,
       icon: AppAssets.news,
       onTap: () {
         currentPageIndex = 6;
@@ -43,6 +47,7 @@ List<DrawerModel> drawerButtons (BuildContext context) {
     ),
     DrawerModel(
       title: S.of(context).vid_library,
+      pageNumber: 7,
       icon: AppAssets.videos,
       onTap: () {
         currentPageIndex = 7;
@@ -52,6 +57,7 @@ List<DrawerModel> drawerButtons (BuildContext context) {
     ),
     DrawerModel(
       title: S.of(context).ads,
+      pageNumber: 8,
       icon: AppAssets.ads,
       onTap: () {
         currentPageIndex = 8;
@@ -61,6 +67,7 @@ List<DrawerModel> drawerButtons (BuildContext context) {
     ),
     DrawerModel(
       title: S.of(context).complaints,
+      pageNumber: 9,
       icon: AppAssets.complaints,
       // onTap: () => context.go(AppRouter.ads),
     ),

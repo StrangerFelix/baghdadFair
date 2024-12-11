@@ -37,7 +37,7 @@ class _FairsSearchAndFilteringState extends State<FairsSearchAndFiltering> {
         } : null,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 150),
-          height: isExpanded ? 180 : 37,
+          height: isExpanded ? 145 : 37,
           decoration: AppStyles.filterBoxDecoration,
           child: SingleChildScrollView(
             child: Column(
@@ -68,7 +68,7 @@ class _FairsSearchAndFilteringState extends State<FairsSearchAndFiltering> {
                           angle: isExpanded ? pi : 0,
                           child: const Icon(
                             Icons.keyboard_arrow_down,
-                            color: primaryTextColor,
+                            color: gradiant2,
                             size: 25,
                           )
                         )
@@ -78,36 +78,11 @@ class _FairsSearchAndFilteringState extends State<FairsSearchAndFiltering> {
                 ),
                 isExpanded 
                 ?  SizedBox(
-                  height: 140,
+                  // height: 140,
                   child: Column(
                     children: [
                       Row(
                         children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 15),
-                              child: Column(
-                                children: [
-                                  CustomTextField(
-                                    hintText: S.of(context).search,
-                                    height: 25,
-                                    suffix: const Icon(
-                                      Icons.search,color: activeColor,
-                                      size: 20,
-                                    ),
-                                  ),
-                                  CustomTextField(
-                                    hintText: S.of(context).specialization_fair,
-                                    height: 25,
-                                  ),
-                                  CustomTextField(
-                                    hintText: S.of(context).organizer,
-                                    height: 25,
-                                  ),
-                                ],
-                              ),
-                            )
-                          ),
                           Expanded(
                             child: Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -119,12 +94,21 @@ class _FairsSearchAndFilteringState extends State<FairsSearchAndFiltering> {
                                   ),
                                   const Padding(
                                     padding: EdgeInsets.symmetric(vertical: 5),
-                                    child: FairsConditionDropDownButton(),
-                                  ),
-                                  const Padding(
-                                    padding: EdgeInsets.symmetric(vertical: 5),
                                     child: FairsLocationsDropdownButton(),
                                   ),
+                                ],
+                              ),
+                            )
+                          ),
+                          const Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 15),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  FairsConditionDropDownButton(),
+                                  SizedBox(height: 35,)
                                 ],
                               ),
                             )

@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
+import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/manager/filters/fairsFiltersBloc.dart';
 import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/manager/filters/fairsFiltersEvents.dart';
 import 'package:baghdad_fair/features/baghdadFair/fairs/presentation/manager/filters/fairsFiltersStates.dart';
@@ -34,7 +35,7 @@ class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownBut
           end: Intl.getCurrentLocale() == 'ar' ? offset.dx : null,
           start: Intl.getCurrentLocale() == 'en' ? offset.dx : null,
           // top: offset.dy / 3.2,
-          top: 205,
+          top: 169,
           width: size.width,
           child: buildOverlay(context)),
     );
@@ -46,7 +47,7 @@ class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownBut
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 5),
         decoration: AppStyles.filterBoxDecoration.copyWith(
-          border: Border.all(width: 1,color: AppStyles.skyBlueColor)
+          border: Border.all(width: 1,color: gradiant2)
         ),
         child: Column(
             children: List.generate(items.length, (index) {
@@ -70,7 +71,7 @@ class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownBut
                       style: const TextStyle(
                           height: 1.3,
                           fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 0, 45, 85)),
+                          color: gradiant2),
                     ),
                   ),
                   index == items.length - 1
@@ -79,7 +80,7 @@ class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownBut
                           color: Colors.white,
                         )
                       : const Divider(
-                          color: AppStyles.skyBlueColor,
+                          color: gradiant2,
                         )
                 ],
               ),
@@ -113,7 +114,7 @@ class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownBut
             decoration: AppStyles.filterBoxDecoration.copyWith(
               border: Border.all(
                 width: 1,
-                color: AppStyles.skyBlueColor,
+                color: gradiant2,
               ),
             ),
             child: Padding(
@@ -128,7 +129,7 @@ class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownBut
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
-                      color: Color.fromARGB(255, 0, 45, 85)
+                      color: gradiant2
                     ),
                   ),
                   const Spacer(),
@@ -137,7 +138,7 @@ class _FairsLocationsDropdownButtonState extends State<FairsLocationsDropdownBut
                     child: const Icon(
                       Icons.arrow_drop_down_sharp,
                       
-                      color: Color.fromARGB(255, 0, 45, 85),
+                      color: gradiant2,
                     )
                     )
                 ],

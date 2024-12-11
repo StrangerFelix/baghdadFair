@@ -11,7 +11,7 @@ class FairsSectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return  SectionTitle(
       title: S.of(context).fairs, 
-      button: const FairDropdownSectionButton()
+      // button: const FairDropdownSectionButton()
     );
   }
 }

@@ -21,7 +21,7 @@ void openDrawer(BuildContext context,double topPadding) {
               SizedBox(
                 height:  50,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 35, right: 35,bottom: 10),
+                  padding: const EdgeInsetsDirectional.only(end: 15, start: 35,bottom: 10),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -69,6 +69,7 @@ void openDrawer(BuildContext context,double topPadding) {
                       );
                     }
                     return CustomDrawerButton(
+                      pageNumber: drawerButtons(context)[index].pageNumber,
                       title: drawerButtons(context)[index].title,
                       icon: drawerButtons(context)[index].icon,
                       onTap: drawerButtons(context)[index].onTap,

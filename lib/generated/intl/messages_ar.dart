@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "about_us": MessageLookupByLibrary.simpleMessage("من نحن"),
         "activity": MessageLookupByLibrary.simpleMessage("نوع النشاط"),
         "address": MessageLookupByLibrary.simpleMessage("الموقع"),
+        "address_info": MessageLookupByLibrary.simpleMessage(
+            "بغداد المنصور - معرض بغداد الدولي - مبنى قاعة (VIP)"),
         "address_of_complaint":
             MessageLookupByLibrary.simpleMessage("عنوان الشكوى للاستفسار"),
         "ads": MessageLookupByLibrary.simpleMessage("الاعلانات"),
@@ -96,6 +98,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "par_countries": MessageLookupByLibrary.simpleMessage("الدول المشاركة"),
         "participation_instructions":
             MessageLookupByLibrary.simpleMessage("تعليمات المشاركة"),
+        "phone_info": MessageLookupByLibrary.simpleMessage(
+            "+9647901800183 الاحد الى الخميس"),
         "private": MessageLookupByLibrary.simpleMessage("خاص"),
         "producing": MessageLookupByLibrary.simpleMessage("انتاج"),
         "public": MessageLookupByLibrary.simpleMessage("عام"),

@@ -90,6 +90,26 @@ class S {
     );
   }
 
+  /// `Baghdad Al Mansour - Baghdad International Fair - Hall Building (VIP)`
+  String get address_info {
+    return Intl.message(
+      'Baghdad Al Mansour - Baghdad International Fair - Hall Building (VIP)',
+      name: 'address_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `+9647901800183 Sunday to Thursday`
+  String get phone_info {
+    return Intl.message(
+      '+9647901800183 Sunday to Thursday',
+      name: 'phone_info',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Language`
   String get changeLanguageButton {
     return Intl.message(

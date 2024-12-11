@@ -10,3 +10,7 @@ const navigationDuration = Duration(milliseconds: 350);
 const activeColor = Color(0xFF828282);
 const gradiant1 = Color(0xffF8AB8B);
 const gradiant2 = Color(0xffA05B4D);
+
+const website = 'https://expo.gov.iq/?lang=ar';
+const xsite = 'https://x.com/baghdad_fair?lang=ar';
+const facebooksite = 'https://www.facebook.com/iraqifairs/?locale=ar_AR';

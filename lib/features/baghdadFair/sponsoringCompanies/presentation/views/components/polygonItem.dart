@@ -1,3 +1,4 @@
+import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/baghdadFair/sponsoringCompanies/presentation/views/components/polygonClipper.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +16,8 @@ class PolygonItem extends StatelessWidget {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color(0xFF016AC5),
-                Color(0xFFB1489E)
+                gradiant1,
+                gradiant2
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter

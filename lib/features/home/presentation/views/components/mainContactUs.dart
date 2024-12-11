@@ -38,6 +38,10 @@ class _MainContactUsState extends State<MainContactUs> {
       child: BlocConsumer<ContactUsBloc, ContactUsStates>(
         listener: (context, state) {
           if (state is SendEmailSuccess) {
+            nameController.clear();
+            emailController.clear();
+            subjectController.clear();
+            messageController.clear();
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(state.message),
@@ -54,6 +58,152 @@ class _MainContactUsState extends State<MainContactUs> {
         },
         builder: (context, state) {
           return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 40),
+            child: Stack(
+              children: [
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width < 600 
+                        ? MediaQuery.of(context).size.width * .8 : 480,
+                      
+                      decoration: AppStyles.primaryBoxDeocration(borderRadius: 2),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          top: 30,
+                          left: 15,
+                          right: 15,
+                          bottom: 10
+                        ),
+                        child: Column(
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Expanded(
+                                  child: ContactUsInfo(
+                                    imageLink: AppAssets.location,
+                                    title: S.of(context).our_address,
+                                    description: widget.addressInfo ?? "",
+                                  ),
+                                ),
+                                Expanded(
+                                  child: ContactUsInfo(
+                                    imageLink: AppAssets.phone,
+                                    title: S.of(context).call_us,
+                                    description: widget.phoneInfo ?? "",
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 10,),
+                            Form(
+                              key: formKey,
+                              child: Column(
+                                children: [
+                                  CustomTextField(
+                                    hintText: S.of(context).name,
+                                    controller: nameController,
+                                    validator: (val) {
+                                      if (val == null || val.isEmpty) {
+                                        return 'املئ الحقل';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                  CustomTextField(
+                                      hintText: S.of(context).email,
+                                      controller: emailController,
+                                      validator: (val) {
+                                        if (val == null || val.isEmpty) {
+                                          return 'املئ الحقل';
+                                        }
+                                        return null;
+                                      }),
+                                  CustomTextField(
+                                      hintText: S.of(context).subject,
+                                      controller: subjectController,
+                                      validator: (val) {
+                                        if (val == null || val.isEmpty) {
+                                          return 'املئ الحقل';
+                                        }
+                                        return null;
+                                      }),
+                                  CustomTextField(
+                                      hintText: S.of(context).message,
+                                      controller: messageController,
+                                      minLines: 1,
+                                      validator: (val) {
+                                        if (val == null || val.isEmpty) {
+                                          return 'املئ الحقل';
+                                        }
+                                        return null;
+                                      }),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Align(
+                                    alignment: AlignmentDirectional.centerEnd,
+                                    child: state is! SendEmailLoading
+                                    ? CustomButton(
+                                        vpadding: 5,
+                                        onPressed: () {
+                                          if (formKey.currentState!.validate()) {
+                                            context.read<ContactUsBloc>().add(
+                                              SendEmailEvent(
+                                                  name: nameController.text,
+                                                  email:
+                                                      emailController.text,
+                                                  subject: subjectController
+                                                      .text,
+                                                  message: messageController
+                                                      .text));
+                                          }
+                                          
+                                        },
+                                        text: S.of(context).send,
+                                      )
+                                    : const CustomLoadingIndicator(),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Container(
+                    width: MediaQuery.of(context).size.width < 600 
+                        ? MediaQuery.of(context).size.width * .6 : 360,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        color: gradiant2,
+                        borderRadius: BorderRadius.circular(2)),
+                    child: Center(
+                      child: Text(
+                        S.of(context).contact_us,
+                        style: AppStyles.bodySmall.copyWith(color: Colors.white,fontSize: 18),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+/*
+Padding(
             padding: const EdgeInsets.symmetric(vertical: 40),
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxHeight: 420),
@@ -146,30 +296,7 @@ class _MainContactUsState extends State<MainContactUs> {
                                   ),
                                   Align(
                                     alignment: AlignmentDirectional.centerEnd,
-                                    child: state is! SendEmailLoading
-                                        ? CustomButton(
-                                            vpadding: 5,
-                                            onPressed: () {
-                                              if (formKey.currentState!.validate()) {
-                                                context.read<ContactUsBloc>().add(
-                                                  SendEmailEvent(
-                                                      name: nameController.text,
-                                                      email:
-                                                          emailController.text,
-                                                      subject: subjectController
-                                                          .text,
-                                                      message: messageController
-                                                          .text));
-                                                          nameController.clear();
-                                                          emailController.clear();
-                                                          subjectController.clear();
-                                                          messageController.clear();
-                                              }
-                                              
-                                            },
-                                            text: S.of(context).send,
-                                          )
-                                        : const CustomLoadingIndicator(),
+                                    child: 
                                   )
                                 ],
                               ),
@@ -179,28 +306,12 @@ class _MainContactUsState extends State<MainContactUs> {
                       ),
                     ),
                   ),
-                  Positioned(
-                    top: 0,
-                    child: Container(
-                      width: 220,
-                      height: 40,
-                      decoration: BoxDecoration(
-                          color: gradiant2,
-                          borderRadius: BorderRadius.circular(2)),
-                      child: Center(
-                        child: Text(
-                          S.of(context).contact_us,
-                          style: AppStyles.bodySmall.copyWith(color: Colors.white,fontSize: 18),
-                        ),
-                      ),
-                    ),
-                  ),
+                  
                 ],
               ),
             ),
           );
-        },
-      ),
-    );
-  }
-}
+ */
+/*
+
+*/
