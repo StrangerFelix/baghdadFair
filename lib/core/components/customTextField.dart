@@ -5,7 +5,7 @@ class CustomTextField extends StatelessWidget {
   const CustomTextField({this.fillColor,this.minLines,this.validator,required this.hintText,this.height = 35,this.suffix,this.controller,super.key});
   final String hintText;
   final Widget? suffix;
-  final double height;
+  final double? height;
   final String? Function(String?)? validator;
   final int? minLines;
   final Color? fillColor;

@@ -1,5 +1,6 @@
 import 'package:baghdad_fair/core/utilities/appRouter.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
+import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/news/news/data/models/newsModel.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -63,7 +64,10 @@ class NewsCard extends StatelessWidget {
                       ),
                       child: Text(
                         news!.description ?? "",
-                        style: AppStyles.autherSmall,
+                        style: AppStyles.autherSmall.copyWith(
+                          color: gradiant2.withOpacity(.65),
+                          
+                        ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),

@@ -26,7 +26,7 @@ class FairsItem extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                flex: 4,
+                flex: 3,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15),
                   child: ClipRRect(

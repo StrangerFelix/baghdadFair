@@ -33,7 +33,7 @@ class VideoCard extends StatelessWidget {
               flex: 1,
               child: Container(
                 decoration: BoxDecoration(
-                  color: const Color(0xFF3EA9F9).withOpacity(.6),
+                  color: gradiant2.withOpacity(.4),
                   borderRadius: const BorderRadiusDirectional.only(
                     topStart: Radius.circular(20),
                     bottomStart: Radius.circular(20),
@@ -43,7 +43,7 @@ class VideoCard extends StatelessWidget {
               ),
             ),
              Expanded(
-              flex: 30,
+              flex: 31,
               child: Padding(
                 padding: const EdgeInsetsDirectional.symmetric(
                   horizontal: 10,
@@ -61,72 +61,61 @@ class VideoCard extends StatelessWidget {
                     const SizedBox(width: 10,),
                     Expanded(
                       flex: 7,
-                      child: Stack(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                          const SizedBox(height: 10,),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(start: 5),
+                            child: Text(
+                              title ?? "",
+                              maxLines: 4,
+                              overflow: TextOverflow.ellipsis,
+                              style: AppStyles.bodySmall.copyWith(
+                                fontWeight: FontWeight.w300
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 15,),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(start: 5),
+                            child: Text(
+                              category ?? "",
+                              style: AppStyles.autherSmall.copyWith(
+                                color: gradiant2,
+                                fontWeight: FontWeight.w300
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                            ),
+                          ),
+                          const SizedBox(height: 15,),
+                          Row(
                             children: [
-                              const SizedBox(height: 10,),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.only(start: 5),
-                                child: Text(
-                                  title ?? "",
-                                  maxLines: 4,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: AppStyles.bodySmall,
+                              const Image(
+                                image: AssetImage(AppAssets.calendar),
+                                width: 30,
+                              ),
+                              const SizedBox(width: 5,),
+                              Text(
+                                date ?? "",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: AppStyles.autherSmall.copyWith(
+                                  color: gradiant2,
+                                  fontWeight: FontWeight.w300
                                 ),
                               ),
-                              const SizedBox(height: 5,),
-                              Row(
-                                // crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Image(
-                                    image: AssetImage(AppAssets.user),
-                                    height: 30,
-                                  ),
-                                  const SizedBox(width: 5,),
-                                  Expanded(
-                                    child: Text(
-                                      auther ?? "",
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: AppStyles.autherSmall,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  const Image(
-                                    image: AssetImage(AppAssets.calendar),
-                                    width: 30,
-                                  ),
-                                  const SizedBox(width: 5,),
-                                  Text(
-                                    date ?? "",
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: AppStyles.autherSmall,
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 5,),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.only(start: 5),
-                                child: Text(
-                                  category ?? "",
-                                  style: AppStyles.autherSmall,
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                ),
-                              ),
-                              const SizedBox(height: 30,),
                             ],
                           ),
-                          Align(
-                            alignment: AlignmentDirectional.bottomEnd,
-                            child: YouTubeButton(youtubeUrl: link ?? "https://youtube.com")
+                          const SizedBox(height: 5,),
+                          // const SizedBox(height: 30,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              YouTubeButton(youtubeUrl: link ?? "https://youtube.com"),
+                            ],
                           )
                         ],
                       )

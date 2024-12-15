@@ -12,59 +12,52 @@ class AdsItem extends StatelessWidget {
   final String? time;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: AppStyles.primaryBoxDeocration(hasBorRadius: false),
-      height: 350,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: horizontalPadding
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            flex: 6,
-            child: Padding(
-              padding: const EdgeInsets.all(horizontalPadding),
-              child: Center(child: CustomCachedImage(image,fit: BoxFit.contain,)),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: horizontalPadding,
+            ),
+            child: Center(
+              child: CustomCachedImage(image,fit: BoxFit.contain,)
             ),
           ),
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
-              child: Row(
-                children: [
-                  const Image(
-                    image: AssetImage(AppAssets.address),
-                    width: 20,
-                  ),
-                  const SizedBox(width: 5,),
-                  Text(
-                    location ?? "",
-                    style: AppStyles.autherSmall,
-                  ),
-                  const SizedBox(width: 10,),
-                  const Image(
-                    image: AssetImage(AppAssets.calendar),
-                    width: 28,
-                  ),
-                  const SizedBox(width: 5,),
-                  Text(
-                    date ?? "",
-                    style: AppStyles.autherSmall,
-                  ),
-                  const SizedBox(width: 10,),
-                  const Image(
-                    image: AssetImage(AppAssets.time),
-                    width: 28,
-                  ),
-                  const SizedBox(width: 5,),
-                  Directionality(
-                    textDirection: TextDirection.ltr,
-                    child: Text(
-                      time ?? "",
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: horizontalPadding,
+            ),
+            child: Column(
+              children: [
+                const SizedBox(height: 15,),
+                Row(
+                  children: [
+                    const Image(
+                      image: AssetImage(AppAssets.address),
+                      width: 20,
+                    ),
+                    const SizedBox(width: 5,),
+                    Text(
+                      location ?? "",
                       style: AppStyles.autherSmall,
                     ),
-                  ),
-                ],
-              ),
+                    const Spacer(),
+                    const Image(
+                      image: AssetImage(AppAssets.calendar),
+                      width: 28,
+                    ),
+                    const SizedBox(width: 5,),
+                    Text(
+                      date ?? "",
+                      style: AppStyles.autherSmall,
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ],

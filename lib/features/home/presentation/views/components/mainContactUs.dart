@@ -106,6 +106,7 @@ class _MainContactUsState extends State<MainContactUs> {
                                   CustomTextField(
                                     hintText: S.of(context).name,
                                     controller: nameController,
+                                    height: null,
                                     validator: (val) {
                                       if (val == null || val.isEmpty) {
                                         return 'املئ الحقل';
@@ -116,6 +117,7 @@ class _MainContactUsState extends State<MainContactUs> {
                                   CustomTextField(
                                       hintText: S.of(context).email,
                                       controller: emailController,
+                                      height: null,
                                       validator: (val) {
                                         if (val == null || val.isEmpty) {
                                           return 'املئ الحقل';
@@ -125,6 +127,7 @@ class _MainContactUsState extends State<MainContactUs> {
                                   CustomTextField(
                                       hintText: S.of(context).subject,
                                       controller: subjectController,
+                                      height: null,
                                       validator: (val) {
                                         if (val == null || val.isEmpty) {
                                           return 'املئ الحقل';
