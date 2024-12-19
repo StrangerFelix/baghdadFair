@@ -1,5 +1,5 @@
 import 'package:baghdad_fair/core/errors/failures.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/data/models/fairsModel.dart';
+import 'package:baghdad_fair/features/fairs/fairs/data/models/fairsModel.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class FairsRepository {

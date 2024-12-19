@@ -4,7 +4,7 @@ import 'package:baghdad_fair/features/baghdadFair/baghdadFair/presentation/views
 import 'package:baghdad_fair/features/complaints/presentation/views/complaintsView.dart';
 import 'package:baghdad_fair/features/main/presentation/views/homeView.dart';
 import 'package:baghdad_fair/features/ads/presentation/views/adsBody.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/views/fairsBody.dart';
+import 'package:baghdad_fair/features/fairs/fairs/presentation/views/fairsBody.dart';
 import 'package:baghdad_fair/features/home/presentation/views/mainHomeBody.dart';
 import 'package:baghdad_fair/features/news/news/data/models/newsModel.dart';
 import 'package:baghdad_fair/features/news/news/presentation/views/newsBody.dart';

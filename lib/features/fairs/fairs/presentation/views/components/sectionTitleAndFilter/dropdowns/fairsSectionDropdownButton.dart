@@ -2,9 +2,9 @@ import 'dart:math';
 import 'package:baghdad_fair/core/components/sectionTitleButton.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/manager/filters/fairsFiltersBloc.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/manager/filters/fairsFiltersEvents.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/manager/filters/fairsFiltersStates.dart';
+import 'package:baghdad_fair/features/fairs/fairs/presentation/manager/filters/fairsFiltersBloc.dart';
+import 'package:baghdad_fair/features/fairs/fairs/presentation/manager/filters/fairsFiltersEvents.dart';
+import 'package:baghdad_fair/features/fairs/fairs/presentation/manager/filters/fairsFiltersStates.dart';
 
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';

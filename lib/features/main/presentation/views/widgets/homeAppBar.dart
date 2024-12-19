@@ -27,10 +27,10 @@ class HomeAppBar extends StatelessWidget {
         titlePadding: const EdgeInsets.only(left: 35, right: 35,bottom: 10),
         title: Row(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(bottom: 2.5),
-              child: Image(
-                image: AssetImage(AppAssets.logo),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 2.5),
+              child: SvgPicture.asset(
+                AppAssets.bflogo,
                 width: 40,
               ),
             ),

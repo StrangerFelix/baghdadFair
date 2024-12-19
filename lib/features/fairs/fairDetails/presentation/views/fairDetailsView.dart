@@ -1,4 +1,4 @@
-import 'package:baghdad_fair/features/baghdadFair/fairs/fairDetails/presentation/views/widgets/fairDetailsViewBody.dart';
+import 'package:baghdad_fair/features/fairs/fairDetails/presentation/views/widgets/fairDetailsViewBody.dart';
 import 'package:flutter/material.dart';
 
 class FairDetailsView extends StatelessWidget {

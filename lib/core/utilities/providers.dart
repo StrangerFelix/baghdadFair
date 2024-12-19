@@ -6,9 +6,9 @@ import 'package:baghdad_fair/features/baghdadFair/aboutUs/presentation/manager/a
 import 'package:baghdad_fair/features/ads/data/repository/adsRepoImpl.dart';
 import 'package:baghdad_fair/features/ads/presentation/manager/ads/adsBloc.dart';
 import 'package:baghdad_fair/features/ads/presentation/manager/ads/adsEvents.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/data/repository/fairsRepoImpl.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/manager/fairs/fairsBloc.dart';
-import 'package:baghdad_fair/features/baghdadFair/fairs/fairs/presentation/manager/fairs/fairsEvents.dart';
+import 'package:baghdad_fair/features/fairs/fairs/data/repository/fairsRepoImpl.dart';
+import 'package:baghdad_fair/features/fairs/fairs/presentation/manager/fairs/fairsBloc.dart';
+import 'package:baghdad_fair/features/fairs/fairs/presentation/manager/fairs/fairsEvents.dart';
 import 'package:baghdad_fair/features/home/data/repository/homeRepoImpl.dart';
 import 'package:baghdad_fair/features/home/presentation/manager/home/homeBloc.dart';
 import 'package:baghdad_fair/features/home/presentation/manager/home/homeEvents.dart';

@@ -24,13 +24,12 @@ class ComplaintsView extends StatelessWidget {
           centerTitle: false,
           title: Row(
             children: [
-              const Padding(
-                padding: EdgeInsets.only(
+              Padding(
+                padding: const EdgeInsets.only(
                   bottom: 2.5,
-                  
                 ),
-                child: Image(
-                  image: AssetImage(AppAssets.logo),
+                child: SvgPicture.asset(
+                  AppAssets.bflogo,
                   width: 40,
                 ),
               ),

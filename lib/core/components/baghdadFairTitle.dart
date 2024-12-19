@@ -3,6 +3,7 @@ import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class BaghdadFairTitle extends StatelessWidget {
   const BaghdadFairTitle({super.key});
@@ -21,8 +22,8 @@ class BaghdadFairTitle extends StatelessWidget {
             S.of(context).title,
             style: AppStyles.bodySmall,
           ),
-          const Image(
-            image: AssetImage(AppAssets.logo),
+          SvgPicture.asset(
+            AppAssets.bflogo,
             height: 45,
           )
         ],

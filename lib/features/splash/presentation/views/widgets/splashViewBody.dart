@@ -4,6 +4,7 @@ import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -41,8 +42,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Image(
-                image: AssetImage(AppAssets.logo),
+                SvgPicture.asset(
+                AppAssets.bflogo,
+                width: 50,
+                height: 50,
               ),
               const SizedBox(width: 10,),
               Text(
