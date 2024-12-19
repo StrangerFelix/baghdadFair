@@ -39,4 +39,5 @@ abstract class AppAssets {
   static const arabic = "assets/icons/arabic.svg";
   static const english = "assets/icons/english.svg";
   static const home = "assets/icons/home.svg";
+  static const fairs = "assets/icons/fairs.svg";
 }

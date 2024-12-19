@@ -32,9 +32,10 @@ class NavBarItem {
     event();
   }
 }
-int currentPageIndex = 5;
+int currentPageIndex = bfNavItems; // bf_array = 4 , [0,1,2,3] and 4 is the static number of array and means arrray + 1 and leads to homescreen
 int lastBfPageIndex = 0;
 
+const bfNavItems = 4;
 List<NavBarItem> navBarItems (BuildContext context) {
   return [
     NavBarItem(
@@ -46,11 +47,6 @@ List<NavBarItem> navBarItems (BuildContext context) {
       name: S.of(context).par_countries, 
       path: AppRouter.participatingCountries,
       event: () => context.read<CountriesBloc>().add(GetCountriesEvent(filter: countriesFilter))
-    ),
-    NavBarItem(
-      name: S.of(context).fairs, 
-      path: AppRouter.fairs,
-      event: () => context.read<FairsBloc>().add(GetFairsEvent(filter: fairsFilter))
     ),
     NavBarItem(
       name: S.of(context).par_companies, 
@@ -76,6 +72,11 @@ List<NavBarItem> navBarItems (BuildContext context) {
       name: S.of(context).vid_library, 
       path: AppRouter.videosLibrary,
       event: () => context.read<VideosBloc>().add(GetVideosEvent(filter: videosFilter))
+    ),
+    NavBarItem(
+      name: S.of(context).fairs, 
+      path: AppRouter.fairs,
+      event: () => context.read<FairsBloc>().add(GetFairsEvent(filter: fairsFilter))
     ),
     NavBarItem(
       name: S.of(context).ads, 

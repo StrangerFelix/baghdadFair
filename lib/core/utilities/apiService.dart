@@ -15,6 +15,7 @@ class ApiService {
   Future<Map<String,dynamic>> get({
     required String endpoint,
   }) async {
+    // print('GET: $_baseUrl${Intl.getCurrentLocale()}/$endpoint');
     var response = await _dio.get('$_baseUrl${Intl.getCurrentLocale()}/$endpoint');
     return response.data;
   }

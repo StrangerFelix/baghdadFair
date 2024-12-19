@@ -23,6 +23,7 @@ class ParticipatingCountriesBody extends StatelessWidget {
           },
         ),
         const CountriesGrid(),
+        const SizedBox(height: 50,)
       ],
     );
   }

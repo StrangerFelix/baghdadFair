@@ -16,10 +16,10 @@ List<DrawerModel> drawerButtons (BuildContext context) {
   return [
     DrawerModel(
       title: S.of(context).home,
-      pageNumber: 5,
+      pageNumber: 4,
       icon: AppAssets.home,
       onTap: () {
-        currentPageIndex = 5;
+        currentPageIndex = 4;
         Navigator.of(context).pop();
         context.go(AppRouter.home);
       },
@@ -37,22 +37,32 @@ List<DrawerModel> drawerButtons (BuildContext context) {
     ),
     DrawerModel(
       title: S.of(context).news,
-      pageNumber: 6,
+      pageNumber: 5,
       icon: AppAssets.news,
       onTap: () {
-        currentPageIndex = 6;
+        currentPageIndex = 5;
         Navigator.of(context).pop();
         context.go(AppRouter.news);
       },
     ),
     DrawerModel(
       title: S.of(context).vid_library,
-      pageNumber: 7,
+      pageNumber: 6,
       icon: AppAssets.videos,
+      onTap: () {
+        currentPageIndex = 6;
+        Navigator.of(context).pop();
+        context.go(AppRouter.videosLibrary);
+      },
+    ),
+    DrawerModel(
+      title: S.of(context).fairs,
+      pageNumber: 7,
+      icon: AppAssets.fairs,
       onTap: () {
         currentPageIndex = 7;
         Navigator.of(context).pop();
-        context.go(AppRouter.videosLibrary);
+        context.go(AppRouter.fairs);
       },
     ),
     DrawerModel(

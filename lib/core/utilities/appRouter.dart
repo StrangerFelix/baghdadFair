@@ -20,7 +20,6 @@ import 'package:go_router/go_router.dart';
 List<String> bfRoutes = [
   AppRouter.aboutUs,
   AppRouter.participatingCountries,
-  AppRouter.fairs,
   AppRouter.participatingCompanies,
   AppRouter.sponsoringCompanies
 ];
@@ -99,14 +98,6 @@ abstract class AppRouter {
                   StatefulShellBranch(
                     routes: [
                       GoRoute(
-                        path: fairs,
-                        builder: (context, state) => const FairsBody(),
-                      ),
-                    ],
-                  ),
-                  StatefulShellBranch(
-                    routes: [
-                      GoRoute(
                         path: participatingCompanies,
                         builder: (context, state) => const ParticipatingCompaniesBody(),
                       ),
@@ -154,6 +145,7 @@ abstract class AppRouter {
           //     ),
           //   ],
           // ),
+          
           StatefulShellBranch(
             routes: [
               GoRoute(
@@ -167,6 +159,14 @@ abstract class AppRouter {
               GoRoute(
                 path: videosLibrary,
                 builder: (context, state) => const VideosLibraryBody(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: fairs,
+                builder: (context, state) => const FairsBody(),
               ),
             ],
           ),

@@ -16,7 +16,8 @@ class CustomDrawerButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        color: (currentPageIndex >= 0 && currentPageIndex < bfRoutes.length && pageNumber == 1) ? primaryBackgroundColor : currentPageIndex == pageNumber ? primaryBackgroundColor : Colors.transparent,
+        color: (
+          currentPageIndex >= 0 && currentPageIndex < bfRoutes.length && pageNumber == 1) ? primaryBackgroundColor : currentPageIndex == pageNumber ? primaryBackgroundColor : Colors.transparent,
         height: 65,
         width: double.infinity,
         child: Padding(

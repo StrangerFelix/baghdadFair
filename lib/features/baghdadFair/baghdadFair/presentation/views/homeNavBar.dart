@@ -14,7 +14,6 @@ class HomeNavBar extends StatefulWidget {
 
 
 class _HomeNavBarState extends State<HomeNavBar> {
-  int itemCount = 5;
   // int itemCount: navBarItems(context).length;
   void _setCurrentPage(int index) {
     setState(() {
@@ -28,7 +27,7 @@ class _HomeNavBarState extends State<HomeNavBar> {
       height: 35,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: itemCount,
+        itemCount: bfNavItems,
         // itemCount: navBarItems(context).length,
         itemBuilder: (context,index) {
           if (index == 0) {
@@ -66,7 +65,7 @@ class _HomeNavBarState extends State<HomeNavBar> {
               ),
             );
           }
-          if (index == itemCount - 1) { // if (index == navBarItems(context).length - 1)
+          if (index == bfNavItems - 1) { // if (index == navBarItems(context).length - 1)
             return Padding(
               padding: const EdgeInsetsDirectional.only(end: horizontalPadding),
               child: Container(

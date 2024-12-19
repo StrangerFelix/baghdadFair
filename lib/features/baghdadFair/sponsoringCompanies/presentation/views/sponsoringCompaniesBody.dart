@@ -19,7 +19,7 @@ class SponsoringCompaniesBody extends StatelessWidget {
         const DiamondPartnersGrid(),
         const GoldenPartnersGrid(),
         const SilverPartnersGrid(),
-        const SizedBox(height: 15,),
+        const SizedBox(height: 50,),
       ],
     );
   }

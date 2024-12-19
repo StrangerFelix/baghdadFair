@@ -35,7 +35,7 @@ bool adsHasMore = true;
 
 void loadMore (int index,BuildContext context) {
   switch (index) {
-    case 6: // News
+    case 5: // News
       if (!isNewsLoading && newsHasMore) {
         isNewsLoading = true;
         context.read<NewsBloc>().add(GetNewsEvent(
@@ -47,7 +47,7 @@ void loadMore (int index,BuildContext context) {
       newsPagination++;
       isNewsLoading = false;
       break;
-    case 7: // Videos
+    case 6: // Videos
       if (!isVideosLoading && videosHasMore) {
         isVideosLoading = true;
         context.read<VideosBloc>().add(GetVideosEvent(
@@ -59,9 +59,8 @@ void loadMore (int index,BuildContext context) {
       videosPagination++;
       isVideosLoading = false;
       break;
-    case 2: // Fairs
+    case 7: // Fairs
       if (!isFairsLoading && fairsHasMore) {
-        
         isFairsLoading = true;
         context.read<FairsBloc>().add(GetFairsEvent(
           page: fairsPagination + 1,
@@ -73,7 +72,7 @@ void loadMore (int index,BuildContext context) {
       fairsPagination++;
       isFairsLoading = false;
       break;
-    case 3: // Participating companies
+    case 2: // Participating companies
       if (!isParCompaniesLoading && parCompaniesHasMore) {
         isParCompaniesLoading = true;
         context.read<CompaniesBloc>().add(GetCompaniesEvent(

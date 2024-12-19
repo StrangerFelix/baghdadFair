@@ -5,6 +5,7 @@ import 'package:baghdad_fair/features/main/presentation/managers/language/langua
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 class LanguageButtons extends StatelessWidget {
   const LanguageButtons({super.key});
@@ -29,7 +30,9 @@ class LanguageButtons extends StatelessWidget {
               onTap: () {
                 HapticFeedback.lightImpact();
                 Navigator.of(context).pop();
-                BlocProvider.of<LanguageCubit>(context).changeLanguage('Arabic',context);
+                if(Intl.getCurrentLocale() != 'ar') {
+                  BlocProvider.of<LanguageCubit>(context).changeLanguage('Arabic',context);
+                }
               },
             ),
           ),
@@ -48,7 +51,9 @@ class LanguageButtons extends StatelessWidget {
               onTap: () {
                 HapticFeedback.lightImpact();
                 Navigator.of(context).pop();
-                BlocProvider.of<LanguageCubit>(context).changeLanguage('English',context);
+                if (Intl.getCurrentLocale() != 'en') {
+                  BlocProvider.of<LanguageCubit>(context).changeLanguage('English',context);
+                }
               },
             ),
           ),

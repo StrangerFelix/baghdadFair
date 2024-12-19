@@ -1,3 +1,4 @@
+import 'package:baghdad_fair/core/utilities/pagesFilters.dart';
 import 'package:baghdad_fair/core/utilities/serviceLocator.dart';
 import 'package:baghdad_fair/features/main/presentation/managers/language/languageCubit.dart';
 import 'package:baghdad_fair/features/baghdadFair/aboutUs/data/repository/aboutUsRepoImpl.dart';
@@ -35,11 +36,11 @@ List<SingleChildWidget> providers = [
   BlocProvider(create: (context) => LanguageCubit(),),
   BlocProvider(create: (context) => HomeBloc(getIt.get<HomeRepositoryImplementation>())..add(GetHomeDataEvent()),),
   BlocProvider(create: (context) => AboutUsBloc(getIt.get<AboutUsRepositoryImplementation>())..add(GetAboutUsEvent()),),
-  BlocProvider(create: (context) => NewsBloc(getIt.get<NewsRepositoryImplementation>())..add(GetNewsEvent()),),
-  BlocProvider(create: (context) => VideosBloc(getIt.get<VideosRepositoryImplementation>())..add(GetVideosEvent()),),
-  BlocProvider(create: (context) => FairsBloc(getIt.get<FairsRepositoryImplementation>())..add(GetFairsEvent()),),
-  BlocProvider(create: (context) => CountriesBloc(getIt.get<CountriesRepositoryImplementation>())..add(GetCountriesEvent()),),
-  BlocProvider(create: (context) => CompaniesBloc(getIt.get<CompaniesRepositoryImplementation>())..add(GetCompaniesEvent()),),
-  BlocProvider(create: (context) => AdsBloc(getIt.get<AdsRepositoryImplementation>())..add(GetAdsEvent()),),
+  BlocProvider(create: (context) => NewsBloc(getIt.get<NewsRepositoryImplementation>())..add(GetNewsEvent(filter: newsFilter)),),
+  BlocProvider(create: (context) => VideosBloc(getIt.get<VideosRepositoryImplementation>())..add(GetVideosEvent(filter: videosFilter)),),
+  BlocProvider(create: (context) => FairsBloc(getIt.get<FairsRepositoryImplementation>())..add(GetFairsEvent(filter: fairsFilter)),),
+  BlocProvider(create: (context) => CountriesBloc(getIt.get<CountriesRepositoryImplementation>())..add(GetCountriesEvent(filter: countriesFilter)),),
+  BlocProvider(create: (context) => CompaniesBloc(getIt.get<CompaniesRepositoryImplementation>())..add(GetCompaniesEvent(filter: companiesFilter)),),
+  BlocProvider(create: (context) => AdsBloc(getIt.get<AdsRepositoryImplementation>())..add(GetAdsEvent(filter: adsFilter)),),
   BlocProvider(create: (context) => SponsorsBloc(getIt.get<SponsoringRepositoryImplementation>())..add(GetSponsorsEvent()),),
 ];
