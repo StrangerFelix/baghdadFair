@@ -2,8 +2,9 @@ import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({this.fillColor,this.minLines,this.validator,required this.hintText,this.height = 35,this.suffix,this.controller,super.key});
+  const CustomTextField({this.keyboardType,this.fillColor,this.minLines,this.validator,required this.hintText,this.height = 35,this.suffix,this.controller,super.key});
   final String hintText;
+  final TextInputType? keyboardType; 
   final Widget? suffix;
   final double? height;
   final String? Function(String?)? validator;
@@ -16,6 +17,7 @@ class CustomTextField extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 5),
       height: minLines == null ? height : null,
       child: TextFormField(
+        keyboardType: keyboardType,
         minLines: minLines,
         maxLines: null,
         validator: validator,

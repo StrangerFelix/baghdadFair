@@ -28,6 +28,7 @@ class _ComplaintsViewBodyState extends State<ComplaintsViewBody> {
     return BlocConsumer<ContactUsBloc, ContactUsStates>(
       listener: (context, state) {
           if (state is SendEmailSuccess) {
+            FocusScope.of(context).unfocus();
             nameController.clear();
             emailController.clear();
             subjectController.clear();
@@ -81,6 +82,7 @@ class _ComplaintsViewBodyState extends State<ComplaintsViewBody> {
                       fillColor: Colors.white,
                         hintText: S.of(context).email,
                         controller: emailController,
+                        keyboardType: TextInputType.emailAddress,
                         minLines: 1,
                         validator: (val) {
                           if (val == null || val.isEmpty) {

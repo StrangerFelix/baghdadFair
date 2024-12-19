@@ -38,6 +38,7 @@ class _MainContactUsState extends State<MainContactUs> {
       child: BlocConsumer<ContactUsBloc, ContactUsStates>(
         listener: (context, state) {
           if (state is SendEmailSuccess) {
+            FocusScope.of(context).unfocus();
             nameController.clear();
             emailController.clear();
             subjectController.clear();
@@ -117,6 +118,7 @@ class _MainContactUsState extends State<MainContactUs> {
                                   CustomTextField(
                                       hintText: S.of(context).email,
                                       controller: emailController,
+                                      keyboardType: TextInputType.emailAddress,
                                       height: null,
                                       validator: (val) {
                                         if (val == null || val.isEmpty) {
