@@ -2,6 +2,7 @@ import 'package:baghdad_fair/core/components/customHomeButton.dart';
 import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class MapButton extends StatelessWidget {
   const MapButton({required this.text,required this.onTap,super.key});
@@ -25,11 +26,12 @@ class MapButton extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const CustomHomeButton(
+                CustomHomeButton(
                   hasSmallerRing: false,
-                  child: Image(
-                    image: AssetImage(AppAssets.address),
-                    width: 30,
+                  child: SvgPicture.asset(
+                    AppAssets.mainAddress,
+                    width: 25,
+                    height: 25,
                   ),
                 ),
                 const SizedBox(width: 15,),

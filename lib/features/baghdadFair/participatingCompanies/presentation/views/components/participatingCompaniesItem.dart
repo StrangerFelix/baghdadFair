@@ -1,7 +1,6 @@
-import 'package:baghdad_fair/core/utilities/appAssets.dart';
+import 'package:baghdad_fair/core/components/customCachedImage.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
-import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/presentation/views/components/participatingCompaniesItemSingleSection.dart';
 import 'package:flutter/material.dart';
 
 class ParticipatingCompaniesItem extends StatelessWidget {
@@ -16,66 +15,33 @@ class ParticipatingCompaniesItem extends StatelessWidget {
   final String? localOrNot;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: AppStyles.primaryBoxDeocration(hasBorRadius: false),
-      child: Column(
-        children: [
-          ParticipatingCompaniesItemSingleSection(
-            firstIcon: const Image(
-              image: AssetImage(AppAssets.userLarge)
-            ), 
-            firstText: name ?? "", 
-            secondIcon: const Image(
-              image: AssetImage(AppAssets.name)
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
+      child: Container(
+        height: 150,
+        decoration: AppStyles.primaryBoxDeocration(hasBorRadius: true),
+        child: const Row(
+          children: [
+            Expanded(
+              flex: 4,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: AspectRatio(
+                  aspectRatio: 3/2,
+                  child: CustomCachedImage(''),
+                ),
+              )
             ),
-            secondText: secondName ?? "" 
-          ),
-          Container(
-            height: 1,
-            width: double.infinity,
-            color: primaryBackgroundColor,
-          ),
-          ParticipatingCompaniesItemSingleSection(
-            firstIcon: const Image(
-              image: AssetImage(AppAssets.emailLarge)
-            ), 
-            firstText: email ?? "", 
-            secondIcon: const Image(
-              image: AssetImage(AppAssets.phoneLarge)
+            Expanded(
+              flex: 7,
+              child: Column(
+                children: [
+                  Text('fd')
+                ],
+              )
             ),
-            secondText: phone ?? ""
-          ),
-          Container(
-            height: 1,
-            width: double.infinity,
-            color: primaryBackgroundColor,
-          ),
-          ParticipatingCompaniesItemSingleSection(
-            firstIcon: const Image(
-              image: AssetImage(AppAssets.earth)
-            ), 
-            firstText: companyDirection ?? "", 
-            secondIcon: const Image(
-              image: AssetImage(AppAssets.link)
-            ),
-            secondText: companyType ?? ""
-          ),
-          Container(
-            height: 1,
-            width: double.infinity,
-            color: primaryBackgroundColor,
-          ),
-          ParticipatingCompaniesItemSingleSection(
-            firstIcon: const Image(
-              image: AssetImage(AppAssets.address)
-            ), 
-            firstText: location ?? "", 
-            secondIcon: const Image(
-              image: AssetImage(AppAssets.flag)
-            ),
-            secondText: localOrNot ?? ""
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:baghdad_fair/core/components/customHomeButton.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class MainHomeInfoItem extends StatelessWidget {
   const MainHomeInfoItem({
@@ -17,9 +18,12 @@ class MainHomeInfoItem extends StatelessWidget {
       child: Column(
         children: [
           CustomHomeButton(
-            child: Image(
-              image: AssetImage(imageLink)
-            ),
+            child: SvgPicture.asset(
+              imageLink,
+              width: 25,
+              height: 25,
+              fit: BoxFit.cover,
+            )
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),

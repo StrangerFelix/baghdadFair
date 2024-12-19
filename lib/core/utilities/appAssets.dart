@@ -4,11 +4,12 @@ abstract class AppAssets {
   static const burgerMenu = 'assets/icons/burgermenu.svg';
   static const website = 'assets/icons/website.png';
   static const send = 'assets/icons/send.png';
-  static const shield = "assets/icons/shield.png";
-  static const clock = "assets/icons/clock.png";
-  static const link = "assets/icons/link.png";
+  static const shield = "assets/icons/shield.svg";
+  static const clock = "assets/icons/clock.svg";
+  static const link = "assets/icons/link.svg";
+  static const mainAddress = "assets/icons/mainaddress.svg";
   static const address = "assets/icons/address.png";
-  static const file = "assets/icons/file.png";
+  static const file = "assets/icons/file.svg";
   static const location = "assets/icons/location.png";
   static const phone = "assets/icons/phone.png";
   static const logo = "assets/icons/logo.png";
@@ -17,7 +18,7 @@ abstract class AppAssets {
   static const google = "assets/icons/google.png";
   static const x = "assets/icons/x.png";
   static const email = "assets/icons/email.png";
-  static const bflogo = 'assets/icons/baghdadfairlogo.png';
+  static const bflogo = 'assets/icons/baghdadfairlogo.svg';
   static const search = "assets/icons/search.png";
   static const filter = "assets/icons/filter.svg";
   static const calendar = "assets/icons/calendar.png";
@@ -30,12 +31,12 @@ abstract class AppAssets {
   static const name = "assets/icons/name.png";
   static const flag = "assets/icons/flag.png";
   static const time = "assets/icons/time.png";
-  static const news = "assets/icons/news.png";
-  static const videos = "assets/icons/videos.png";
-  static const ads = "assets/icons/ads.png";
-  static const complaints = "assets/icons/complaints.png";
-  static const langs = "assets/icons/langs.png";
-  static const arabic = "assets/icons/arabic.png";
-  static const english = "assets/icons/english.png";
-  static const home = "assets/icons/home.png";
+  static const news = "assets/icons/news.svg";
+  static const videos = "assets/icons/videos.svg";
+  static const ads = "assets/icons/ads.svg";
+  static const complaints = "assets/icons/complaints.svg";
+  static const langs = "assets/icons/langs.svg";
+  static const arabic = "assets/icons/arabic.svg";
+  static const english = "assets/icons/english.svg";
+  static const home = "assets/icons/home.svg";
 }

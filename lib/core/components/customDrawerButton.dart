@@ -3,6 +3,7 @@ import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/main/data/models/navBarModel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CustomDrawerButton extends StatelessWidget {
   const CustomDrawerButton({this.pageNumber = -1,this.onTap,required this.icon,required this.title,super.key});
@@ -23,8 +24,8 @@ class CustomDrawerButton extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image(
-                image: AssetImage(icon),
+              SvgPicture.asset(
+                icon,
                 fit: BoxFit.cover,
                 width: 25,
                 height: 25,

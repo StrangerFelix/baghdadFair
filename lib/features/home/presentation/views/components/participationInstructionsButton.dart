@@ -4,6 +4,7 @@ import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ParticipationInstructionsButton extends StatelessWidget {
   const ParticipationInstructionsButton({super.key});
@@ -16,11 +17,12 @@ class ParticipationInstructionsButton extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const CustomHomeButton(
+            CustomHomeButton(
               hasSmallerRing: false,
-              child: Image(
-                image: AssetImage(AppAssets.file),
-                width: 30,
+              child: SvgPicture.asset(
+                AppAssets.file,
+                width: 25,
+                height: 25,
               ),
             ),
             const SizedBox(width: 10,),
