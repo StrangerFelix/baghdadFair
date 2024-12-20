@@ -52,6 +52,10 @@ class AppStyles {
     color: gradiant2,
     fontWeight: FontWeight.bold
   );
+  static var titleBoxDexoration = BoxDecoration(
+    color: gradiant1.withOpacity(.4),
+    boxShadow: boxShadow
+  );
   static var boxShadow = [
     BoxShadow(
       color: gradiant2.withOpacity(.1),

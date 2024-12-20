@@ -1,6 +1,7 @@
 import 'package:baghdad_fair/core/components/customButton.dart';
 import 'package:baghdad_fair/core/components/customLoadingIndicator.dart';
 import 'package:baghdad_fair/core/components/customTextField.dart';
+import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/home/presentation/manager/contactUs/contactUsBloc.dart';
@@ -9,6 +10,7 @@ import 'package:baghdad_fair/features/home/presentation/manager/contactUs/contac
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ComplaintsViewBody extends StatefulWidget {
   const ComplaintsViewBody({super.key});
@@ -48,91 +50,116 @@ class _ComplaintsViewBodyState extends State<ComplaintsViewBody> {
           }
         },
       builder: (context, state) {
-        return ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 600),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
-            child: Form(
-              key: formKey,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      S.of(context).help_message,
-                      style: AppStyles.titleLarge
-                          .copyWith(fontWeight: FontWeight.normal),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    CustomTextField(
-                      hintText: S.of(context).name,
-                      fillColor: Colors.white,
-                      controller: nameController,
-                      minLines: 1,
-                      validator: (val) {
-                        if (val == null || val.isEmpty) {
-                          return 'املئ الحقل';
-                        }
-                        return null;
-                      },
-                    ),
-                    CustomTextField(
-                      fillColor: Colors.white,
-                        hintText: S.of(context).email,
-                        controller: emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        minLines: 1,
-                        validator: (val) {
-                          if (val == null || val.isEmpty) {
-                            return 'املئ الحقل';
-                          }
-                          return null;
-                        }),
-                    CustomTextField(
-                        hintText: S.of(context).complaint_title,
-                        fillColor: Colors.white,
-                        controller: subjectController,
-                        minLines: 1,
-                        validator: (val) {
-                          if (val == null || val.isEmpty) {
-                            return 'املئ الحقل';
-                          }
-                          return null;
-                        }),
-                    CustomTextField(
-                        hintText: S.of(context).message,
-                        fillColor: Colors.white,
-                        controller: messageController,
-                        minLines: 1,
-                        validator: (val) {
-                          if (val == null || val.isEmpty) {
-                            return 'املئ الحقل';
-                          }
-                          return null;
-                        }),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    state is! SendEmailLoading
-                        ? CustomButton(
-                            width: double.infinity,
-                            vpadding: 10,
-                            onPressed: () {
-                              if (formKey.currentState!.validate()) {
-                                context.read<ContactUsBloc>().add(
-                                    SendEmailEvent(
-                                        name: nameController.text,
-                                        email: emailController.text,
-                                        subject: subjectController.text,
-                                        message: messageController.text));
+        return LayoutBuilder(
+          builder: (context, constraints) => SingleChildScrollView(
+            child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: 600,
+                  minHeight: constraints.maxHeight
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
+                  child: Form(
+                    key: formKey,
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            S.of(context).help_message,
+                            style: AppStyles.titleLarge
+                                .copyWith(fontWeight: FontWeight.normal),
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          CustomTextField(
+                            hintText: S.of(context).name,
+                            fillColor: Colors.white,
+                            controller: nameController,
+                            minLines: 1,
+                            validator: (val) {
+                              if (val == null || val.isEmpty) {
+                                return 'املئ الحقل';
                               }
+                              return null;
                             },
-                            text: S.of(context).send,
-                          )
-                        : const CustomLoadingIndicator()
-                  ],
+                          ),
+                          CustomTextField(
+                            fillColor: Colors.white,
+                              hintText: S.of(context).email,
+                              controller: emailController,
+                              keyboardType: TextInputType.emailAddress,
+                              minLines: 1,
+                              validator: (val) {
+                                if (val == null || val.isEmpty) {
+                                  return 'املئ الحقل';
+                                }
+                                return null;
+                              }),
+                          CustomTextField(
+                              hintText: S.of(context).complaint_title,
+                              fillColor: Colors.white,
+                              controller: subjectController,
+                              minLines: 1,
+                              validator: (val) {
+                                if (val == null || val.isEmpty) {
+                                  return 'املئ الحقل';
+                                }
+                                return null;
+                              }),
+                          CustomTextField(
+                              hintText: S.of(context).message,
+                              fillColor: Colors.white,
+                              controller: messageController,
+                              minLines: 1,
+                              validator: (val) {
+                                if (val == null || val.isEmpty) {
+                                  return 'املئ الحقل';
+                                }
+                                return null;
+                              }),
+                          const SizedBox(
+                            height: 40,
+                          ),
+                          state is! SendEmailLoading
+                              ? CustomButton(
+                                  width: double.infinity,
+                                  otherChild: Row(
+                                    children: [
+                                      const SizedBox(width: 10,),
+                                      Column(
+                                        children: [
+                                          SvgPicture.asset(
+                                            AppAssets.send,
+                                            width: 18,
+                                            height: 18
+                                          ),
+                                          const SizedBox(height: 2,)
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                  vpadding: 10,
+                                  onPressed: () {
+                                    if (formKey.currentState!.validate()) {
+                                      context.read<ContactUsBloc>().add(
+                                          SendEmailEvent(
+                                              name: nameController.text,
+                                              email: emailController.text,
+                                              subject: subjectController.text,
+                                              message: messageController.text));
+                                    }
+                                  },
+                                  text: S.of(context).send,
+                                )
+                              : const CustomLoadingIndicator()
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),

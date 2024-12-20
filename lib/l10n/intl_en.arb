@@ -87,5 +87,7 @@
     "home" : "Homescreen",
     "complaints" : "Complaints",
     "complaint_title" : "Complaint title",
-    "help_message" : "We're here to help"
+    "help_message" : "We're here to help",
+    "description" : "Description",
+    "fair_details" : "Fair details"
 }

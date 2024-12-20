@@ -3,15 +3,15 @@ abstract class AppAssets {
   static const titleText = 'assets/icons/titletext.svg';
   static const burgerMenu = 'assets/icons/burgermenu.svg';
   static const website = 'assets/icons/website.png';
-  static const send = 'assets/icons/send.png';
+  static const send = 'assets/icons/send.svg';
   static const shield = "assets/icons/shield.svg";
   static const clock = "assets/icons/clock.svg";
   static const link = "assets/icons/link.svg";
   static const mainAddress = "assets/icons/mainaddress.svg";
   static const address = "assets/icons/address.png";
   static const file = "assets/icons/file.svg";
-  static const location = "assets/icons/location.png";
-  static const phone = "assets/icons/phone.png";
+  static const location = "assets/icons/d_location.svg";
+  static const phone = "assets/icons/call.svg";
   static const logo = "assets/icons/logo.png";
   static const linksImage = "assets/images/links_image.svg";
   static const facebook = "assets/icons/facebook.png";
@@ -40,4 +40,9 @@ abstract class AppAssets {
   static const english = "assets/icons/english.svg";
   static const home = "assets/icons/home.svg";
   static const fairs = "assets/icons/fairs.svg";
+  static const dPower = "assets/icons/d_power.svg";
+  static const dFair = "assets/icons/d_fair.svg";
+  static const dArrow = "assets/icons/d_arrow.svg";
+  static const dLocation = "assets/icons/d_location.svg";
+  static const dCalendar = "assets/icons/d_calendar.svg";
 }

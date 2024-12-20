@@ -61,22 +61,16 @@ class _FairsListState extends State<FairsList> {
                   padding: const EdgeInsets.symmetric(
                       horizontal: horizontalPadding, vertical: 5),
                   child: FairsItem(
+                    fair: fairs[index],
                     title: fairs[index].name,
                     image: fairs[index].photo,
                     location: fairs[index].location,
                     date: fairs[index].date!.substring(0,10),
-                    category: fairs[index].description,
-                    fairDate: fairs[index].date!.substring(0,10),
-                    fairCategory: fairs[index].specialty,
-                    fairType: Intl.getCurrentLocale() == 'en' ? 
-                      fairs[index].fairsLocation == "خارج العراق" ? 'Outside iraq' : "Inside iraq"
-                      : fairs[index].fairsLocation,
                     fairCondition: Intl.getCurrentLocale() == 'en' ?
                       fairs[index].fairStatus == 'قادمة' ? 'Incoming'
                       : fairs[index].fairStatus == 'جارية' ? ' Pending'
                       : 'Ended'
                       : fairs[index].fairStatus
-                    
                   ),
                 );
               }

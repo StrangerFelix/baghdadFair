@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "contact_us": MessageLookupByLibrary.simpleMessage("الاتصال بنا"),
         "contact_us_error":
             MessageLookupByLibrary.simpleMessage("تعذر ارسال البريد"),
+        "description": MessageLookupByLibrary.simpleMessage("الوصف"),
         "details": MessageLookupByLibrary.simpleMessage("تفاصيل"),
         "diamond_partners":
             MessageLookupByLibrary.simpleMessage("الشركاء الماسيّون"),
@@ -55,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "empty": MessageLookupByLibrary.simpleMessage("القائمة فارغة."),
         "ended": MessageLookupByLibrary.simpleMessage("منتهية"),
         "error": MessageLookupByLibrary.simpleMessage("حدث خطأ ما!"),
+        "fair_details": MessageLookupByLibrary.simpleMessage("تفاصيل المعرض"),
         "fair_history":
             MessageLookupByLibrary.simpleMessage("تاريخ معرض بغداد الدولي"),
         "fairs": MessageLookupByLibrary.simpleMessage("المعارض المتخصصة"),

@@ -50,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "contact_us": MessageLookupByLibrary.simpleMessage("Contact us"),
         "contact_us_error":
             MessageLookupByLibrary.simpleMessage("Email not sent."),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
         "details": MessageLookupByLibrary.simpleMessage("Details"),
         "diamond_partners":
             MessageLookupByLibrary.simpleMessage("Diamond partners"),
@@ -58,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "empty": MessageLookupByLibrary.simpleMessage("The list is empty."),
         "ended": MessageLookupByLibrary.simpleMessage("Ended"),
         "error": MessageLookupByLibrary.simpleMessage("An error occurred"),
+        "fair_details": MessageLookupByLibrary.simpleMessage("Fair details"),
         "fair_history": MessageLookupByLibrary.simpleMessage(
             "Baghdad\'s international fair history"),
         "fairs": MessageLookupByLibrary.simpleMessage("Fairs"),

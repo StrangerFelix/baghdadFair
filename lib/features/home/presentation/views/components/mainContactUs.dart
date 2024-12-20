@@ -13,6 +13,7 @@ import 'package:baghdad_fair/features/home/presentation/views/components/mainCon
 import 'package:baghdad_fair/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 
 class MainContactUs extends StatefulWidget {
   const MainContactUs({this.addressInfo, this.phoneInfo, super.key});
@@ -154,6 +155,22 @@ class _MainContactUsState extends State<MainContactUs> {
                                     child: state is! SendEmailLoading
                                     ? CustomButton(
                                         vpadding: 5,
+                                        width: 150,
+                                        otherChild: Row(
+                                          children: [
+                                            const SizedBox(width: 10,),
+                                            Column(
+                                              children: [
+                                                SvgPicture.asset(
+                                                  AppAssets.send,
+                                                  width: 18,
+                                                  height: 18
+                                                ),
+                                                const SizedBox(height: 2,)
+                                              ],
+                                            )
+                                          ],
+                                        ),
                                         onPressed: () {
                                           if (formKey.currentState!.validate()) {
                                             context.read<ContactUsBloc>().add(

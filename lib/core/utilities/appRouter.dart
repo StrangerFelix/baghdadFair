@@ -2,6 +2,8 @@ import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/baghdadFair/aboutUs/presentation/views/aboutUsBody.dart';
 import 'package:baghdad_fair/features/baghdadFair/baghdadFair/presentation/views/baghdadFairBody.dart';
 import 'package:baghdad_fair/features/complaints/presentation/views/complaintsView.dart';
+import 'package:baghdad_fair/features/fairs/fairDetails/presentation/views/fairDetailsView.dart';
+import 'package:baghdad_fair/features/fairs/fairs/data/models/fairsModel.dart';
 import 'package:baghdad_fair/features/main/presentation/views/homeView.dart';
 import 'package:baghdad_fair/features/ads/presentation/views/adsBody.dart';
 import 'package:baghdad_fair/features/fairs/fairs/presentation/views/fairsBody.dart';
@@ -30,7 +32,8 @@ abstract class AppRouter {
   static const news = "/news";
   static const newsDetails = "/newsDetails";
   static const videosLibrary = "/videosLibrary";
-  static const fairs = "/bf/fairs";
+  static const fairs = "/fairs";
+  static const fairDetails = "/fairsDetails";
   static const participatingCountries = "/bf/participatingCountries";
   static const participatingCompanies = "/bf/participatingCompanies";
   static const sponsoringCompanies = "/bf/sponsoringCompanies";
@@ -46,6 +49,13 @@ abstract class AppRouter {
       GoRoute(
         path: '/',
         builder: (context,state) => const SplashView()
+      ),
+      GoRoute(
+        path: fairDetails,
+        builder: (context,state) {
+          final fair = state.extra as Fair;
+          return FairDetailsScreen(fair: fair,);
+        } 
       ),
       GoRoute(
         path: newsDetails,

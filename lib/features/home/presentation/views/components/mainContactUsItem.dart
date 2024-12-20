@@ -1,6 +1,7 @@
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ContactUsInfo extends StatelessWidget {
   const ContactUsInfo({required this.imageLink,required this.title,required this.description,super.key});
@@ -13,10 +14,17 @@ class ContactUsInfo extends StatelessWidget {
       children: [
         Row(
           children: [
-            Image(
-              image: AssetImage(imageLink),
+            Column(
+              children: [
+                SvgPicture.asset(
+                  imageLink,
+                  width: 15,
+                  height: 15,
+                ),
+                const SizedBox(height: 2,)
+              ],
             ),
-            const SizedBox(width: 5,),
+            const SizedBox(width: 10,),
             Text(
               title,
               style: TextStyle(
@@ -27,6 +35,7 @@ class ContactUsInfo extends StatelessWidget {
             ),
           ],
         ),
+        const SizedBox(height: 5,),
         Padding(
           padding: const EdgeInsetsDirectional.only(start:10),
           child: Text(

@@ -1,3 +1,4 @@
+import 'package:baghdad_fair/core/components/screenAppBar.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/news/news/data/models/newsModel.dart';
 import 'package:baghdad_fair/features/news/newsDetails/presentation/views/widgets/newsDetailsBody.dart';
@@ -10,6 +11,7 @@ class NewsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryBackgroundColor,
+      appBar: screenAppBar,
       body: NewsDetailsBody(news: news),
     );
   }
