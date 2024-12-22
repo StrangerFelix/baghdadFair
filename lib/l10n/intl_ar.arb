@@ -89,5 +89,7 @@
     "complaint_title" : "عنوان الشكوى",
     "help_message" : "نحن هنا لمساعدتك",
     "description" : "الوصف",
-    "fair_details" : "تفاصيل المعرض"
+    "fair_details" : "تفاصيل المعرض",
+    "contacts" : "للتواصل"
+    
 }

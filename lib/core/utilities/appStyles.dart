@@ -53,14 +53,14 @@ class AppStyles {
     fontWeight: FontWeight.bold
   );
   static var titleBoxDexoration = BoxDecoration(
-    color: gradiant1.withOpacity(.4),
+    color: gradiant2.withOpacity(.1), // #F9EAE5
     boxShadow: boxShadow
   );
   static var boxShadow = [
     BoxShadow(
       color: gradiant2.withOpacity(.1),
       spreadRadius: 1,
-      blurRadius: 3,
+      blurRadius: 6,
       offset: const Offset(0, 0),
     ),
   ];

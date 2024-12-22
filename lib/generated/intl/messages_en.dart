@@ -50,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "contact_us": MessageLookupByLibrary.simpleMessage("Contact us"),
         "contact_us_error":
             MessageLookupByLibrary.simpleMessage("Email not sent."),
+        "contacts": MessageLookupByLibrary.simpleMessage("Contacts"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "details": MessageLookupByLibrary.simpleMessage("Details"),
         "diamond_partners":

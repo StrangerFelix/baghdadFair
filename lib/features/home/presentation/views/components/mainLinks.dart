@@ -17,7 +17,7 @@ class MainLinks extends StatelessWidget {
         Transform.scale(
           scale: 1.1,
           child: SvgPicture.asset(
-            AppAssets.linksImage
+            AppAssets.mainLinksBackground
           ),
         ),
         Padding(
@@ -35,29 +35,29 @@ class MainLinks extends StatelessWidget {
                     style: AppStyles.bodySmall,
                   ),
                   const SizedBox(height: 8,),
-                  const Row(
+                  Row(
                     children: [
-                      Image(
-                        image: AssetImage(AppAssets.email),
-                        width: 25,
-                        height: 25,
+                      SvgPicture.asset(
+                        AppAssets.emailMain,
+                        width: 28,
+                        height: 28,
                       ),
-                      SizedBox(width: 5,),
-                      Text(
+                      const SizedBox(width: 5,),
+                      const Text(
                         'iraqifairs@mot.gov.iq',
                         style: AppStyles.bodySmall,
                       )
                     ],
                   ),
-                  const Row(
+                  Row(
                     children: [
-                      Image(
-                        image: AssetImage(AppAssets.website),
-                        width: 25,
-                        height: 25,
+                      SvgPicture.asset(
+                        AppAssets.website,
+                        width: 28,
+                        height: 28,
                       ),
-                      SizedBox(width: 5,),
-                      Text(
+                      const SizedBox(width: 5,),
+                      const Text(
                         'www.fairs.gov.iq',
                         style: AppStyles.bodySmall,
                       )
@@ -66,7 +66,6 @@ class MainLinks extends StatelessWidget {
                 ],
               ),
               Column(
-                
                 children: [
                   const SizedBox(height: 20,),
                   Row(

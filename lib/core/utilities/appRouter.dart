@@ -1,8 +1,10 @@
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/baghdadFair/aboutUs/presentation/views/aboutUsBody.dart';
 import 'package:baghdad_fair/features/baghdadFair/baghdadFair/presentation/views/baghdadFairBody.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/details/presentation/views/parCompanyDetailsView.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/participatingCompanies/data/models/companiesModel.dart';
 import 'package:baghdad_fair/features/complaints/presentation/views/complaintsView.dart';
-import 'package:baghdad_fair/features/fairs/fairDetails/presentation/views/fairDetailsView.dart';
+import 'package:baghdad_fair/features/fairs/details/presentation/views/fairDetailsView.dart';
 import 'package:baghdad_fair/features/fairs/fairs/data/models/fairsModel.dart';
 import 'package:baghdad_fair/features/main/presentation/views/homeView.dart';
 import 'package:baghdad_fair/features/ads/presentation/views/adsBody.dart';
@@ -10,11 +12,11 @@ import 'package:baghdad_fair/features/fairs/fairs/presentation/views/fairsBody.d
 import 'package:baghdad_fair/features/home/presentation/views/mainHomeBody.dart';
 import 'package:baghdad_fair/features/news/news/data/models/newsModel.dart';
 import 'package:baghdad_fair/features/news/news/presentation/views/newsBody.dart';
-import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/presentation/views/participatingCompaniesBody.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/participatingCompanies/presentation/views/participatingCompaniesBody.dart';
 import 'package:baghdad_fair/features/baghdadFair/participatingCountries/presentation/views/participatingCountriesBody.dart';
 import 'package:baghdad_fair/features/baghdadFair/sponsoringCompanies/presentation/views/sponsoringCompaniesBody.dart';
 import 'package:baghdad_fair/features/videos/presentation/views/videosLibraryBody.dart';
-import 'package:baghdad_fair/features/news/newsDetails/presentation/views/newsScreen.dart';
+import 'package:baghdad_fair/features/news/details/presentation/views/newsScreen.dart';
 import 'package:baghdad_fair/features/splash/presentation/views/splashView.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -30,12 +32,13 @@ abstract class AppRouter {
   static const home = '/home';
   static const aboutUs = '/bf/aboutUs';
   static const news = "/news";
-  static const newsDetails = "/newsDetails";
+  static const newsDetails = "$news/newsDetails";
   static const videosLibrary = "/videosLibrary";
   static const fairs = "/fairs";
-  static const fairDetails = "/fairsDetails";
+  static const fairDetails = "$fairs/fairDetails";
   static const participatingCountries = "/bf/participatingCountries";
   static const participatingCompanies = "/bf/participatingCompanies";
+  static const participatingCompanyDetails = "$participatingCompanies/participatingCompanyDetails";
   static const sponsoringCompanies = "/bf/sponsoringCompanies";
   static const ads = "/ads";
   static const complaints = '/complaints';
@@ -55,6 +58,13 @@ abstract class AppRouter {
         builder: (context,state) {
           final fair = state.extra as Fair;
           return FairDetailsScreen(fair: fair,);
+        } 
+      ),
+      GoRoute(
+        path: participatingCompanyDetails,
+        builder: (context,state) {
+          final company = state.extra as Company;
+          return ParticipatingCompanyDetailsView(company: company);
         } 
       ),
       GoRoute(

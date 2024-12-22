@@ -4,7 +4,7 @@ import 'package:baghdad_fair/features/ads/data/repository/adsRepoImpl.dart';
 import 'package:baghdad_fair/features/fairs/fairs/data/repository/fairsRepoImpl.dart';
 import 'package:baghdad_fair/features/home/data/repository/homeRepoImpl.dart';
 import 'package:baghdad_fair/features/news/news/data/repository/newsRepoImpl.dart';
-import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/data/repository/companiesRepoImpl.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/participatingCompanies/data/repository/companiesRepoImpl.dart';
 import 'package:baghdad_fair/features/baghdadFair/participatingCountries/data/repository/countriesRepoImpl.dart';
 import 'package:baghdad_fair/features/baghdadFair/sponsoringCompanies/data/repository/sponsoringRepoImpl.dart';
 import 'package:baghdad_fair/features/videos/data/repository/videosRepoImpl.dart';

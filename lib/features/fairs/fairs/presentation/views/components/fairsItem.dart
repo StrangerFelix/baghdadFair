@@ -1,25 +1,16 @@
+import 'package:baghdad_fair/core/components/companyInfo.dart';
 import 'package:baghdad_fair/core/components/customCachedImage.dart';
 import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/core/utilities/appRouter.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
-import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:baghdad_fair/features/fairs/fairs/data/models/fairsModel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
 
 class FairsItem extends StatelessWidget {
-  const FairsItem({super.key, this.fair,this.image, this.title, this.location, this.date, this.category, this.fairDate, this.fairCategory, this.fairType, this.fairCondition});
-  final String? image;
-  final String? title;
-  final String? location;
-  final String? date;
-  final String? category;
-  final String? fairDate;
-  final String? fairCategory;
-  final String? fairType;
-  final String? fairCondition;
-  final Fair? fair;
+  const FairsItem({super.key,required this.fair});
+  final Fair fair;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +32,7 @@ class FairsItem extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(16)),
-                      child: CustomCachedImage(image)
+                      child: CustomCachedImage(fair.photo)
                     )
                   )
                 ),
@@ -54,41 +45,25 @@ class FairsItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          title ?? "",
+                          fair.name ?? "",
                           style: AppStyles.bodySmall,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 4,
                         ),
                         const SizedBox(height: 20,),
-                        Row(
-                          children: [
-                            SvgPicture.asset(
-                              AppAssets.dPower,
-                              width: 25,
-                              height: 25,
-                            ),
-                            const SizedBox(width: 5,),
-                            Text(
-                              fairCondition ?? "",
-                              style: AppStyles.autherSmall.copyWith(color: gradiant2.withOpacity(.75)),
-                            )
-                          ],
+                        CompanyInfo(
+                          image: AppAssets.dPower,
+                          text: Intl.getCurrentLocale() == 'en' ?
+                            fair.fairStatus == 'قادمة' ? 'Incoming'
+                            : fair.fairStatus == 'جارية' ? 'Pending'
+                            : 'Ended'
+                            : fair.fairStatus,
                         ),
                         const SizedBox(height: 5,),
-                        Row(
-                          children: [
-                            SvgPicture.asset(
-                              AppAssets.dCalendar,
-                              width: 25,
-                              height: 25,
-                            ),
-                            const SizedBox(width: 5,),
-                            Text(
-                              date ?? "",
-                              style: AppStyles.autherSmall.copyWith(color: gradiant2.withOpacity(.75)),
-                            )
-                          ],
-                        ),
+                        CompanyInfo(
+                          image: AppAssets.dCalendar,
+                          text: fair.date!.substring(0,10),
+                        )
                       ],
                     ),
                   )

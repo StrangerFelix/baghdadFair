@@ -38,7 +38,7 @@ class MainHomeInfo extends StatelessWidget {
             title: durationTitle ?? ""
           ),
           MainHomeInfoItem(
-            imageLink: AppAssets.mainAddress, 
+            imageLink: AppAssets.address, 
             titleName: S.of(context).address, 
             title: locationTitle ?? ""
           ),

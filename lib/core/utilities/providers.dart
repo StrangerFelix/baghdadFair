@@ -16,9 +16,9 @@ import 'package:baghdad_fair/features/home/presentation/manager/home/homeEvents.
 import 'package:baghdad_fair/features/news/news/data/repository/newsRepoImpl.dart';
 import 'package:baghdad_fair/features/news/news/presentation/manager/news/newsBloc.dart';
 import 'package:baghdad_fair/features/news/news/presentation/manager/news/newsEvents.dart';
-import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/data/repository/companiesRepoImpl.dart';
-import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/presentation/manager/companies/companiesBloc.dart';
-import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/presentation/manager/companies/companiesEvents.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/participatingCompanies/data/repository/companiesRepoImpl.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/participatingCompanies/presentation/manager/companies/companiesBloc.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/participatingCompanies/presentation/manager/companies/companiesEvents.dart';
 import 'package:baghdad_fair/features/baghdadFair/participatingCountries/data/repository/countriesRepoImpl.dart';
 import 'package:baghdad_fair/features/baghdadFair/participatingCountries/presentation/manager/countries/countriesBloc.dart';
 import 'package:baghdad_fair/features/baghdadFair/participatingCountries/presentation/manager/countries/countriesEvents.dart';

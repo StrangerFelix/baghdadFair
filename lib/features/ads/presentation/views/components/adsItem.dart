@@ -3,6 +3,7 @@ import 'package:baghdad_fair/core/utilities/appAssets.dart';
 import 'package:baghdad_fair/core/utilities/appStyles.dart';
 import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class AdsItem extends StatelessWidget {
   const AdsItem({required this.image,super.key, this.location, this.date, this.time});
@@ -36,8 +37,8 @@ class AdsItem extends StatelessWidget {
                 const SizedBox(height: 15,),
                 Row(
                   children: [
-                    const Image(
-                      image: AssetImage(AppAssets.address),
+                    SvgPicture.asset(
+                      AppAssets.address,
                       width: 20,
                     ),
                     const SizedBox(width: 5,),

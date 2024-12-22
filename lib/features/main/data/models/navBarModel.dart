@@ -6,8 +6,8 @@ import 'package:baghdad_fair/features/baghdadFair/aboutUs/presentation/manager/a
 import 'package:baghdad_fair/features/baghdadFair/aboutUs/presentation/manager/aboutUs/aboutUsEvents.dart';
 import 'package:baghdad_fair/features/fairs/fairs/presentation/manager/fairs/fairsBloc.dart';
 import 'package:baghdad_fair/features/fairs/fairs/presentation/manager/fairs/fairsEvents.dart';
-import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/presentation/manager/companies/companiesBloc.dart';
-import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/presentation/manager/companies/companiesEvents.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/participatingCompanies/presentation/manager/companies/companiesBloc.dart';
+import 'package:baghdad_fair/features/baghdadFair/participatingCompanies/participatingCompanies/presentation/manager/companies/companiesEvents.dart';
 import 'package:baghdad_fair/features/baghdadFair/participatingCountries/presentation/manager/countries/countriesBloc.dart';
 import 'package:baghdad_fair/features/baghdadFair/participatingCountries/presentation/manager/countries/countriesEvents.dart';
 import 'package:baghdad_fair/features/baghdadFair/sponsoringCompanies/presentation/manager/sponsors/sponsorsBloc.dart';

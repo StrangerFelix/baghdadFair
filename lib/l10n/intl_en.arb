@@ -89,5 +89,6 @@
     "complaint_title" : "Complaint title",
     "help_message" : "We're here to help",
     "description" : "Description",
-    "fair_details" : "Fair details"
+    "fair_details" : "Fair details",
+    "contacts" : "Contacts"
 }

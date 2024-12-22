@@ -10,7 +10,6 @@ import 'package:baghdad_fair/features/fairs/fairs/presentation/manager/fairs/fai
 import 'package:baghdad_fair/features/fairs/fairs/presentation/views/components/fairsItem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 
 class FairsList extends StatefulWidget {
   const FairsList({super.key});
@@ -62,15 +61,6 @@ class _FairsListState extends State<FairsList> {
                       horizontal: horizontalPadding, vertical: 5),
                   child: FairsItem(
                     fair: fairs[index],
-                    title: fairs[index].name,
-                    image: fairs[index].photo,
-                    location: fairs[index].location,
-                    date: fairs[index].date!.substring(0,10),
-                    fairCondition: Intl.getCurrentLocale() == 'en' ?
-                      fairs[index].fairStatus == 'قادمة' ? 'Incoming'
-                      : fairs[index].fairStatus == 'جارية' ? ' Pending'
-                      : 'Ended'
-                      : fairs[index].fairStatus
                   ),
                 );
               }

@@ -93,7 +93,7 @@ class _MainContactUsState extends State<MainContactUs> {
                                 ),
                                 Expanded(
                                   child: ContactUsInfo(
-                                    imageLink: AppAssets.phone,
+                                    imageLink: AppAssets.call,
                                     title: S.of(context).call_us,
                                     description: widget.phoneInfo ?? "",
                                   ),

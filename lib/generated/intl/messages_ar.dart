@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "contact_us": MessageLookupByLibrary.simpleMessage("الاتصال بنا"),
         "contact_us_error":
             MessageLookupByLibrary.simpleMessage("تعذر ارسال البريد"),
+        "contacts": MessageLookupByLibrary.simpleMessage("للتواصل"),
         "description": MessageLookupByLibrary.simpleMessage("الوصف"),
         "details": MessageLookupByLibrary.simpleMessage("تفاصيل"),
         "diamond_partners":

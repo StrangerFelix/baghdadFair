@@ -29,7 +29,7 @@ class MapButton extends StatelessWidget {
                 CustomHomeButton(
                   hasSmallerRing: false,
                   child: SvgPicture.asset(
-                    AppAssets.mainAddress,
+                    AppAssets.address,
                     width: 25,
                     height: 25,
                   ),

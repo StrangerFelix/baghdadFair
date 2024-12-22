@@ -1,3 +1,4 @@
+import 'package:baghdad_fair/core/utilities/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +14,26 @@ class CustomCachedImage extends StatelessWidget {
       fit: fit ?? BoxFit.cover,
       imageUrl: imageUrl ?? "",
       placeholder: (context, url) {
-        return Image.asset('assets/images/placeholder.png');
-        
+        return AspectRatio(
+          aspectRatio: 3/2,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(16)),
+              color: gradiant2.withOpacity(.1),
+            ),
+          ),
+        );
       },
       errorWidget: (context, url, error) {
-        return Image.asset('assets/images/placeholder.png');
+        return AspectRatio(
+          aspectRatio: 3/2,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(16)),
+              color: gradiant2.withOpacity(.1),
+            ),
+          ),
+        );
       },
     );
   }
